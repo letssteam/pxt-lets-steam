@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"command": "pxt",
+	"type": "shell",
+	"reveal": "always",
+	"tasks": [
+		{
+			"label": "serve",
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+	]
+}
