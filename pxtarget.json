@@ -6,31 +6,87 @@
     "title": "MakeCode Let's STEAM - Blocks / Javascript editor",
     "description": "A Blocks / JavaScript code editor for the Let's STEAM project",
     "corepkg": "core",
-    "cloud": {
-        "workspace": false,
-        "packages": true
-    },
     "bundleddirs": [
+        "libs/base",
         "libs/core"
     ],
-    "runtime": {
-      "mathBlocks": true,
-      "loopsBlocks": true,
-      "logicBlocks": true,
-      "variablesBlocks": true,
-      "textBlocks": false,
-      "functionBlocks": false,
-      "listsBlocks": false
+    "serial": {
+        "useHF2": false,
+        "useEditor": true,
+        "log": true,
+        "editorTheme": {
+            "graphBackground": "#d9d9d9",
+            "lineColors": [
+                "#CC2936",
+                "#FFC914",
+                "#2EB7ED",
+                "#FB48C7",
+                "#08415C",
+                "#C200C0"
+            ]
+        }
     },
     "simulator": {
-        "autoRun": true
+        "autoRun": true,
+        "streams": false,
+        "aspectRatio": 1.0,
+        "parts": true,
+        "partsAspectRatio": 0.69,
+        "dynamicBoardDefinition": true
+    },
+    "cloud": {
+        "workspace": false,
+        "packages": true,
+        "sharing": true,
+        "thumbnails": true,
+        "publishing": true,
+        "importing": true,
+        "preferredPackages": [],
+        "githubPackages": true,
+        "cloudProviders": {
+            "github": {}
+        }
+    },
+    "runtime": {
+        "mathBlocks": true,
+        "loopsBlocks": true,
+        "logicBlocks": true,
+        "variablesBlocks": true,
+        "textBlocks": true,
+        "listsBlocks": true,
+        "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": []
+        },
+        "onStartNamespace": "loops",
+        "onStartColor": "#40bf4a",
+        "onStartWeight": 100,
+        "pauseUntilBlock": {},
+        "breakBlock": true,
+        "continueBlock": true
     },
     "appTheme": {
-        "logoUrl": "https://github.com/Microsoft/pxt-sample",
-        "homeUrl": "http://microsoft.github.io/pxt-sample/",
+        "accentColor": "#0089BF",
+        "logoUrl": "https://github.com/letssteam/pxt-lets-steam",
+        "logo": "./static/logo.svg",
+        "docsLogo": "./static/logo.svg",
+        "docsHeader": "Microsoft MakeCode STM32",
+        "portraitLogo": "./static/logo.svg",
+        "footerLogo": "./static/logo.svg",
+        "organization": "Microsoft MakeCode",
+        "organizationUrl": "https://makecode.com/",
+        "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
+        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+        "homeUrl": "http://letssteam.github.io/pxt-lets-steam/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "betaUrl": "https://makecode.com/",
+        "githubUrl": "https://github.com/letssteam/pxt-lets-steam",
+        "feedbackUrl": "https://forum.makecode.com/",
+        "betaUrl": "https://github.com/letssteam/pxt-lets-steam",
+        "boardName": "board",
+        "homeScreenHero": "./static/hero.svg",
+        "chooseBoardOnNewProject": true,
         "docMenu": [
             {
                 "name": "About",
@@ -41,11 +97,15 @@
                 "path": "/docs"
             }
         ],
+
+        "invertedMenu": true,
+        "invertedToolbox": true,
+        "invertedMonaco": true,
         "coloredToolbox": false,
         "monacoToolbox": true,
-        "invertedMenu": true,
         "showHomeScreen": true,
-        "homeScreenHero": "./static/hero.png",
+        "simAnimationEnter": "fly right in",
+        "simAnimationExit": "fly right out",
         "blocklyOptions": {
             "grid": {
                 "spacing": 20,
@@ -54,8 +114,21 @@
                 "snap": true
             }
         },
-        "simAnimationEnter": "fly right in",
-        "simAnimationExit": "fly right out",
+        "blocklyColors": {
+            "insertionMarker": "#FFFFFF",
+            "insertionMarkerOpacity": 0.5
+        },
+        "blockColors": {
+            "loops": "#40bf4a",
+            "logic": "#4cbfe6",
+            "math": "#9966ff",
+            "variables": "#FF6680",
+            "text": "#ffab19",
+            "advanced": "#00272B",
+            "functions": "#005a9e",
+            "arrays": "#8A1C7C"
+        },
+        "allowPackageExtensions": true,
         "scriptManager": true,
         "debugger": true,
         "print": true,
