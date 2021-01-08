@@ -2,65 +2,61 @@
      User Global Variables
 *******************************/
 
+@fontName  : 'Open Sans';
+
+
+@red:#CC2936;
+@yellow:#FFC914;
+@teal:#08415C;
+@violet:#C200C0;
+@brown:#2E282A; 
+
+/* ST colors */
+@darkBlue: #002052;
+@blue:  #39A9DC;
+@pink:#D4007A;
+@grey: #B9C4CA;
+@darkGrey: #4F5251;
+
+@green: #40bf4a; /*#00922B;*/
+@purple:#8073E5;
+@orange:#d25b33; /*#FFA702;*/
+
+
+@darkGreen: #092C3A;
+
+@primaryColor: @blue;
+@secondaryColor: @pink;
+@pageBackground: @grey;
+
 /*--------------
-      Page
+   Form Input
 ---------------*/
 
-@pageBackground      : #F9F9F9;
+/* This adjusts the default form input across all elements */
+@inputBackground        : #333940;
 
-/*-------------------
-     Fonts
---------------------*/
+/* Input Text Color */
+@inputColor: white;
+@highlightColor: @grey;
+@inputHighlightColor: @inputColor;
 
-@headerFont        : "Roboto Mono", serif;
-@pageFont          : "Roboto Mono", serif;
-@googleFontName    : 'Roboto Mono';
-@importGoogleFonts : true;
-
-@docsHeaderFont: @headerFont;
-@docsPageFont: @pageFont;
-
-/*-------------------
-      Site Colors
---------------------*/
-
-/*---  Colors  ---*/
-@black            : #2d3436;
-@blue             : #74b9ff;
-@green            : #55efc4;
-@grey             : #636e72;
-@orange           : #fab1a0;
-@pink             : #fd79a8;
-@purple           : #a29bfe;
-@red              : #ff7675;
-@teal             : #81ecec;
-@yellow           : #ffeaa7;
-
-/*-------------------
-    Brand Colors
---------------------*/
-
-@primaryColor        : @blue;
-@secondaryColor      : @grey;
-
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
+@linkColor: #3eb1d0;
 
 /*******************************
-     PXT Variables
+         PXT Overrides
 *******************************/
 
 /*-------------------
    Menu
 --------------------*/
 
-@mainMenuBackground: @purple;
-@mainMenuInvertedBackground: @mainMenuBackground;
+@mainMenuInvertedBackground: @blue;
 @mainMenuTutorialBackground: @orange;
 
-@mainMenuBlocksJsToggleColor: @primaryColor;
+@mainMenuBlocksJsToggleColor: @black;
 
-@tutorialSelectedMenuColor: @primaryColor;
+@tutorialSelectedMenuColor: @blue;
 
 /*-------------------
    Layout
@@ -74,37 +70,90 @@
    Background
 --------------------*/
 
-@simulatorBackground: #E8EDF1;
-@editorToolsBackground: #E8EDF1;
-@blocklySvgColor: #F9F9F9;
+@simulatorBackground: @darkGrey;
+@editorToolsBackground: @simulatorBackground;
+@blocklySvgColor: #424a51;
 
-@homeScreenBackground: #ecf0f1;
 
 /*-------------------
    Full screen
 --------------------*/
 
 @fullscreenBackgroundGradientStart: @mainMenuInvertedBackground;
-@fullscreenBackgroundGradientEnd: @simulatorBackground;
+@fullscreenBackgroundGradientEnd: #fff;
+
+/*-------------------
+   Side Docs
+--------------------*/
+
+@sidedocsButtonsTop: (@mainMenuHeight + 1rem);
+@sidedocsButtonsRight: 4.25rem;
 
 /*-------------------
    Editor
 --------------------*/
 
-@blocklyToolboxColor: white;
+@blocklyToolboxColor: #424A51;
 @trashIconColor: @primaryColor;
+
 
 /*-------------------
    Blockly
 --------------------*/
 
-@blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+@blocklyRowWidthWide: 160px;
+@blocklyRowWidthComputer: 140px;
+
+@blocklyScrollbarColor: lighten(@grey, 20%);
+@blocklyScrollbarOpacity: 0.5;
+
+
+/*-------------------
+   Scrollbars
+--------------------*/
+
+@thumbBackground: fade(@blocklyScrollbarColor, 50%);
+@thumbInvertedBackground: fade(@blocklyScrollbarColor, 50%);
+
+/*-------------------
+   Serial
+--------------------*/
+@editorCloseColor: white;
+@serialTextColor: @invertedTextColor;
+
+/*-------------------
+   Home screen
+--------------------*/
+
+@homeScreenBackground: @darkBlue;
+@homeCardBackgroundColor: @darkGreen;
+@homeHeaderColor: white;
+@homeCardColor: #bdcadb;
+@homeCardBorderRadius: 5px;
+@homeCardBorderSize: 2px;
+@homeCardBorderColor: lighten(@darkGreen, 10%);
+@homeCardHoverBorderColor: white;
+@homeCardImageBorderRadius: 5px;
+
+/*-------------------
+   Docs
+--------------------*/
+
+@avatarImageUrl: "../docs/static/avatar.svg";
+@docsAvatarImageUrl: "../docs/static/avatar-inverted.svg";
+
+/*-------------------
+   Tutorial
+--------------------*/
+
+@tutorialSegmentBackground: @darkGrey;
+@tutorialSegmentColor: @inputColor;
 
 /*-------------------
    Flyout
 --------------------*/
 
 @flyoutLabelColor: white;
-@blocklyFlyoutColor: @grey;
+@blocklyFlyoutColor: #292F36;
 @blocklyFlyoutColorOpacity: 0.9;
 @monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);

@@ -2,7 +2,22 @@
     User Variable Overrides
 *******************************/
 
+@invertedItemTextColor: @white;
 
-/*******************************
-    PXT Theme Overrides
-*******************************/
+@dropdownBackground: @darkGrey;
+
+@dropdownItemColor: white;
+
+
+
+/* Dark menu theme */
+@textColor                   : @invertedTextColor;
+@darkTextColor               : @invertedTextColor;
+@mutedTextColor              : @invertedMutedTextColor;
+@lightTextColor              : @invertedLightTextColor;
+
+@unselectedTextColor         : @invertedUnselectedTextColor;
+@hoveredTextColor            : @invertedHoveredTextColor;
+@pressedTextColor            : @invertedPressedTextColor;
+@selectedTextColor           : @invertedSelectedTextColor;
+@disabledTextColor           : @invertedDisabledTextColor;
