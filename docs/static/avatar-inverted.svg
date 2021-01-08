@@ -23,8 +23,23 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs918" />
+     id="defs918">
+    <filter
+       id="filter1622"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1618"
+         result="color1"
+         values="180"
+         type="hueRotate" />
+      <feColorMatrix
+         id="feColorMatrix1620"
+         result="color2"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 1 0 " />
+    </filter>
+  </defs>
   <g
+     style="filter:url(#filter1622)"
      id="g1485"
      transform="matrix(0.80149538,0,0,-0.80149538,-58.049967,298.95758)">
     <path
