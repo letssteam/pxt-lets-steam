@@ -1,14 +1,11 @@
-# Docs for Sample Target
+# Documentation
 
-This is a pure javascript sample target for [Microsoft MakeCode](https://makecode.com). 
-For more information about setting your own target, 
-see https://makecode.com/packages .
+### @description Links to the documentation, reference and projects.
 
-You can embed code snippets and [more](https://makecode.com/markdown)
-
-```blocks
-loops.forever(() => {
-    turtle.turn(Direction.Left, 10);
-    turtle.forward(1);
-});
-```
+* [About](/about)
+* [FAQ](/faq)
+* [Boards](/boards)
+* [Projects](/projects)
+* [Blocks](/blocks)
+* [JavaScript](/javascript)
+* [Reference](/reference)
