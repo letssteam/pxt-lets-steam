@@ -1,0 +1,57 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/libs/blocksprj/built/codal/build/STM32_IOT_NODE",
+            "name": "Debug (OpenOCD)",
+            "device": "STM32L475VGTx",
+			"searchDir": [
+				"/usr/share/openocd/scripts/",
+				"${workspaceRoot}/libs/blocksprj/built/codal/libraries/codal-stm32-iot-node/scripts/"
+			],
+            "configFiles": [
+				"openocd.cfg",
+			],
+        },
+		{
+			"name": "Launch",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/pxt-core/built/pxt.js",
+			"stopOnEntry": false,
+			"args": ["serve"],
+			"cwd": "${workspaceRoot}",
+			"runtimeExecutable": null,
+			"runtimeArgs": [
+				"--nolazy"
+			],
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"console": "integratedTerminal",
+			"sourceMaps": true,
+			"outFiles": []
+		},
+		{
+			"name": "Run mocha",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["built/tests/decompile-test/runner.js", "--no-timeouts"],
+			"cwd": "${workspaceRoot}",
+			"runtimeExecutable": null,
+			"env": { "NODE_ENV": "testing"}
+		},
+		{
+			"name": "Attach",
+			"type": "node",
+			"request": "attach",
+			"port": 5858
+		}
+	]
+}

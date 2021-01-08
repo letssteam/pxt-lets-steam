@@ -36,5 +36,6 @@ videos/**
 .piolibdeps
 lib/
 _locales
+_locales/**
 
 **/*.DS_Store
