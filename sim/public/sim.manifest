@@ -5,7 +5,6 @@ CACHE:
 /cdn/pxtsim.js
 /sim/common-sim.js
 /sim/sim.js
-/sim/sim.css
 
 NETWORK:
 *
