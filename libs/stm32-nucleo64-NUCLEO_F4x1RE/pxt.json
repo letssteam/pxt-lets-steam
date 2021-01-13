@@ -1,6 +1,6 @@
 {
-    "name": "stm32-nucleo64-NUCLEO_F411RE",
-    "description": "Nucleo F411RE - beta",
+    "name": "stm32-nucleo64-NUCLEO_F4x1RE",
+    "description": "Nucleo F4x1RE - beta",
     "files": [
         "README.md",
         "config.ts",
@@ -8,7 +8,7 @@
         "board.json",
         "board.svg"
     ],
-    "compileServiceVariant": "stm32-NUCLEO_F411RE",
+    "compileServiceVariant": "stm32-NUCLEO_F4x1RE",
     "dependencies": {
         "core---stm32": "file:../core---stm32"
     },

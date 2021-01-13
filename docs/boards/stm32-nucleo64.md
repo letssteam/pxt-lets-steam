@@ -16,10 +16,10 @@
 ```codecard
 [
     {
-        "name": "Nucleo F411RE Board",
-        "url": "/boards/stm32-nucleo64-NUCLEO_F411RE",
+        "name": "Nucleo F4x1RE Board",
+        "url": "/boards/stm32-nucleo64-NUCLEO_F4x1RE",
         "cardType": "template",
-        "imageUrl": "/static/libs/stm32-nucleo64-NUCLEO_F411RE.jpg"  
+        "imageUrl": "/static/libs/stm32-nucleo64-NUCLEO_F4x1RE.jpg"  
     }
 ]
 ```
