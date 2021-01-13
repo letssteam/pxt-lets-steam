@@ -4,44 +4,49 @@
 
 @fontName  : 'Open Sans';
 
-
 @red:#CC2936;
-@yellow:#FFC914;
+@yellow:#FDC400;
 @teal:#08415C;
-@violet:#C200C0;
-@brown:#2E282A; 
+@violet:#62549F;
+@brown:#2E282A;
+@purple:#62549F;
+@orange:#d25b33;
 
-/* ST colors */
-@darkBlue: #002052;
-@blue:  #39A9DC;
-@pink:#D4007A;
-@grey: #B9C4CA;
+@darkBlue: #140E4E;
+@blue:  #3BBDD6;
+@lightBlue: #3eb1d0;
+
+@pink:#E9407F;
+
 @darkGrey: #4F5251;
-
-@green: #40bf4a; /*#00922B;*/
-@purple:#8073E5;
-@orange:#d25b33; /*#FFA702;*/
-
+@grey: #B9C4CA;
 
 @darkGreen: #092C3A;
+@green: #40bf4a; 
+
+/*-------------------	
+    Brand Colors	
+--------------------*/	
 
 @primaryColor: @blue;
 @secondaryColor: @pink;
 @pageBackground: @grey;
+@lightPrimaryColor   : @lightBlue;	
+@lightSecondaryColor : @lightGrey;
 
 /*--------------
    Form Input
 ---------------*/
 
 /* This adjusts the default form input across all elements */
-@inputBackground        : #333940;
+@inputBackground        : @darkGrey;
 
 /* Input Text Color */
 @inputColor: white;
 @highlightColor: @grey;
 @inputHighlightColor: @inputColor;
 
-@linkColor: #3eb1d0;
+@linkColor: @lightBlue;
 
 /*******************************
          PXT Overrides
@@ -51,7 +56,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @blue;
+@mainMenuInvertedBackground: @pink;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @black;
@@ -80,7 +85,7 @@
 --------------------*/
 
 @fullscreenBackgroundGradientStart: @mainMenuInvertedBackground;
-@fullscreenBackgroundGradientEnd: #fff;
+@fullscreenBackgroundGradientEnd: @white;
 
 /*-------------------
    Side Docs
