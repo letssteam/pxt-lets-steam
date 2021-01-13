@@ -1,0 +1,25 @@
+{
+    "name": "stm32-nucleo64-NUCLEO_F411RE",
+    "description": "Nucleo F411RE - beta",
+    "files": [
+        "README.md",
+        "config.ts",
+        "device.d.ts",
+        "board.json",
+        "board.svg"
+    ],
+    "compileServiceVariant": "stm32-NUCLEO_F411RE",
+    "dependencies": {
+        "core---stm32": "file:../core---stm32"
+    },
+    "core": true,
+    "public": true,
+    "dalDTS": {
+        "corePackage": "../core---stm32"
+    },
+    "features": [
+        "uf2",
+        "pina0",
+        "pina1"
+    ]
+}
