@@ -8,7 +8,11 @@
     "corepkg": "core",
     "bundleddirs": [
         "libs/base",
-        "libs/core"
+        "libs/core",
+        "libs/core---stm32",
+        "libs/stm32-nucleo64-NUCLEO_F411RE",
+        "libs/stm32-discovery-DISCO_L475VG_IOT",
+        "libs/stm32-nucleo64-PNUCLEO_WB55RG"
     ],
     "serial": {
         "useHF2": false,
@@ -32,7 +36,13 @@
         "aspectRatio": 1.0,
         "parts": true,
         "partsAspectRatio": 0.69,
-        "dynamicBoardDefinition": true
+        "dynamicBoardDefinition": true,
+        "messageSimulators": {
+            "jacdac": {
+                "url": "https://microsoft.github.io/jacdac-ts/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$"
+            }
+        }
     },
     "cloud": {
         "workspace": false,
@@ -66,6 +76,100 @@
         "breakBlock": true,
         "continueBlock": true
     },
+    "compile": {
+        "isNative": true,
+        "useUF2": true,
+        "webUSB": true,
+        "hasHex": true,
+        "saveAsPNG": true,
+        "deployDrives": ".*",
+        "deployFileMarker": "INFO_UF2.TXT",
+        "driveName": "DRIVE",
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd21g18; source [find target/at91samdXX.cfg]",
+        "flashChecksumAddr": 8372,
+        "flashCodeAlign": 256
+    },
+    "compileService": {
+        "buildEngine": "codal",
+        "codalTarget": {
+            "name": "missing",
+            "url": "https://github.com/microsoft/pxt-does-not-exist",
+            "branch": "v0",
+            "type": "git"
+        },
+        "codalBinary": "CIRCUIT_PLAYGROUND",
+        "yottaConfig": {
+            "pxt": {
+                "board": {
+                    "id": "BOARD_ID_CPLAY"
+                }
+            }
+        },
+        "githubCorePackage": "letssteam/codal-letssteam",
+        "gittag": "master",
+        "serviceId": "codal2cp",
+        "dockerImage": "pext/yotta:latest"
+    },
+
+    "variants": {
+        "stm32-NUCLEO_F411RE": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+                "flashChecksumAddr": 0,
+                "uf2Family": "0x57755a57"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-stm32-NUCLEO_F411RE",
+                    "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F411RE",
+                    "branch": "master",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
+            }
+        },
+        "stm32-PNUCLEO_WB55RG": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+                "flashChecksumAddr": 0,
+                "uf2Family": "0x57755a57"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-stm32-PNUCLEO_WB55RG",
+                    "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
+                    "branch": "master",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
+            }
+        },
+        "stm32-DISCO_L475VG_IOT": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+                "flashChecksumAddr": 0,
+                "uf2Family": "0x57755a57"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-stm32-DISCO_L475VG_IOT",
+                    "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
+                    "branch": "master",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
+            }
+        }
+    },
     "appTheme": {
         "accentColor": "#0089BF",
         "logoUrl": "https://github.com/letssteam/pxt-lets-steam",
@@ -78,7 +182,7 @@
         "organizationUrl": "https://makecode.com/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
         "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
-        "homeUrl": "http://letssteam.github.io/pxt-lets-steam/",
+        "homeUrl": "http://www.lets-steam.eu/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "githubUrl": "https://github.com/letssteam/pxt-lets-steam",
