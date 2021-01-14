@@ -25,8 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         run: |
-          sudo apt-get install xvfb libudev-dev libudev1
-          sudo npm install -g pxt
+          npm install -g pxt
           npm install
       - name: pxt ci
         run: |
