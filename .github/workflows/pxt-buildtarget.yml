@@ -16,7 +16,7 @@ jobs:
         node-version: [8.x]
     container:
       image: nedseb/arm-gcc-none-eabi:latest
-      options: --user 1001 --security-opt no-new-privileges
+      options: --user 1000 --security-opt no-new-privileges
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
