@@ -234,6 +234,7 @@ int *getBootloaderConfigData() {
 
 #define STM32_UUID ((uint32_t *)0x1FFF7A10)
 
+#if CONFIG_ENABLED(DEVICE_USB)
 static void writeHex(char *buf, uint32_t n) {
     int i = 0;
     int sh = 28;
@@ -244,6 +245,7 @@ static void writeHex(char *buf, uint32_t n) {
     }
     buf[i] = 0;
 }
+#endif
 
 void platform_usb_init() {
 #if CONFIG_ENABLED(DEVICE_USB)
