@@ -127,7 +127,7 @@
                     "type": "git",
                     "dev": true
                 },
-                "codalBinary": "STM32",
+                "codalBinary": "NUCLEO_F4x1RE",
                 "serviceId": "codal2stm32",
                 "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
             }
@@ -147,7 +147,7 @@
                     "type": "git",
                     "dev": true
                 },
-                "codalBinary": "STM32",
+                "codalBinary": "PNUCLEO_WB55RG",
                 "serviceId": "codal2stm32",
                 "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
             }
@@ -167,7 +167,7 @@
                     "type": "git",
                     "dev": true
                 },
-                "codalBinary": "STM32",
+                "codalBinary": "DISCO_L475VG_IOT",
                 "serviceId": "codal2stm32",
                 "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
             }
