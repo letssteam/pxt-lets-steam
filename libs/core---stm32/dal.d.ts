@@ -641,7 +641,6 @@ declare const enum DAL {
     CFG_PIN_LED2 = 56,
     CFG_PIN_LED3 = 57,
     CFG_PIN_LED4 = 58,
-    CFG_PIN_LED5 = 458,
     CFG_SPEAKER_VOLUME = 59,
     CFG_PIN_JACK_TX = 60,
     CFG_PIN_JACK_SENSE = 61,
@@ -933,6 +932,9 @@ declare const enum DAL {
     CFG_PIN_SS = 1042,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
+    // /pxtapp/jacdac/jdprotocol.h
+    JDSPI_MAGIC = 31437,
+    JDSPI_MAGIC_NOOP = 46029,
     // /pxtapp/pins.h
     BUTTON_ACTIVE_HIGH_PULL_DOWN = 17,
     BUTTON_ACTIVE_HIGH_PULL_UP = 33,
@@ -1063,6 +1065,11 @@ declare const enum DAL {
     GC = 0,
     // /pxtapp/pxtconfig.h
     PXT_UF2_FAMILY = 1467308631,
+    // /pxtapp/settings/Flash.h
+    DEVICE_FLASH_ERROR = 922,
+    // /pxtapp/settings/RAFFS.h
+    RAFFS_FOLLOWING_MASK = 32768,
+    RAFFS_FLASH_BUFFER_SIZE = 64,
     // /pxtapp/uf2hid.h
     UF2_HID_H = 1,
 }

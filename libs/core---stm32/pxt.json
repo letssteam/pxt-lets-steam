@@ -1,3 +1,4 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/core---stm32"
+    "name": "core---stm32",
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/core"
 }
