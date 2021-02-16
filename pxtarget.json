@@ -105,8 +105,8 @@
                 }
             }
         },
-        "githubCorePackage": "lancaster-university/codal",
-        "gittag": "master",
+        "githubCorePackage": "letssteam/codal-letssteam",
+        "gittag": "main",
         "serviceId": "codal2cp",
         "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
     },
@@ -124,7 +124,8 @@
                     "name": "codal-stm32-NUCLEO_F4x1RE",
                     "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
                     "branch": "main",
-                    "type": "git"
+                    "type": "git",
+                    "dev": true
                 },
                 "codalBinary": "STM32",
                 "serviceId": "codal2stm32",
@@ -143,7 +144,8 @@
                     "name": "codal-stm32-PNUCLEO_WB55RG",
                     "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
                     "branch": "main",
-                    "type": "git"
+                    "type": "git",
+                    "dev": true
                 },
                 "codalBinary": "STM32",
                 "serviceId": "codal2stm32",
@@ -161,8 +163,9 @@
                 "codalTarget": {
                     "name": "codal-stm32-DISCO_L475VG_IOT",
                     "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-                    "branch": "master",
-                    "type": "git"
+                    "branch": "main",
+                    "type": "git",
+                    "dev": true
                 },
                 "codalBinary": "STM32",
                 "serviceId": "codal2stm32",
