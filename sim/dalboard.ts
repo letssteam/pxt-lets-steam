@@ -106,13 +106,13 @@ namespace pxsim {
             this.lightSensorState = new AnalogSensorState(DAL.DEVICE_ID_LIGHT_SENSOR, 0, 255, 128 / 4, 896 / 4);
             this.thermometerState = new AnalogSensorState(DAL.DEVICE_ID_THERMOMETER, -20, 50, 10, 30);
             this.thermometerUnitState = TemperatureUnit.Celsius;
-            this.irState = new InfraredState();
+            this.irState = new InfraredState(this);
             this.lcdState = new LCDState();
             this.bus.setNotify(DAL.DEVICE_ID_NOTIFY, DAL.DEVICE_ID_NOTIFY_ONE);
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
             // this should be probably merged with buttonpair somehow
-            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, {
+            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, this, {
                 ID_RADIO: DAL.DEVICE_ID_RADIO,
                 RADIO_EVT_DATAGRAM: 1 /*DAL.DEVICE_RADIO_EVT_DATAGRAM*/
             });
@@ -228,7 +228,6 @@ namespace pxsim {
             document.body.appendChild(this.view = this.viewHost.getView());
 
             this.accelerometerState.attachEvents(this.view);
-            this.radioState.addListeners();
 
             return Promise.resolve();
         }
