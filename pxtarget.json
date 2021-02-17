@@ -92,19 +92,13 @@
     "compileService": {
         "buildEngine": "codal",
         "codalTarget": {
-            "name": "missing",
-            "url": "https://github.com/microsoft/pxt-does-not-exist",
-            "branch": "v0",
-            "type": "git"
+            "name": "codal-stm32-NUCLEO_F4x1RE",
+            "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
+            "branch": "main",
+            "type": "git",
+            "dev": true
         },
-        "codalBinary": "CIRCUIT_PLAYGROUND",
-        "yottaConfig": {
-            "pxt": {
-                "board": {
-                    "id": "BOARD_ID_CPLAY"
-                }
-            }
-        },
+        "codalBinary": "NUCLEO_F4x1RE",
         "githubCorePackage": "letssteam/codal-letssteam",
         "gittag": "main",
         "serviceId": "codal2cp",
