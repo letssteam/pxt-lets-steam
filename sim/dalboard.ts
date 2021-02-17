@@ -28,7 +28,8 @@ namespace pxsim {
         ScreenBoard,
         InfraredBoard,
         LCDBoard,
-        RadioBoard {
+        RadioBoard,
+        ControlMessageBoard {
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -48,6 +49,7 @@ namespace pxsim {
         irState: InfraredState;
         lcdState: LCDState;
         radioState: RadioState;
+        controlMessageState: ControlMessageState;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -108,6 +110,7 @@ namespace pxsim {
             this.thermometerUnitState = TemperatureUnit.Celsius;
             this.irState = new InfraredState(this);
             this.lcdState = new LCDState();
+            this.controlMessageState = new ControlMessageState(this);
             this.bus.setNotify(DAL.DEVICE_ID_NOTIFY, DAL.DEVICE_ID_NOTIFY_ONE);
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -172,26 +175,6 @@ namespace pxsim {
             this.builtinParts["pixels"] = (pin: Pin) => { return this.neopixelState(!!this.neopixelPin && this.neopixelPin.id); };
             this.builtinVisuals["pixels"] = () => new visuals.NeoPixelView(parsePinString);
             this.builtinPartVisuals["pixels"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);    
-        }
-
-        receiveMessage(msg: SimulatorMessage) {
-            super.receiveMessage(msg);
-            if (!runtime || runtime.dead) return;
-
-            switch (msg.type || "") {
-                case "eventbus":
-                    let ev = <SimulatorEventBusMessage>msg;
-                    this.bus.queue(ev.id, ev.eventid, ev.value);
-                    break;
-                case "serial":
-                    let data = (<SimulatorSerialMessage>msg).data || "";
-                    // TODO
-                    break;
-                case "irpacket":
-                    let irpacket = <SimulatorInfraredPacketMessage>msg;
-                    this.irState.receive(irpacket.packet);
-                    break;
-            }
         }
 
         kill() {

@@ -78,7 +78,7 @@
     },
     "compile": {
         "isNative": true,
-        "useUF2": true,
+        "useUF2": false,
         "webUSB": true,
         "hasHex": true,
         "saveAsPNG": true,
@@ -187,7 +187,11 @@
         "betaUrl": "https://github.com/letssteam/pxt-lets-steam",
         "boardName": "board",
         "homeScreenHero": "./static/hero.svg",
+        "debugger": true,
+        "print": true,
         "chooseBoardOnNewProject": true,
+        "lightToc": true,
+        "instructions": true,
         "docMenu": [
             {
                 "name": "About",
@@ -196,17 +200,48 @@
             {
                 "name": "Docs",
                 "path": "/docs"
+            },
+            {
+                "name": "Forum",
+                "path": "https://forum.makecode.com"
+            },
+            {
+                "name": "Boards",
+                "path": "/boards"
+            },
+            {
+                "name": "Blocks",
+                "path": "/blocks"
+            },
+            {
+                "name": "JavaScript",
+                "path": "/javascript"
+            },
+            {
+                "name": "Reference",
+                "path": "/reference"
+            },
+            {
+                "name": "GitHub",
+                "path": "https://github.com/letssteam/pxt-lets-steam"
             }
         ],
 
         "invertedMenu": true,
         "invertedToolbox": true,
         "invertedMonaco": true,
-        "coloredToolbox": false,
+
         "monacoToolbox": true,
-        "showHomeScreen": true,
+        "highContrast": true,
+        "greenScreen": true,
+        "blocksCollapsing": true,
+        "accessibleBlocks": true,
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
+        "hasAudio": true,
+        "usbDocs": "/device/usb",
+        "disableBlockIcons": true,
+        "disableAPICache": true,
         "blocklyOptions": {
             "grid": {
                 "spacing": 20,
@@ -229,15 +264,30 @@
             "functions": "#005a9e",
             "arrays": "#8A1C7C"
         },
-        "allowPackageExtensions": true,
-        "scriptManager": true,
-        "debugger": true,
-        "print": true,
-        "highContrast": true,
-        "python": true,
-        "greenScreen": true,
         "monacoColors": {
             "editor.background": "#ecf0f1"
-        }
-    }
+        },
+        "allowPackageExtensions": true,
+        "scriptManager": true,
+        "simScreenshot": true,
+        "simGif": true,
+        "qrCode": true,
+        "python": true,
+        "pythonToolbox": true,
+        "addNewTypeScriptFile": true,
+        "alwaysGithubItemBlocks": true,
+        "alwaysGithubItem": true,
+        "githubBlocksDiff": true,
+        "nameProjectFirst": true,
+        "showProjectSettings": true,
+        "selectLanguage": false,
+        "githubEditor": true,
+        "tutorialBlocksDiff": true,
+        "tutorialExplicitHints": true,
+        "chooseLanguageRestrictionOnNewProject": true,
+        "openProjectNewTab": true,
+        "errorList": true
+    },
+    "ignoreDocsErrors": true,
+    "uploadDocs": false
 }
