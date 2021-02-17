@@ -1,4 +1,4 @@
-# MakeCode STM32
+# MakeCode STM32 ![pxt-buildtarget](https://github.com/letssteam/pxt-lets-steam/workflows/pxt-buildtarget/badge.svg)
 
 This is an experimental code editor for STM32 boards - try it at https://makecode.st.com.
 
