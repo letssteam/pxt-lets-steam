@@ -1,7 +1,7 @@
 {
     "name": "{0}",
     "dependencies": {
-        "core": "file:../core"
+        "core": "file:../stm32-discovery-DISCO_L475VG_IOT"
     },
     "description": "",
     "files": [
