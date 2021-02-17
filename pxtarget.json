@@ -198,10 +198,6 @@
                 "path": "/about"
             },
             {
-                "name": "Docs",
-                "path": "/docs"
-            },
-            {
                 "name": "Forum",
                 "path": "https://forum.makecode.com"
             },
@@ -239,7 +235,6 @@
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "hasAudio": true,
-        "usbDocs": "/device/usb",
         "disableBlockIcons": true,
         "disableAPICache": true,
         "blocklyOptions": {
