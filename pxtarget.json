@@ -99,7 +99,7 @@
             "dev": true
         },
         "codalBinary": "NUCLEO_F4x1RE",
-        "githubCorePackage": "letssteam/codal-letssteam",
+        "githubCorePackage": "letssteam/codal",
         "gittag": "main",
         "serviceId": "codal2cp",
         "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
