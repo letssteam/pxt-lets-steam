@@ -1,0 +1,17 @@
+{
+    "name": "distance",
+    "description": "A distance sensor driver",
+    "files": [
+        "distance.cpp",
+        "target_distance.h",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core---stm32"
+    }
+}
