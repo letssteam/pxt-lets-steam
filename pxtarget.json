@@ -10,6 +10,8 @@
         "libs/base",
         "libs/core",
         "libs/core---stm32",
+        "libs/distance",
+        "libs/distance---vl53l0x",
         "libs/stm32-nucleo64-NUCLEO_F4x1RE",
         "libs/stm32-discovery-DISCO_L475VG_IOT",
         "libs/stm32-nucleo64-PNUCLEO_WB55RG"
