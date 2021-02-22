@@ -10,18 +10,19 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
-
+        node-version: [10.x]
+    container:
+      image: nedseb/arm-gcc-none-eabi:latest
+      options: --user 1001 --security-opt no-new-privileges
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         run: |
-          sudo apt-get install xvfb libudev-dev libudev1
-          sudo npm install -g pxt
+          npm install -g pxt
           npm install
       - name: pxt ci
         run: |
