@@ -111,6 +111,8 @@ namespace pxsim.visuals {
         private onBoardButtons: BoardButton[];
         private onBoardTouchPads: BoardTouchButton[];
 
+        private onBoardDistance: pxsim.visuals.DistanceView;
+
         constructor(public props: MetroBoardProps) {
             super(props);
 
@@ -169,6 +171,8 @@ namespace pxsim.visuals {
                 el.appendChild(tp.element);
             }
 
+            this.onBoardDistance = new DistanceView();
+
             if (props && props.theme)
                 this.updateTheme();
 
@@ -178,13 +182,14 @@ namespace pxsim.visuals {
                 this.updateState();
             }
 
-
+            this.onBoardDistance.init(this.board.bus, new DistanceState(this.board.distanceState, this.board.distanceUnitState), el, null);
         }
 
         public updateTheme() {
         }
 
         public updateState() {
+
             this.onBoardLeds.forEach(l => l.updateState());
             if (this.board.neopixelPin) {
                 const state = this.board.neopixelState(this.board.neopixelPin.id);
@@ -196,6 +201,8 @@ namespace pxsim.visuals {
                     }
                 }
             }
+
+            this.onBoardDistance.updateState();
         }
 
         private addDefs(el: SVGElement) {

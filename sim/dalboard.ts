@@ -29,7 +29,9 @@ namespace pxsim {
         InfraredBoard,
         LCDBoard,
         RadioBoard,
-        ControlMessageBoard {
+        ControlMessageBoard,
+        
+        DistanceBoard{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -50,6 +52,9 @@ namespace pxsim {
         lcdState: LCDState;
         radioState: RadioState;
         controlMessageState: ControlMessageState;
+
+        distanceState: AnalogSensorState;
+        distanceUnitState: DistanceUnit;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -113,6 +118,13 @@ namespace pxsim {
             this.controlMessageState = new ControlMessageState(this);
             this.bus.setNotify(DAL.DEVICE_ID_NOTIFY, DAL.DEVICE_ID_NOTIFY_ONE);
 
+
+
+            this.distanceState = new AnalogSensorState(DAL.DEVICE_ID_DISTANCE, 0, 2000);
+            this.distanceUnitState = DistanceUnit.Millimeter;
+
+
+
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
             // this should be probably merged with buttonpair somehow
             this.builtinParts["radio"] = this.radioState = new RadioState(runtime, this, {
@@ -174,7 +186,13 @@ namespace pxsim {
             
             this.builtinParts["pixels"] = (pin: Pin) => { return this.neopixelState(!!this.neopixelPin && this.neopixelPin.id); };
             this.builtinVisuals["pixels"] = () => new visuals.NeoPixelView(parsePinString);
-            this.builtinPartVisuals["pixels"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);    
+            this.builtinPartVisuals["pixels"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
+
+
+
+
+            this.builtinParts["distance"] = () => new DistanceState(this.distanceState, this.distanceUnitState);
+            this.builtinVisuals["distance"] = () => new visuals.DistanceView();
         }
 
         kill() {
