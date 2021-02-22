@@ -27,6 +27,8 @@ jobs:
         run: |
           pxt ci
         env:
+          PXT_FORCE_LOCAL: 1 
+          PXT_NODOCKER : 1
           CHROME_BIN: chromium-browser
           DISPLAY: :99.0
           CI: true
