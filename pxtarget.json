@@ -127,9 +127,9 @@
         "stm32-PNUCLEO_WB55RG": {
             "compile": {
                 "hasHex": true,
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32wbx.cfg]",
                 "flashChecksumAddr": 0,
-                "uf2Family": "0x57755a57"
+                "uf2Family": "0x70d16653"
             },
             "compileService": {
                 "codalTarget": {
@@ -149,9 +149,9 @@
                 "hasHex": true,
                 "deployFileMarker": "MBED.HTM",
                 "driveName": "DIS_L4IOT",
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]",
                 "flashChecksumAddr": 0,
-                "uf2Family": "0x57755a57",
+                "uf2Family": "0x00ff6919",
                 "gc": true,
                 "floatingPoint": true,
                 "taggedInts": true,
