@@ -1,0 +1,7 @@
+{
+    "name": "distance---vl53l0x",
+    "dependencies": {
+        "core": "file:../core---stm32"
+    },
+    "additionalFilePath": "../distance"
+}
