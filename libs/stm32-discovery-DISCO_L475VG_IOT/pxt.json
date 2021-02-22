@@ -10,7 +10,8 @@
     ],
     "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
     "dependencies": {
-        "core---stm32": "file:../core---stm32"
+        "core---stm32": "file:../core---stm32",
+        "distance---vl53l0x" : "file:../distance---vl53l0x"
     },
     "core": true,
     "public": true,
