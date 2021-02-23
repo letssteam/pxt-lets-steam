@@ -2,14 +2,6 @@
 /// <reference path="../../built/common-sim.d.ts"/>
 /// <reference path="../../libs/core/dal.d.ts"/>
 
-namespace pxsim{
-    export class DistanceState { 
-        constructor(public distanceState: AnalogSensorState, public distanceUnit : DistanceUnit) {
-            
-        }
-    }
-}
-
 namespace pxsim.visuals {
     export class DistanceView implements IBoardPart<DistanceState> {
         public element: SVGElement;
