@@ -31,7 +31,8 @@ namespace pxsim {
         RadioBoard,
         ControlMessageBoard,
         
-        DistanceBoard{
+        DistanceBoard,
+        SSD1306Board{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -55,6 +56,8 @@ namespace pxsim {
 
         distanceState: AnalogSensorState;
         distanceUnitState: DistanceUnit;
+
+        ssd1306State: SSD1306State;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -123,6 +126,7 @@ namespace pxsim {
             this.distanceState = new AnalogSensorState(DAL.DEVICE_ID_DISTANCE, 0, 2000);
             this.distanceUnitState = DistanceUnit.Millimeter;
 
+            this.ssd1306State = new SSD1306State();
 
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -193,6 +197,10 @@ namespace pxsim {
 
             this.builtinParts["distance"] = () => new DistanceState(this.distanceState, this.distanceUnitState);
             this.builtinVisuals["distance"] = () => new visuals.DistanceView();
+
+            this.builtinParts["ssd1306"] = this.ssd1306State;
+            this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
+            this.builtinPartVisuals["ssd1306"] = (xy: visuals.Coord) => visuals.mkSSD1306Part(xy);
         }
 
         kill() {
