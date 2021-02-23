@@ -6,12 +6,4 @@ namespace pxsim {
         distanceState: AnalogSensorState;
         distanceUnitState: DistanceUnit;
     }
-
-    export function distanceState(): AnalogSensorState {
-        return (board() as DistanceBoard).distanceState;
-    }
-
-    export function setDistanceUnit(unit: DistanceUnit) {
-        (board() as DistanceBoard).distanceUnitState = unit;
-    }
 }
