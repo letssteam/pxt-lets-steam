@@ -1,5 +1,5 @@
 {
-    "name": "{0}",
+    "name": "{0} block",
     "dependencies": {
         "core": "file:../stm32-discovery-DISCO_L475VG_IOT"
     },
