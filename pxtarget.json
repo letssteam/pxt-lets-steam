@@ -249,10 +249,6 @@
                 "snap": true
             }
         },
-        "blocklyColors": {
-            "insertionMarker": "#FFFFFF",
-            "insertionMarkerOpacity": 0.5
-        },
         "blockColors": {
             "loops": "#40bf4a",
             "logic": "#4cbfe6",
@@ -264,7 +260,7 @@
             "arrays": "#8A1C7C"
         },
         "monacoColors": {
-            "editor.background": "#ecf0f1"
+            "editor.background": "#39474e"
         },
         "allowPackageExtensions": true,
         "scriptManager": true,

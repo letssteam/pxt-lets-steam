@@ -1,3 +1,14 @@
+
+/*******************************
+    Blockly toolbox
+*******************************/
+
+/* Toolbox */
+.blocklyToolboxDiv, .monacoToolboxDiv {
+    padding: 0.5rem;
+    border-right: solid 1px #282828;
+}
+
 /* Remove shadow around blockly blocks */
 .blocklyPathDark, .blocklyPathLight {
     display: none;
@@ -54,7 +65,11 @@ svg.blocklySvg {
     margin-top: 0.1rem;
 }
 .blocklySearchInputField {
+    border: 1px solid @darkGrey !important;
     border-radius: 2.5rem !important;
+}
+.blocklySearchInputField:focus {
+    border: 1px solid @blue !important;
 }
 
 /* Mobile */

@@ -18,7 +18,7 @@
 
 @pink:#E9407F;
 
-@darkGrey: #4F5251;
+@darkGrey: #39474e;
 @grey: #B9C4CA;
 
 @darkGreen: #092C3A;
@@ -76,7 +76,7 @@
 --------------------*/
 
 @simulatorBackground: @darkGrey;
-@editorToolsBackground: @simulatorBackground;
+@editorToolsBackground: lighten(@grey, 20%);
 @blocklySvgColor: #424a51;
 
 
