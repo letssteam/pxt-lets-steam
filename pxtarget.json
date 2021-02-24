@@ -250,11 +250,12 @@
             }
         },
         "blockColors": {
-            "loops": "#40bf4a",
-            "logic": "#4cbfe6",
-            "math": "#9966ff",
-            "variables": "#FF6680",
-            "text": "#ffab19",
+            "input": "#E9407F",
+            "loops": "#fdc400",
+            "logic": "#61b22f",
+            "math": "#62549f",
+            "variables": "#140e4e",
+            "text": "#3BBDD6",
             "advanced": "#00272B",
             "functions": "#005a9e",
             "arrays": "#8A1C7C"
