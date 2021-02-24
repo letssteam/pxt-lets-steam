@@ -2,28 +2,25 @@
 /// <reference path="../../built/common-sim.d.ts"/>
 
 namespace pxsim {
-    export class SSD1306State {
-        matrix: boolean[][];
 
-        public sensorUsed: boolean = false;
+    export class SSD1306DrawElement {
+        svgObject: SVGGraphicsElement;
+        x : number;
+        y : number;
+        width : number;
+        height : number;
+    }
+
+    export class SSD1306State {
+        drawingList: SSD1306DrawElement[];
+        isInvert : boolean = false;
 
         constructor() {
-            this.matrix = []
-
-            for( var x = 0; x < 128; x++ ){
-                this.matrix[x] = [];
-                for( var y = 0; y < 64; ++y ){
-                    this.matrix[x][y] = false;
-                }
-            }
+            this.drawingList = []
         }
 
-        public setUsed(){
-            if( !this.sensorUsed ){
-                this.sensorUsed = true;
-                runtime.queueDisplayUpdate();
-            }
-        }
+        public getWidth() : number { return 128; }
+        public getHeight() : number { return 64; }
     }
 
     export function ssd1306State(): SSD1306State {
