@@ -1,4 +1,3 @@
-/// <reference path="../node_modules/typescript/lib/lib.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 /// <reference path="../node_modules/pxt-core/localtypings/pxtarget.d.ts"/>
 /// <reference path="../built/common-sim.d.ts"/>
@@ -33,6 +32,7 @@ namespace pxsim {
         ControlMessageBoard,
         
         DistanceBoard,
+        HygrometerBoard,
         SSD1306Board{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -57,7 +57,7 @@ namespace pxsim {
 
         distanceState: AnalogSensorState;
         distanceUnitState: DistanceUnit;
-
+        hygrometerState: AnalogSensorState;
         ssd1306State: SSD1306State;
 
         constructor(public boardDefinition: BoardDefinition) {
@@ -126,8 +126,9 @@ namespace pxsim {
 
             this.distanceState = new AnalogSensorState(DAL.DEVICE_ID_DISTANCE, 0, 2000);
             this.distanceUnitState = DistanceUnit.Millimeter;
-
+            this.hygrometerState = new AnalogSensorState(DAL.DEVICE_ID_HUMIDITY, 0, 100);
             this.ssd1306State = new SSD1306State();
+
 
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -198,6 +199,9 @@ namespace pxsim {
 
             this.builtinParts["distance"] = () => new DistanceState(this.distanceState, this.distanceUnitState);
             this.builtinVisuals["distance"] = () => new visuals.DistanceView();
+
+            this.builtinParts["hygrometer"] = () => new HygrometerState( this.hygrometerState );
+            this.builtinVisuals["hygrometer"] = () => new visuals.HygrometerView();
 
             this.builtinParts["ssd1306"] = this.ssd1306State;
             this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
