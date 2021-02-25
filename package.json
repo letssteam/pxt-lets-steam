@@ -36,12 +36,12 @@
         "docs/static/icons/favicon.ico"
     ],
     "devDependencies": {
-        "typescript": "^3.7.5",
-        "semantic-ui-less": "2.2.14",
         "@types/bluebird": "2.0.33",
         "@types/jquery": "3.3.29",
         "@types/marked": "0.3.0",
-        "@types/node": "8.0.53"
+        "@types/node": "8.0.53",
+        "semantic-ui-less": "2.2.14",
+        "typescript": "^3.7.5"
     },
     "dependencies": {
         "pxt-common-packages": "8.5.2",
