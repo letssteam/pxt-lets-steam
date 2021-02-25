@@ -3,7 +3,7 @@ declare namespace screen {
 
     /**
      * @brief Print string on screen at the given position
-     * 
+     *
      * @param x pixel coordinate on X axis
      * @param y pixel coordinate on Y axis
      * @param str the string to print
@@ -16,7 +16,7 @@ declare namespace screen {
 
     /**
      * @brief Fill the screen with specific color
-     * 
+     *
      * @param color the color use to fill the screen
      */
     //% help=screen/fillScree,
@@ -26,7 +26,7 @@ declare namespace screen {
 
     /**
      * @brief Clear the entire screen
-     * 
+     *
      */
     //% help=screen/clearScreen
     //% blockId=clear_screen_ssd1306 block="clear the screen"
@@ -35,7 +35,7 @@ declare namespace screen {
 
     /**
      * @brief set the color of a specific pixel
-     * 
+     *
      * @param x the coordinate pixel on X axis
      * @param y the coordinate pixel on Y axis
      * @param color the color of the pixel
@@ -47,7 +47,7 @@ declare namespace screen {
 
     /**
      * @brief Define if the screen should be inverted
-     * 
+     *
      * @param invert if True the screen is inverted, otherwise False
      */
     //% help=screen/invertScreen

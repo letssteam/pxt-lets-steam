@@ -7,10 +7,11 @@ class WSSD1306 {
   public:
     codal::SSD1306_I2C screen;
     STM32IotNode iotNode;
-    
-    WSSD1306() : screen(iotNode.i2c1, 0x78, 128, 64)
-    {
-      screen.init();
-    }
+
+    static constexpr uint16_t I2C_ADDRESS = 0x78;
+    static constexpr uint16_t WIDTH = 128;
+    static constexpr uint16_t HEIGHT = 64;
+
+    WSSD1306() : screen(iotNode.i2c1, I2C_ADDRESS, WIDTH, HEIGHT) { screen.init(); }
 };
 }
