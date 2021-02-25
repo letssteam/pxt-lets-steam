@@ -203,6 +203,9 @@ namespace pxsim {
             this.builtinParts["hygrometer"] = () => new HygrometerState( this.hygrometerState );
             this.builtinVisuals["hygrometer"] = () => new visuals.HygrometerView();
 
+            this.builtinParts["thermometer"] = () => new ThermometerState( this.hygrometerState );
+            this.builtinVisuals["thermometer"] = () => new visuals.ThermometerView();
+
             this.builtinParts["ssd1306"] = this.ssd1306State;
             this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
             this.builtinPartVisuals["ssd1306"] = (xy: visuals.Coord) => visuals.mkSSD1306Part(xy);
