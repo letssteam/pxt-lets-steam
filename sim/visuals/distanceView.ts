@@ -94,7 +94,6 @@ namespace pxsim.visuals {
                     (ev) => {
                         let cur = svg.cursorPoint(pt, svgEl, ev);
                         let t = Math.max(0, Math.min(1, ((heightBase + yBase) - cur.y)/(heightBase)));
-                        console.log(64 + yBase - cur.y);
                         this.state.distanceState.setLevel(Math.floor(DistanceView.dmin + t * (DistanceView.dmax - DistanceView.dmin)));
                         this.updateDistance();
                     },
