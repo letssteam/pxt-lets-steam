@@ -8,5 +8,9 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": true
-    }
+    },
+    "include": [
+        "**/*",
+        "../libs/*/sim/*"
+    ]
 }
