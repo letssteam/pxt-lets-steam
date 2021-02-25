@@ -1,0 +1,14 @@
+{
+    "name": "hygrometer",
+    "description": "A hygrometer sensor driver",
+    "files": [
+        "hygrometer.cpp",
+        "target_hygrometer.h",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core---stm32"
+    }
+}
