@@ -1,24 +1,21 @@
 namespace pxsim.input {
 
     export function humidity(): number {
-        let b = hygrometerState();
-        b.setUsed();
-        const humidity = b.getLevel();
-        return humidity ;
+        let state = hygrometerState();
+        state.setUsed();
+        return state.getLevel() ;
     }
 
     export function onHumidityConditionChanged(condition: number, humidity: number, body: RefAction) {
-        let b = hygrometerState();
-        b.setUsed();
-
-        const t = humidity;
+        let state = hygrometerState();
+        state.setUsed();
         
         if (condition === DAL.ANALOG_THRESHOLD_HIGH) {
-            b.setHighThreshold(t);
+            state.setHighThreshold(humidity);
         }
         else {
-            b.setLowThreshold(t);
+            state.setLowThreshold(humidity);
         }
-        pxtcore.registerWithDal(b.id, condition, body);
+        pxtcore.registerWithDal(state.id, condition, body);
     }
 }
