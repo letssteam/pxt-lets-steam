@@ -12,6 +12,7 @@
     "dependencies": {
         "core---stm32": "file:../core---stm32",
         "distance---vl53l0x" : "file:../distance---vl53l0x",
+        "hygrometer---hts221" : "file:../hygrometer---hts221",
         "ssd1306": "file:../ssd1306"
     },
     "core": true,
