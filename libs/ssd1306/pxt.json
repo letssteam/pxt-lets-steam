@@ -2,6 +2,7 @@
     "name": "ssd1306",
     "description": "SSD1306 Driver",
     "files": [
+        "ns.ts",
         "ssd1306.cpp",
         "target_ssd1306.h",
         "shims.d.ts",
