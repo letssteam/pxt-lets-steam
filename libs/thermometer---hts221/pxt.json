@@ -3,5 +3,5 @@
     "dependencies": {
         "core": "file:../core---stm32"
     },
-    "additionalFilePath": "../../../pxt-common-packages/libs/thermometer"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/thermometer"
 }
