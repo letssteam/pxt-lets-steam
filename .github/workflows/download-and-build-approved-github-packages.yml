@@ -12,7 +12,14 @@ jobs:
       matrix:
         node-version: [10.x]
         branch: [main]
-
+    container:
+      image: nedseb/arm-gcc-none-eabi:latest
+      options: --user 1001 --security-opt no-new-privileges
+    env:
+      PXT_FORCE_LOCAL: 1 
+      PXT_NODOCKER : 1
+      PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
+      PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -42,7 +49,6 @@ jobs:
         run: pxt testghpkgs
         env:
           PXT_FORCE_GITHUB_PROXY: 1
-          PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       - name: upload build log
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
