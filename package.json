@@ -1,6 +1,6 @@
 {
     "name": "pxt-lets-steam",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "description": "MakeCode for Let's STEAM project",
     "public": true,
     "keywords": [
