@@ -114,6 +114,7 @@ namespace pxsim.visuals {
         private onBoardDistance: pxsim.visuals.DistanceView;
         private onBoardHygrometer: pxsim.visuals.HygrometerView;
         private onBoardThermometer: pxsim.visuals.ThermometerView;
+        private onBoardBarometer: pxsim.visuals.BarometerView;
 
         constructor(public props: MetroBoardProps) {
             super(props);
@@ -176,6 +177,7 @@ namespace pxsim.visuals {
             this.onBoardDistance = new DistanceView();
             this.onBoardHygrometer = new HygrometerView();
             this.onBoardThermometer = new ThermometerView();
+            this.onBoardBarometer = new BarometerView();
 
             if (props && props.theme)
                 this.updateTheme();
@@ -189,6 +191,7 @@ namespace pxsim.visuals {
             this.onBoardDistance.init(this.board.bus, new DistanceState(this.board.distanceState, this.board.distanceUnitState), el, null);
             this.onBoardHygrometer.init( this.board.bus, new HygrometerState(this.board.hygrometerState), el, null);
             this.onBoardThermometer.init( this.board.bus, new ThermometerState(this.board.thermometerState), el, null);
+            this.onBoardBarometer.init( this.board.bus, new BarometerState(this.board.barometerState, this.board.pressureUnitState), el, null);
         }
 
         public updateTheme() {
@@ -211,6 +214,7 @@ namespace pxsim.visuals {
             this.onBoardDistance.updateState();
             this.onBoardHygrometer.updateState();
             this.onBoardThermometer.updateState();
+            this.onBoardBarometer.updateState();
         }
 
         private addDefs(el: SVGElement) {
