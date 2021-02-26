@@ -1,4 +1,4 @@
-name: "Build pxt-letssteam PR"
+name: "Build pxt-letssteam on pull request"
 
 on:
   pull_request:
