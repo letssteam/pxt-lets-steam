@@ -1,0 +1,14 @@
+{
+    "name": "barometer",
+    "description": "A barometer sensor driver",
+    "files": [
+        "barometer.cpp",
+        "target_barometer.h",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core---stm32"
+    }
+}
