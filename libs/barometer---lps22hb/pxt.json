@@ -1,0 +1,7 @@
+{   
+    "name": "hygrometer---lps22hb",
+    "dependencies": {
+        "core": "file:../core---stm32"
+    },
+    "additionalFilePath": "../barometer"
+}
