@@ -14,6 +14,7 @@
         "distance---vl53l0x" : "file:../distance---vl53l0x",
         "hygrometer---hts221" : "file:../hygrometer---hts221",
         "thermometer---hts221" : "file:../thermometer---hts221",
+        "barometer---lps22hb" : "file:../barometer---lps22hb",
         "ssd1306": "file:../ssd1306"
     },
     "core": true,

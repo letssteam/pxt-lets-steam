@@ -33,6 +33,7 @@ namespace pxsim {
         
         DistanceBoard,
         HygrometerBoard,
+        BarometerBoard,
         SSD1306Board{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -58,6 +59,8 @@ namespace pxsim {
         distanceState: AnalogSensorState;
         distanceUnitState: DistanceUnit;
         hygrometerState: AnalogSensorState;
+        barometerState: AnalogSensorState;
+        pressureUnitState: PressureUnit;
         ssd1306State: SSD1306State;
 
         constructor(public boardDefinition: BoardDefinition) {
@@ -127,6 +130,8 @@ namespace pxsim {
             this.distanceState = new AnalogSensorState(DAL.DEVICE_ID_DISTANCE, 0, 2000);
             this.distanceUnitState = DistanceUnit.Millimeter;
             this.hygrometerState = new AnalogSensorState(DAL.DEVICE_ID_HUMIDITY, 0, 100);
+            this.barometerState = new AnalogSensorState(DAL.DEVICE_ID_PRESSURE, 980, 1050);
+            this.pressureUnitState = PressureUnit.HectoPascal;
             this.ssd1306State = new SSD1306State();
 
 
@@ -205,6 +210,9 @@ namespace pxsim {
 
             this.builtinParts["thermometer"] = () => new ThermometerState( this.hygrometerState );
             this.builtinVisuals["thermometer"] = () => new visuals.ThermometerView();
+
+            this.builtinParts["barometer"] = () => new BarometerState( this.hygrometerState, this.pressureUnitState );
+            this.builtinVisuals["barometer"] = () => new visuals.BarometerView();
 
             this.builtinParts["ssd1306"] = this.ssd1306State;
             this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
