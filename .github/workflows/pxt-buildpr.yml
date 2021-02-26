@@ -1,4 +1,4 @@
-name: pxt-buildpr
+name: "Build pxt-letssteam PR"
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: pxt-testghpkgs
+name: "Download and build approved github packages"
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x]
-        branch: [stable3.0]
+        branch: [main]
 
     steps:
       - uses: actions/checkout@v2

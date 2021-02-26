@@ -1,4 +1,4 @@
-name: pxt-buildtarget
+name: "Build pxt-letssteam target"
 
 on:
   push:
