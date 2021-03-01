@@ -115,6 +115,10 @@ namespace pxsim.visuals {
         private onBoardHygrometer: pxsim.visuals.HygrometerView;
         private onBoardThermometer: pxsim.visuals.ThermometerView;
         private onBoardBarometer: pxsim.visuals.BarometerView;
+        private onBoardCompass: pxsim.visuals.CompassView;
+
+        private shakeButton: SVGCircleElement;
+        private shakeText: SVGTextElement;
 
         constructor(public props: MetroBoardProps) {
             super(props);
@@ -178,6 +182,7 @@ namespace pxsim.visuals {
             this.onBoardHygrometer = new HygrometerView();
             this.onBoardThermometer = new ThermometerView();
             this.onBoardBarometer = new BarometerView();
+            this.onBoardCompass = new CompassView();
 
             if (props && props.theme)
                 this.updateTheme();
@@ -192,9 +197,12 @@ namespace pxsim.visuals {
             this.onBoardHygrometer.init( this.board.bus, new HygrometerState(this.board.hygrometerState), el, null);
             this.onBoardThermometer.init( this.board.bus, new ThermometerState(this.board.thermometerState), el, null);
             this.onBoardBarometer.init( this.board.bus, new BarometerState(this.board.barometerState, this.board.pressureUnitState), el, null);
+            this.onBoardCompass.init(this.board.bus, this.board.compassState, el, null);
         }
 
         public updateTheme() {
+            let theme = this.props.theme;
+            if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
         }
 
         public updateState() {
@@ -215,6 +223,37 @@ namespace pxsim.visuals {
             this.onBoardHygrometer.updateState();
             this.onBoardThermometer.updateState();
             this.onBoardBarometer.updateState();
+            this.onBoardCompass.updateState();
+            this.updateGestures();
+        }
+
+        private updateGestures() {
+            let state = this.board;
+            if (state.accelerometerState.useShake && !this.shakeButton) {
+                const el = this.getView().el;
+                this.shakeButton = svg.child(el, "circle", { cx: 230, cy: 30, r: 16.5, class: "sim-shake" }) as SVGCircleElement;
+                accessibility.makeFocusable(this.shakeButton);
+                svg.fill(this.shakeButton, this.props.theme.virtualButtonUp)
+                pointerEvents.down.forEach(evid => this.shakeButton.addEventListener(evid, ev => {
+                    let state = this.board;
+                    svg.fill(this.shakeButton, this.props.theme.buttonDown);
+                }));
+                this.shakeButton.addEventListener(pointerEvents.leave, ev => {
+                    let state = this.board;
+                    svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
+                })
+                this.shakeButton.addEventListener(pointerEvents.up, ev => {
+                    let state = this.board;
+                    svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
+                    this.board.bus.queue(DAL.DEVICE_ID_GESTURE, 11); // GESTURE_SHAKE
+                })
+                accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
+                    this.board.bus.queue(DAL.DEVICE_ID_GESTURE, 11);
+                });
+                accessibility.setAria(this.shakeButton, "button", "Shake the board");
+                this.shakeText = svg.child(el, "text", { x: 250, y: 40, class: "sim-text" }) as SVGTextElement;
+                this.shakeText.textContent = "SHAKE"
+            }
         }
 
         private addDefs(el: SVGElement) {

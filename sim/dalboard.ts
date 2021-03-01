@@ -34,6 +34,7 @@ namespace pxsim {
         DistanceBoard,
         HygrometerBoard,
         BarometerBoard,
+        CompassBoard,
         SSD1306Board{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -61,6 +62,7 @@ namespace pxsim {
         hygrometerState: AnalogSensorState;
         barometerState: AnalogSensorState;
         pressureUnitState: PressureUnit;
+        compassState: CompassState;
         ssd1306State: SSD1306State;
 
         constructor(public boardDefinition: BoardDefinition) {
@@ -213,6 +215,7 @@ namespace pxsim {
 
             this.builtinParts["barometer"] = () => new BarometerState( this.hygrometerState, this.pressureUnitState );
             this.builtinVisuals["barometer"] = () => new visuals.BarometerView();
+            this.builtinParts["compass"] = this.compassState = new CompassState();
 
             this.builtinParts["ssd1306"] = this.ssd1306State;
             this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
