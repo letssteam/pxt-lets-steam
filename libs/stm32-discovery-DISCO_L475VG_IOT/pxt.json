@@ -15,6 +15,7 @@
         "hygrometer---hts221" : "file:../hygrometer---hts221",
         "thermometer---hts221" : "file:../thermometer---hts221",
         "barometer---lps22hb" : "file:../barometer---lps22hb",
+        "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl",
         "ssd1306": "file:../ssd1306"
     },
     "core": true,
