@@ -1,0 +1,16 @@
+{
+    "name": "accelerometer---lsm6dsl",
+    "dependencies": {
+        "core": "file:../core---stm32"
+    },
+    "files": [
+        "shims.d.ts",
+        "enums.d.ts",
+        "accelerometer.cpp",
+        "target_accelerometer.h",
+        "target_compass.h",
+        "target_gyroscope.h",
+        "axis.h"
+    ],
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/accelerometer"
+}
