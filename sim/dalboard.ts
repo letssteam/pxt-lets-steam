@@ -90,12 +90,11 @@ namespace pxsim {
                     for (let sublbl of lbl.split(/[\/,]/)) {
                         sublbl = sublbl.replace(/[~\s]+/g, "")
                         let id = pinId(sublbl)
+
                         if (id != null) {
                             if (pinList.indexOf(id) < 0) {
                                 pinList.push(id)
-                                if ((DAL.PA02 <= id && id <= DAL.PA11) ||
-                                    (DAL.PB00 <= id && id <= DAL.PB09))
-                                    servos[sublbl] = id;
+                                servos[sublbl] = id;
                             }
                             pinIds[lbl] = id;
                             pinIds[sublbl] = id;
