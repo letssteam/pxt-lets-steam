@@ -1,0 +1,18 @@
+{
+    "name": "lcd",
+    "dependencies": {
+        "core": "file:../core---stm32"
+    },
+    "files": [
+        "README.md",
+        "characterlcd.ts",
+        "characterlcdmono.ts",
+        "characterlcdrbg.ts",
+        "lcd.cpp",
+        "pxtparts.json",
+        "shims.d.ts",
+        "target_lcd.h",
+        "ns.ts"
+    ],
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/lcd"
+}
