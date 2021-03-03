@@ -37,36 +37,19 @@ namespace pxsim.visuals {
         }
 
         public updateState() {
-            console.log("Start update");
-
             let state = this.state;
             if (!state || !state.heading || !state.usesHeading) {
-                console.log("    A");
                 if (this.head) {
-                    console.log("    B");
                     this.svgEl.removeChild(this.element);
                     this.head = null;
                     this.headInitialized = false;
                 }
             } else if (state && state.heading && state.usesHeading && !this.headInitialized) {
-                console.log("    C");
                 this.mkCompass();
                 this.svgEl.appendChild(this.element);
                 this.updateCompass();
                 this.headInitialized = true;
             }
-
-
-            console.log("Report : ");
-            console.log(" - state is undefined : " + (state == undefined) );
-
-            if( state ){
-                console.log(" - state.heading " + state.heading );
-                console.log(" - state.usesHeading " + state.usesHeading );
-                console.log(" - headInitialized " + this.headInitialized);
-            }
-
-            console.log("End update");
         }
 
         getElement() {
