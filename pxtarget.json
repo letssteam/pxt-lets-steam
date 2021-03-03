@@ -19,6 +19,7 @@
         "libs/barometer",
         "libs/barometer---lps22hb",
         "libs/accelerometer---lsm6dsl",
+        "libs/lcd",
         "libs/stm32-nucleo64-NUCLEO_F4x1RE",
         "libs/stm32-discovery-DISCO_L475VG_IOT",
         "libs/stm32-nucleo64-PNUCLEO_WB55RG"
