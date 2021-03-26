@@ -30,7 +30,7 @@
 
 @primaryColor: @blue;
 @secondaryColor: @pink;
-@pageBackground: @grey;
+@pageBackground: @darkGrey;
 @lightPrimaryColor   : @lightBlue;	
 @lightSecondaryColor : @lightGrey;
 
@@ -130,14 +130,14 @@
    Home screen
 --------------------*/
 
-@homeScreenBackground: @darkBlue;
+@homeScreenBackground: @darkGrey;
 @homeCardBackgroundColor: @darkGreen;
 @homeHeaderColor: white;
 @homeCardColor: #bdcadb;
 @homeCardBorderRadius: 5px;
 @homeCardBorderSize: 2px;
 @homeCardBorderColor: lighten(@darkGreen, 10%);
-@homeCardHoverBorderColor: white;
+@homeCardHoverBorderColor: #bdcadb;
 @homeCardImageBorderRadius: 5px;
 
 /*-------------------
