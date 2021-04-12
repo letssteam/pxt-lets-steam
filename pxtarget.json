@@ -1,297 +1,298 @@
 {
-    "id": "lets-steam",
-    "platformid": "codal",
-    "nickname": "lets-steam",
-    "name": "MakeCode Let's STEAM",
-    "title": "MakeCode Let's STEAM - Blocks / Javascript editor",
-    "description": "A Blocks / JavaScript code editor for the Let's STEAM project",
-    "corepkg": "core",
-    "bundleddirs": [
-        "libs/base",
-        "libs/core",
-        "libs/core---stm32",
-        "libs/distance",
-        "libs/distance---vl53l0x",
-        "libs/ssd1306",
-        "libs/hygrometer",
-        "libs/hygrometer---hts221",
-        "libs/thermometer---hts221",
-        "libs/barometer",
-        "libs/barometer---lps22hb",
-        "libs/accelerometer---lsm6dsl",
-        "libs/lcd",
-        "libs/stm32-nucleo64-NUCLEO_F4x1RE",
-        "libs/stm32-discovery-DISCO_L475VG_IOT",
-        "libs/stm32-nucleo64-PNUCLEO_WB55RG"
-    ],
-    "serial": {
-        "useHF2": false,
-        "useEditor": true,
-        "log": true,
-        "editorTheme": {
-            "graphBackground": "#d9d9d9",
-            "lineColors": [
-                "#CC2936",
-                "#FFC914",
-                "#2EB7ED",
-                "#FB48C7",
-                "#08415C",
-                "#C200C0"
-            ]
-        }
+  "id": "lets-steam",
+  "platformid": "codal",
+  "nickname": "lets-steam",
+  "name": "MakeCode Let's STEAM",
+  "title": "MakeCode Let's STEAM - Blocks / Javascript editor",
+  "description": "A Blocks / JavaScript code editor for the Let's STEAM project",
+  "corepkg": "core",
+  "bundleddirs": [
+    "libs/base",
+    "libs/core",
+    "libs/core---stm32",
+    "libs/distance",
+    "libs/distance---vl53l0x",
+    "libs/ssd1306",
+    "libs/hygrometer",
+    "libs/hygrometer---hts221",
+    "libs/thermometer---hts221",
+    "libs/barometer",
+    "libs/barometer---lps22hb",
+    "libs/accelerometer---lsm6dsl",
+    "libs/lcd",
+    "libs/stm32-nucleo64-NUCLEO_F4x1RE",
+    "libs/stm32-discovery-DISCO_L475VG_IOT",
+    "libs/stm32-nucleo64-PNUCLEO_WB55RG"
+  ],
+  "serial": {
+    "useHF2": false,
+    "useEditor": true,
+    "log": true,
+    "editorTheme": {
+      "graphBackground": "#d9d9d9",
+      "lineColors": [
+        "#CC2936",
+        "#FFC914",
+        "#2EB7ED",
+        "#FB48C7",
+        "#08415C",
+        "#C200C0"
+      ]
+    }
+  },
+  "simulator": {
+    "autoRun": true,
+    "streams": false,
+    "aspectRatio": 1.0,
+    "parts": true,
+    "partsAspectRatio": 0.69,
+    "dynamicBoardDefinition": true,
+    "messageSimulators": {
+      "jacdac": {
+        "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+        "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+        "aspectRatio": 0.89,
+        "permanent": true
+      }
+    }
+  },
+  "cloud": {
+    "workspace": false,
+    "packages": false,
+    "sharing": false,
+    "thumbnails": false,
+    "publishing": false,
+    "importing": false,
+    "preferredPackages": [],
+    "githubPackages": false,
+    "cloudProviders": {
+      "github": {}
+    }
+  },
+  "runtime": {
+    "mathBlocks": true,
+    "loopsBlocks": true,
+    "logicBlocks": true,
+    "variablesBlocks": true,
+    "textBlocks": true,
+    "listsBlocks": true,
+    "functionBlocks": true,
+    "functionsOptions": {
+      "useNewFunctions": true,
+      "extraFunctionEditorTypes": []
     },
-    "simulator": {
-        "autoRun": true,
-        "streams": false,
-        "aspectRatio": 1.0,
-        "parts": true,
-        "partsAspectRatio": 0.69,
-        "dynamicBoardDefinition": true,
-        "messageSimulators": {
-            "jacdac": {
-                "url": "https://microsoft.github.io/jacdac-ts/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
-                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$"
-            }
-        }
+    "onStartNamespace": "loops",
+    "onStartWeight": 100,
+    "pauseUntilBlock": {},
+    "breakBlock": true,
+    "continueBlock": true
+  },
+  "compile": {
+    "isNative": true,
+    "useUF2": false,
+    "webUSB": false,
+    "hasHex": true,
+    "saveAsPNG": true,
+    "deployDrives": ".*",
+    "flashCodeAlign": 256
+  },
+  "compileService": {
+    "buildEngine": "codal",
+    "codalTarget": {
+      "name": "codal-stm32-NUCLEO_F4x1RE",
+      "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
+      "branch": "main",
+      "type": "git",
+      "dev": true
     },
-    "cloud": {
-        "workspace": false,
-        "packages": true,
-        "sharing": true,
-        "thumbnails": true,
-        "publishing": true,
-        "importing": true,
-        "preferredPackages": [],
-        "githubPackages": true,
-        "cloudProviders": {
-            "github": {}
-        }
-    },
-    "runtime": {
-        "mathBlocks": true,
-        "loopsBlocks": true,
-        "logicBlocks": true,
-        "variablesBlocks": true,
-        "textBlocks": true,
-        "listsBlocks": true,
-        "functionBlocks": true,
-        "functionsOptions": {
-            "useNewFunctions": true,
-            "extraFunctionEditorTypes": []
-        },
-        "onStartNamespace": "loops",
-        "onStartColor": "#40bf4a",
-        "onStartWeight": 100,
-        "pauseUntilBlock": {},
-        "breakBlock": true,
-        "continueBlock": true
-    },
-    "compile": {
-        "isNative": true,
-        "useUF2": false,
-        "webUSB": false,
+    "codalBinary": "NUCLEO_F4x1RE",
+    "githubCorePackage": "letssteam/codal",
+    "gittag": "main",
+    "serviceId": "codal2cp",
+    "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+  },
+
+  "variants": {
+    "stm32-NUCLEO_F4x1RE": {
+      "compile": {
         "hasHex": true,
-        "saveAsPNG": true,
-        "deployDrives": ".*",
-        "flashCodeAlign": 256
-    },
-    "compileService": {
-        "buildEngine": "codal",
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
+        "flashChecksumAddr": 0,
+        "uf2Family": "0x57755a57"
+      },
+      "compileService": {
         "codalTarget": {
-            "name": "codal-stm32-NUCLEO_F4x1RE",
-            "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-            "branch": "main",
-            "type": "git",
-            "dev": true
+          "name": "codal-stm32-NUCLEO_F4x1RE",
+          "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
+          "branch": "main",
+          "type": "git",
+          "dev": true
         },
         "codalBinary": "NUCLEO_F4x1RE",
-        "githubCorePackage": "letssteam/codal",
-        "gittag": "main",
-        "serviceId": "codal2cp",
+        "serviceId": "codal2stm32",
         "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+      }
     },
-
-    "variants": {
-        "stm32-NUCLEO_F4x1RE": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
-                "flashChecksumAddr": 0,
-                "uf2Family": "0x57755a57"
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32-NUCLEO_F4x1RE",
-                    "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-                    "branch": "main",
-                    "type": "git",
-                    "dev": true
-                },
-                "codalBinary": "NUCLEO_F4x1RE",
-                "serviceId": "codal2stm32",
-                "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
-            }
+    "stm32-PNUCLEO_WB55RG": {
+      "compile": {
+        "hasHex": true,
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32wbx.cfg]",
+        "flashChecksumAddr": 0,
+        "uf2Family": "0x70d16653"
+      },
+      "compileService": {
+        "codalTarget": {
+          "name": "codal-stm32-PNUCLEO_WB55RG",
+          "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
+          "branch": "main",
+          "type": "git",
+          "dev": true
         },
-        "stm32-PNUCLEO_WB55RG": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32wbx.cfg]",
-                "flashChecksumAddr": 0,
-                "uf2Family": "0x70d16653"
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32-PNUCLEO_WB55RG",
-                    "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
-                    "branch": "main",
-                    "type": "git",
-                    "dev": true
-                },
-                "codalBinary": "PNUCLEO_WB55RG",
-                "serviceId": "codal2stm32",
-                "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
-            }
-        },
-        "stm32-DISCO_L475VG_IOT": {
-            "compile": {
-                "hasHex": true,
-                "deployFileMarker": "MBED.HTM",
-                "driveName": "DIS_L4IOT",
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]",
-                "flashChecksumAddr": 0,
-                "uf2Family": "0x00ff6919",
-                "gc": true,
-                "floatingPoint": true,
-                "taggedInts": true,
-                "vtableShift": 4
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32-DISCO_L475VG_IOT",
-                    "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-                    "branch": "main",
-                    "type": "git",
-                    "dev": true
-                },
-                "codalBinary": "DISCO_L475VG_IOT",
-                "serviceId": "codal2stm32",
-                "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
-            }
-        }
+        "codalBinary": "PNUCLEO_WB55RG",
+        "serviceId": "codal2stm32",
+        "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+      }
     },
-    "appTheme": {
-        "accentColor": "#0089BF",
-        "logoUrl": "https://github.com/letssteam/pxt-lets-steam",
-        "logo": "./static/logo.svg",
-        "docsLogo": "./static/logo.svg",
-        "docsHeader": "Microsoft MakeCode STM32",
-        "portraitLogo": "./static/logo.svg",
-        "footerLogo": "./static/logo.svg",
-        "organization": "Microsoft MakeCode",
-        "organizationUrl": "https://makecode.com/",
-        "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
-        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
-        "homeUrl": "http://www.lets-steam.eu/",
-        "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
-        "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "githubUrl": "https://github.com/letssteam/pxt-lets-steam",
-        "feedbackUrl": "https://forum.makecode.com/",
-        "betaUrl": "https://github.com/letssteam/pxt-lets-steam",
-        "boardName": "board",
-        "homeScreenHero": "./static/hero.svg",
-        "debugger": true,
-        "print": true,
-        "chooseBoardOnNewProject": true,
-        "lightToc": true,
-        "instructions": true,
-        "docMenu": [
-            {
-                "name": "About",
-                "path": "/about"
-            },
-            {
-                "name": "Forum",
-                "path": "https://forum.makecode.com"
-            },
-            {
-                "name": "Boards",
-                "path": "/boards"
-            },
-            {
-                "name": "Blocks",
-                "path": "/blocks"
-            },
-            {
-                "name": "JavaScript",
-                "path": "/javascript"
-            },
-            {
-                "name": "Reference",
-                "path": "/reference"
-            },
-            {
-                "name": "GitHub",
-                "path": "https://github.com/letssteam/pxt-lets-steam"
-            }
-        ],
+    "stm32-DISCO_L475VG_IOT": {
+      "compile": {
+        "hasHex": true,
+        "deployFileMarker": "MBED.HTM",
+        "driveName": "DIS_L4IOT",
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]",
+        "flashChecksumAddr": 0,
+        "uf2Family": "0x00ff6919",
+        "gc": true,
+        "floatingPoint": true,
+        "taggedInts": true,
+        "vtableShift": 4
+      },
+      "compileService": {
+        "codalTarget": {
+          "name": "codal-stm32-DISCO_L475VG_IOT",
+          "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
+          "branch": "main",
+          "type": "git",
+          "dev": true
+        },
+        "codalBinary": "DISCO_L475VG_IOT",
+        "serviceId": "codal2stm32",
+        "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+      }
+    }
+  },
+  "appTheme": {
+    "accentColor": "#0089BF",
+    "logoUrl": "https://github.com/letssteam/pxt-lets-steam",
+    "logo": "./static/logo.svg",
+    "docsLogo": "./static/logo.svg",
+    "docsHeader": "Microsoft MakeCode STM32",
+    "portraitLogo": "./static/logo.svg",
+    "footerLogo": "./static/logo.svg",
+    "organization": "Microsoft MakeCode",
+    "organizationUrl": "https://makecode.com/",
+    "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
+    "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+    "homeUrl": "http://www.lets-steam.eu/",
+    "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
+    "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
+    "githubUrl": "https://github.com/letssteam/pxt-lets-steam",
+    "feedbackUrl": "https://forum.makecode.com/",
+    "betaUrl": "https://github.com/letssteam/pxt-lets-steam",
+    "boardName": "board",
+    "homeScreenHero": "./static/hero.svg",
+    "debugger": true,
+    "print": true,
+    "chooseBoardOnNewProject": true,
+    "lightToc": true,
+    "instructions": true,
+    "docMenu": [
+      {
+        "name": "About",
+        "path": "/about"
+      },
+      {
+        "name": "Forum",
+        "path": "https://forum.makecode.com"
+      },
+      {
+        "name": "Boards",
+        "path": "/boards"
+      },
+      {
+        "name": "Blocks",
+        "path": "/blocks"
+      },
+      {
+        "name": "JavaScript",
+        "path": "/javascript"
+      },
+      {
+        "name": "Reference",
+        "path": "/reference"
+      },
+      {
+        "name": "GitHub",
+        "path": "https://github.com/letssteam/pxt-lets-steam"
+      }
+    ],
 
-        "invertedMenu": true,
-        "invertedToolbox": true,
-        "invertedMonaco": true,
+    "invertedMenu": true,
+    "invertedToolbox": true,
+    "invertedMonaco": true,
 
-        "monacoToolbox": true,
-        "highContrast": true,
-        "greenScreen": true,
-        "blocksCollapsing": true,
-        "accessibleBlocks": true,
-        "simAnimationEnter": "fly right in",
-        "simAnimationExit": "fly right out",
-        "hasAudio": true,
-        "disableBlockIcons": true,
-        "disableAPICache": true,
-        "blocklyOptions": {
-            "grid": {
-                "spacing": 20,
-                "length": 2,
-                "colour": "rgba(189, 195, 199, 0.20)",
-                "snap": true
-            }
-        },
-        "blockColors": {
-            "input": "#E9407F",
-            "loops": "#fdc400",
-            "logic": "#61b22f",
-            "math": "#62549f",
-            "variables": "#140e4e",
-            "text": "#3BBDD6",
-            "advanced": "#00272B",
-            "functions": "#005a9e",
-            "arrays": "#8A1C7C"
-        },
-        "monacoColors": {
-            "editor.background": "#39474e"
-        },
-        "allowPackageExtensions": true,
-        "scriptManager": true,
-        "simScreenshot": true,
-        "simGif": true,
-        "qrCode": true,
-        "python": true,
-        "pythonToolbox": true,
-        "addNewTypeScriptFile": true,
-        "alwaysGithubItemBlocks": true,
-        "alwaysGithubItem": true,
-        "githubBlocksDiff": true,
-        "nameProjectFirst": true,
-        "showProjectSettings": true,
-        "selectLanguage": false,
-        "githubEditor": true,
-        "tutorialBlocksDiff": true,
-        "tutorialExplicitHints": true,
-        "chooseLanguageRestrictionOnNewProject": true,
-        "openProjectNewTab": true,
-        "errorList": true
+    "monacoToolbox": true,
+    "highContrast": true,
+    "greenScreen": true,
+    "blocksCollapsing": true,
+    "accessibleBlocks": true,
+    "simAnimationEnter": "fly right in",
+    "simAnimationExit": "fly right out",
+    "hasAudio": true,
+    "disableBlockIcons": true,
+    "disableAPICache": true,
+    "blocklyOptions": {
+      "grid": {
+        "spacing": 20,
+        "length": 2,
+        "colour": "rgba(189, 195, 199, 0.20)",
+        "snap": true
+      }
     },
-    "ignoreDocsErrors": true,
-    "uploadDocs": false
+    "blockColors": {
+      "input": "#E9407F",
+      "loops": "#fdc400",
+      "logic": "#61b22f",
+      "math": "#62549f",
+      "variables": "#140e4e",
+      "text": "#3BBDD6",
+      "advanced": "#00272B",
+      "functions": "#005a9e",
+      "arrays": "#8A1C7C"
+    },
+    "monacoColors": {
+      "editor.background": "#39474e"
+    },
+    "allowPackageExtensions": true,
+    "scriptManager": true,
+    "simScreenshot": true,
+    "simGif": true,
+    "qrCode": true,
+    "python": true,
+    "pythonToolbox": true,
+    "addNewTypeScriptFile": true,
+    "alwaysGithubItemBlocks": true,
+    "alwaysGithubItem": true,
+    "githubBlocksDiff": true,
+    "nameProjectFirst": true,
+    "showProjectSettings": true,
+    "selectLanguage": false,
+    "githubEditor": true,
+    "tutorialBlocksDiff": true,
+    "tutorialExplicitHints": true,
+    "chooseLanguageRestrictionOnNewProject": true,
+    "openProjectNewTab": true,
+    "errorList": true
+  },
+  "ignoreDocsErrors": true,
+  "uploadDocs": false
 }
