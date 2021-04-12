@@ -15,8 +15,7 @@
         "hygrometer---hts221" : "file:../hygrometer---hts221",
         "thermometer---hts221" : "file:../thermometer---hts221",
         "barometer---lps22hb" : "file:../barometer---lps22hb",
-        "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl",
-        "ssd1306": "file:../ssd1306"
+        "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl"
     },
     "core": true,
     "public": true,
@@ -24,7 +23,6 @@
         "corePackage": "../core---stm32"
     },
     "features": [
-        "uf2",
         "pina0",
         "pina1"
     ]

@@ -19,7 +19,6 @@
         "corePackage": "../core---stm32"
     },
     "features": [
-        "uf2",
         "pina0",
         "pina1"
     ]
