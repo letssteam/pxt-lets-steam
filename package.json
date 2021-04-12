@@ -39,7 +39,8 @@
         "@types/bluebird": "2.0.33",
         "@types/jquery": "3.3.29",
         "@types/marked": "0.3.0",
-        "@types/node": "8.0.53",
+        "@types/node": "8.10.66",
+        "less": "2.7.3",
         "semantic-ui-less": "2.2.14",
         "typescript": "^3.7.5"
     },
@@ -49,7 +50,7 @@
         "webusb": "^1.1.1"
     },
     "scripts": {
-        "test": "node node_modules/pxt-core/built/pxt.js travis",
+        "test": "node node_modules/pxt-core/built/pxt.js ci",
         "svgo": "glob-exec --foreach \"**/boardhd.svg\" -- \"svgo --config=svgo.yml {{file}} -o {{file.dir}}/board.svg \""
     }
 }
