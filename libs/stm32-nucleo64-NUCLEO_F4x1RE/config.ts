@@ -34,6 +34,4 @@ namespace config {
     export const PIN_LED = DAL.PA_5;
     export const PIN_LED2 = DAL.PB_14;
     export const PIN_LED3 = DAL.PB_14;
-    export const PIN_LED4 = DAL.PB_14;
-    export const PIN_LED5 = DAL.PB_14;
 }
