@@ -1,29 +1,27 @@
 {
-    "name": "stm32-discovery-DISCO_L475VG_IOT",
-    "description": "DISCO_L475VG_IOT - beta",
-    "files": [
-        "README.md",
-        "config.ts",
-        "device.d.ts",
-        "board.json",
-        "board.svg"
-    ],
-    "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
-    "dependencies": {
-        "core---stm32": "file:../core---stm32",
-        "distance---vl53l0x" : "file:../distance---vl53l0x",
-        "hygrometer---hts221" : "file:../hygrometer---hts221",
-        "thermometer---hts221" : "file:../thermometer---hts221",
-        "barometer---lps22hb" : "file:../barometer---lps22hb",
-        "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl"
-    },
-    "core": true,
-    "public": true,
-    "dalDTS": {
-        "corePackage": "../core---stm32"
-    },
-    "features": [
-        "pina0",
-        "pina1"
-    ]
+  "name": "stm32-discovery-DISCO_L475VG_IOT",
+  "description": "DISCO_L475VG_IOT - beta",
+  "files": [
+    "README.md",
+    "ns.ts",
+    "config.ts",
+    "device.d.ts",
+    "board.json",
+    "board.svg"
+  ],
+  "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
+  "dependencies": {
+    "core---stm32": "file:../core---stm32",
+    "distance---vl53l0x": "file:../distance---vl53l0x",
+    "hygrometer---hts221": "file:../hygrometer---hts221",
+    "thermometer---hts221": "file:../thermometer---hts221",
+    "barometer---lps22hb": "file:../barometer---lps22hb",
+    "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl"
+  },
+  "core": true,
+  "public": true,
+  "dalDTS": {
+    "corePackage": "../core---stm32"
+  },
+  "features": ["pina0", "pina1"]
 }
