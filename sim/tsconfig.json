@@ -1,13 +1,16 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2017",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "declaration": true,
         "out": "../built/sim.js",
         "rootDir": ".",
         "newLine": "LF",
-        "sourceMap": true
+        "sourceMap": false,
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
     },
     "include": [
         "**/*",
