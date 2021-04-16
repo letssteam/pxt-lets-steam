@@ -7,27 +7,30 @@
   "description": "A Blocks / JavaScript code editor for the Let's STEAM project",
   "corepkg": "core",
   "bundleddirs": [
+    "libs/accelerometer---lsm6dsl",
+    "libs/barometer---lps22hb",
     "libs/base",
     "libs/core",
     "libs/core---stm32",
-    "libs/distance",
+    "libs/datalogger",
     "libs/distance---vl53l0x",
-    "libs/ssd1306",
-    "libs/hygrometer",
     "libs/hygrometer---hts221",
-    "libs/thermometer---hts221",
-    "libs/barometer",
-    "libs/barometer---lps22hb",
-    "libs/accelerometer---lsm6dsl",
     "libs/lcd",
-    "libs/stm32-nucleo64-NUCLEO_F4x1RE",
+    "libs/microphone",
+    "libs/music",
+    "libs/serial",
+    "libs/servo",
+    "libs/ssd1306",
     "libs/stm32-discovery-DISCO_L475VG_IOT",
-    "libs/stm32-nucleo64-PNUCLEO_WB55RG"
+    "libs/stm32-nucleo64-NUCLEO_F4x1RE",
+    "libs/stm32-nucleo64-PNUCLEO_WB55RG",
+    "libs/storage",
+    "libs/thermometer---hts221"
   ],
   "serial": {
     "useHF2": false,
-    "useEditor": true,
-    "log": true,
+    "useEditor": false,
+    "log": false,
     "editorTheme": {
       "graphBackground": "#d9d9d9",
       "lineColors": [
@@ -58,13 +61,13 @@
   },
   "cloud": {
     "workspace": false,
-    "packages": false,
-    "sharing": false,
-    "thumbnails": false,
-    "publishing": false,
-    "importing": false,
+    "packages": true,
+    "sharing": true,
+    "thumbnails": true,
+    "publishing": true,
+    "importing": true,
     "preferredPackages": [],
-    "githubPackages": false,
+    "githubPackages": true,
     "cloudProviders": {
       "github": {}
     }
@@ -101,14 +104,14 @@
     "codalTarget": {
       "name": "codal-stm32-NUCLEO_F4x1RE",
       "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-      "branch": "main",
+      "branch": "v0.0.14",
       "type": "git",
       "dev": true
     },
     "codalBinary": "NUCLEO_F4x1RE",
-    "githubCorePackage": "letssteam/codal",
-    "gittag": "main",
-    "serviceId": "codal2cp",
+    "githubCorePackage": "lancaster-university/codal",
+    "gittag": "v0.8.0",
+    "serviceId": "codal2stm32",
     "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
   },
 
@@ -124,7 +127,7 @@
         "codalTarget": {
           "name": "codal-stm32-NUCLEO_F4x1RE",
           "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-          "branch": "main",
+          "branch": "v0.0.14",
           "type": "git",
           "dev": true
         },
@@ -144,7 +147,7 @@
         "codalTarget": {
           "name": "codal-stm32-PNUCLEO_WB55RG",
           "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
-          "branch": "main",
+          "branch": "v0.0.16",
           "type": "git",
           "dev": true
         },
@@ -170,7 +173,7 @@
         "codalTarget": {
           "name": "codal-stm32-DISCO_L475VG_IOT",
           "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-          "branch": "main",
+          "branch": "v0.2.13",
           "type": "git",
           "dev": true
         },
