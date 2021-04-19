@@ -1,7 +1,8 @@
 {
-  "driveDisplayName": "",
+  "driveDisplayName": "NODE_F4x1RG",
   "visual": {
     "image": "pkg://board.svg",
+    "outlineImage": "pkg://boardwireframe.svg",
     "useCrocClips": false,
     "width": 450,
     "height": 377,
