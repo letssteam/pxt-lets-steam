@@ -112,7 +112,7 @@
     "githubCorePackage": "lancaster-university/codal",
     "gittag": "v0.8.0",
     "serviceId": "codal2stm32",
-    "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+    "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
   },
 
   "variants": {
@@ -133,7 +133,7 @@
         },
         "codalBinary": "NUCLEO_F4x1RE",
         "serviceId": "codal2stm32",
-        "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
       }
     },
     "stm32-PNUCLEO_WB55RG": {
@@ -153,7 +153,7 @@
         },
         "codalBinary": "PNUCLEO_WB55RG",
         "serviceId": "codal2stm32",
-        "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
       }
     },
     "stm32-DISCO_L475VG_IOT": {
@@ -179,7 +179,7 @@
         },
         "codalBinary": "DISCO_L475VG_IOT",
         "serviceId": "codal2stm32",
-        "dockerImage": "nedseb/arm-gcc-none-eabi:latest"
+        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
       }
     }
   },

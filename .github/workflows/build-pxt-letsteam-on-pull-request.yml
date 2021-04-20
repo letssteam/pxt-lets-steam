@@ -4,14 +4,13 @@ on: [pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [10.x]
     container:
-      image: nedseb/arm-gcc-none-eabi:latest
+      image: letssteam/makecode-toolchain:latest
       options: --user 1001 --security-opt no-new-privileges
     steps:
       - uses: actions/checkout@v2
@@ -27,8 +26,8 @@ jobs:
         run: |
           pxt ci
         env:
-          PXT_FORCE_LOCAL: 1 
-          PXT_NODOCKER : 1
+          PXT_FORCE_LOCAL: 1
+          PXT_NODOCKER: 1
           CHROME_BIN: chromium-browser
           DISPLAY: :99.0
           CI: true
