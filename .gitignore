@@ -7,7 +7,7 @@ typings
 tmp
 temp
 .vscode/ipch
-projects/**
+/projects/**
 clients/win10/app/AppPackages
 clients/win10/app/BundlePackages
 clients/win10/app/BundleArtifacts
@@ -18,7 +18,7 @@ clients/**/bin/**
 clients/**/obj/**
 clients/electron/projects
 temp/
-projects/
+/projects/
 packaged
 gh-pages
 
