@@ -3,6 +3,11 @@
 ```codecard
 [
     {
+        "name": "Activities",
+        "url": "/activities",
+        "imageUrl": "/static/libs/stm32-board.jpg"
+    },
+    {
         "name": "Nucleo 32",
         "url": "/boards/stm32-nucleo32"
     },
@@ -23,13 +28,14 @@
     {
         "name": "Boards",
         "url": "/boards",
-        "imageUrl": "/static/libs/bead-servo.jpg"
+        "imageUrl": "/static/libs/stm32-board.jpg"
     }
 ]
 ```
 
 ## See Also
 
+[Activities](/activities),
 [Nucleo 32](/boards/stm32-nucleo32),
 [Nucleo 64](/boards/stm32-nucleo64),
 [Nucleo 144](/boards/stm32-nucleo144),
