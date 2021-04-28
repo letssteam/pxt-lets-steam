@@ -63,9 +63,7 @@ void fillScreen(PixelColor color) {
 //% help=screen/fillRect,
 //% blockId=fill_re_ssd1306 block="fill the rectangle in %color"
 //% parts="ssd1306"
-void fillRect(uint8_t x, uint8_t y, uint8_t width, uint8_t height, PixelColor color) {
-    // TODO
-}
+void fillRect(uint8_t x, uint8_t y, uint8_t width, uint8_t height, PixelColor color) {}
 
 /**
  * @brief set the color of a specific pixel
