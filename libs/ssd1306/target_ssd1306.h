@@ -1,6 +1,6 @@
+#include "STM32IotNode.h"
 #include "pxt.h"
 #include "ssd1306.h"
-#include "STM32IotNode.h"
 
 namespace pxt {
 class WSSD1306 {
@@ -14,4 +14,4 @@ class WSSD1306 {
 
     WSSD1306() : screen(iotNode.i2c1, I2C_ADDRESS, WIDTH, HEIGHT) { screen.init(); }
 };
-}
+} // namespace pxt

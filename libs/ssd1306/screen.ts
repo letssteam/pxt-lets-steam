@@ -7,6 +7,8 @@ namespace screen {
     const textOffset = 4;
     const lineOffset = 2;
 
+    const screenHeight = 64;
+
     /**
      * Gets the text line height
      */
@@ -18,7 +20,7 @@ namespace screen {
      * Number of lines
      */
     export function lineCount(): number {
-        return 5
+        return ((screenHeight - textOffset) / lineHeight()) >> 0
     }
 
     /**
@@ -35,8 +37,11 @@ namespace screen {
         line = (line - 1) >> 0;
         const nlines = lineCount();
         if (line < 0 || line >= nlines) return; // out of screen
+        
+        const h = lineHeight();
+        const y = textOffset + h * line;
 
-        printString(text, PixelColor.White, 0, line)
+        printString(text, PixelColor.White, 0, y)
     }
 
     /**
@@ -59,7 +64,7 @@ namespace screen {
      * @param line the line number to print the text at (starting at 1), eg: 1
      */
     //% blockId=displayshowvalue block="show value %name|: %text|at line %line"
-    //% weight=96 inlineInputMode="inline" blockGap=8
+    //% weight=94 inlineInputMode="inline" blockGap=8
     //% group="Screen"
     //% help=display/show-value
     //% line.min=1 line.max=10
