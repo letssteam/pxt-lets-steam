@@ -9,6 +9,7 @@ declare namespace screen {
      * @param str the string to print
      * @param color the color use to print on screen
      */
+    //% group="More" advanced=true
     //% help=screen/printString
     //% blockId=print_string_ssd1306 block="print %str on screen in %color at x: %x|y: %y"
     //% parts="ssd1306" shim=screen::printString
@@ -19,19 +20,11 @@ declare namespace screen {
      *
      * @param color the color use to fill the screen
      */
+    //% group="More" advanced=true
     //% help=screen/fillScree,
     //% blockId=fill_screen_ssd1306 block="fill the screen in %color"
     //% parts="ssd1306" shim=screen::fillScreen
     function fillScreen(color: PixelColor): void;
-
-    /**
-     * @brief Clear the entire screen
-     *
-     */
-    //% help=screen/clearScreen
-    //% blockId=clear_screen_ssd1306 block="clear the screen"
-    //% parts="ssd1306" shim=screen::clearScreen
-    function clearScreen(): void;
 
     /**
      * @brief set the color of a specific pixel
@@ -40,6 +33,7 @@ declare namespace screen {
      * @param y the coordinate pixel on Y axis
      * @param color the color of the pixel
      */
+    //% group="More" advanced=true
     //% help=screen/setPixel
     //% blockId=set_pixel_ssd1306 block="set pixel at %x, %y to %color"
     //% parts="ssd1306" shim=screen::setPixel
@@ -50,6 +44,7 @@ declare namespace screen {
      *
      * @param invert if True the screen is inverted, otherwise False
      */
+    //% group="More" advanced=true
     //% help=screen/invertScreen
     //% blockId=invert_screen_ssd1306 block="invert the screen : %invert"
     //% parts="ssd1306" shim=screen::invertScreen

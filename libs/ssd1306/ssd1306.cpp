@@ -33,6 +33,7 @@ constexpr uint16_t toLocalColor(PixelColor color) {
  * @param str the string to print
  * @param color the color use to print on screen
  */
+//% group="More" advanced=true
 //% help=screen/printString
 //% blockId=print_string_ssd1306 block="print %str on screen in %color at x: %x|y: %y"
 //% parts="ssd1306"
@@ -45,22 +46,12 @@ void printString(String str, PixelColor color, uint8_t x, uint8_t y) {
  *
  * @param color the color use to fill the screen
  */
+//% group="More" advanced=true
 //% help=screen/fillScree,
 //% blockId=fill_screen_ssd1306 block="fill the screen in %color"
 //% parts="ssd1306"
 void fillScreen(PixelColor color) {
     getWSSD1306()->screen.fill(toLocalColor(color));
-}
-
-/**
- * @brief Clear the entire screen
- *
- */
-//% help=screen/clearScreen
-//% blockId=clear_screen_ssd1306 block="clear the screen"
-//% parts="ssd1306"
-void clearScreen() {
-    fillScreen(PixelColor::Black);
 }
 
 /**
@@ -70,6 +61,7 @@ void clearScreen() {
  * @param y the coordinate pixel on Y axis
  * @param color the color of the pixel
  */
+//% group="More" advanced=true
 //% help=screen/setPixel
 //% blockId=set_pixel_ssd1306 block="set pixel at %x, %y to %color"
 //% parts="ssd1306"
@@ -82,6 +74,7 @@ void setPixel(uint8_t x, uint8_t y, PixelColor color) {
  *
  * @param invert if True the screen is inverted, otherwise False
  */
+//% group="More" advanced=true
 //% help=screen/invertScreen
 //% blockId=invert_screen_ssd1306 block="invert the screen : %invert"
 //% parts="ssd1306"

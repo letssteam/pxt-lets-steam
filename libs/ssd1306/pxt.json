@@ -1,17 +1,18 @@
 {
-    "name": "ssd1306",
-    "description": "SSD1306 Driver",
-    "files": [
-        "ns.ts",
-        "ssd1306.cpp",
-        "target_ssd1306.h",
-        "shims.d.ts",
-        "enums.d.ts",
-        "pxtparts.json",
-        "SSD1306_128x64.svg"
-    ],
-    "public": true,
-    "dependencies": {
-        "core": "file:../core---stm32"
-    }
+  "name": "ssd1306",
+  "description": "SSD1306 Driver",
+  "files": [
+    "ns.ts",
+    "screen.ts",
+    "ssd1306.cpp",
+    "target_ssd1306.h",
+    "shims.d.ts",
+    "enums.d.ts",
+    "pxtparts.json",
+    "SSD1306_128x64.svg"
+  ],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
 }
