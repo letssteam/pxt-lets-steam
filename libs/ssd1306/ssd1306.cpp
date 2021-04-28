@@ -47,23 +47,12 @@ void printString(String str, PixelColor color, uint8_t x, uint8_t y) {
  * @param color the color use to fill the screen
  */
 //% group="More" advanced=true
-//% help=screen/fillScreen,
+//% help=screen/fillScreen
 //% blockId=fill_screen_ssd1306 block="fill the screen in %color"
 //% parts="ssd1306"
 void fillScreen(PixelColor color) {
     getWSSD1306()->screen.fill(toLocalColor(color));
 }
-
-/**
- * @brief Fill the screen with specific color
- *
- * @param color the color use to fill the screen
- */
-//% group="More" advanced=true
-//% help=screen/fillRect,
-//% blockId=fill_re_ssd1306 block="fill the rectangle in %color"
-//% parts="ssd1306"
-void fillRect(uint8_t x, uint8_t y, uint8_t width, uint8_t height, PixelColor color) {}
 
 /**
  * @brief set the color of a specific pixel

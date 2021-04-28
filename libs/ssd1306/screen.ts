@@ -25,6 +25,22 @@ namespace screen {
     }
 
     /**
+     * Fill a rectangle with specific color
+     * @param x x-coordinate in pixel of the upper left corner
+     * @param y y-coordinate in pixel of the upper left corner
+     * @param width width of the rectangle
+     * @param height height of the rectangle
+     * @param color filling color of the rectangle
+     */
+    //% group="More" advanced=true
+    //% help=screen/fillRect
+    //% blockId=fill_rect_ssd1306 block="fill the rectangle at %x %y with %width %height in %color"
+    //% parts="ssd1306"
+    export function fillRect(x: number, y: number, width: number, height: number, color: PixelColor): void{
+
+    }
+
+    /**
      * Show text on the screen at a specific line.
      * @param text the text to print on the screen, eg: "Hello world"
      * @param line the line number to print the text at (starting at 1), eg: 1
@@ -84,6 +100,7 @@ namespace screen {
     export function clear() {
         fillScreen(PixelColor.Black)
     }
+
 }
 
 
