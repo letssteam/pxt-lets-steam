@@ -8,6 +8,7 @@ namespace screen {
     const lineOffset = 2;
 
     const screenHeight = 64;
+    const screenWidth = 64;
 
     /**
      * Gets the text line height
@@ -40,7 +41,7 @@ namespace screen {
         
         const h = lineHeight();
         const y = textOffset + h * line;
-
+        fillRect(0, y, screenWidth, h, PixelColor.Black); // clear background
         printString(text, PixelColor.White, 0, y)
     }
 

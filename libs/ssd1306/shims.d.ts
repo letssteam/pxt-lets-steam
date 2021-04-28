@@ -21,10 +21,21 @@ declare namespace screen {
      * @param color the color use to fill the screen
      */
     //% group="More" advanced=true
-    //% help=screen/fillScree,
+    //% help=screen/fillScreen,
     //% blockId=fill_screen_ssd1306 block="fill the screen in %color"
     //% parts="ssd1306" shim=screen::fillScreen
     function fillScreen(color: PixelColor): void;
+
+    /**
+     * @brief Fill the screen with specific color
+     *
+     * @param color the color use to fill the screen
+     */
+    //% group="More" advanced=true
+    //% help=screen/fillRect,
+    //% blockId=fill_re_ssd1306 block="fill the rectangle in %color"
+    //% parts="ssd1306" shim=screen::fillRect
+    function fillRect(x: uint8, y: uint8, width: uint8, height: uint8, color: PixelColor): void;
 
     /**
      * @brief set the color of a specific pixel
