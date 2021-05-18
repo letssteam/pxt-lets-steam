@@ -104,15 +104,15 @@
     "codalTarget": {
       "name": "codal-stm32-NUCLEO_F4x1RE",
       "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-      "branch": "v0.0.17",
+      "branch": "v0.1.0",
       "type": "git",
       "dev": true
     },
-    "codalBinary": "NUCLEO_F4x1RE",
+    "codalBinary": "STM32",
     "githubCorePackage": "lancaster-university/codal",
     "gittag": "v0.8.0",
     "serviceId": "codal2stm32",
-    "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
+    "dockerImage": "pext/yotta:latest"
   },
 
   "variants": {
@@ -127,13 +127,13 @@
         "codalTarget": {
           "name": "codal-stm32-NUCLEO_F4x1RE",
           "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-          "branch": "v0.0.17",
+          "branch": "v0.1.0",
           "type": "git",
           "dev": true
         },
-        "codalBinary": "NUCLEO_F4x1RE",
+        "codalBinary": "STM32",
         "serviceId": "codal2stm32",
-        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
+        "dockerImage": "pext/yotta:latest"
       }
     },
     "stm32-PNUCLEO_WB55RG": {
@@ -147,13 +147,13 @@
         "codalTarget": {
           "name": "codal-stm32-PNUCLEO_WB55RG",
           "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
-          "branch": "v0.0.19",
+          "branch": "v0.1.0",
           "type": "git",
           "dev": true
         },
-        "codalBinary": "PNUCLEO_WB55RG",
+        "codalBinary": "STM32",
         "serviceId": "codal2stm32",
-        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
+        "dockerImage": "pext/yotta:latest"
       }
     },
     "stm32-DISCO_L475VG_IOT": {
@@ -173,13 +173,13 @@
         "codalTarget": {
           "name": "codal-stm32-DISCO_L475VG_IOT",
           "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-          "branch": "v0.2.16",
+          "branch": "v0.3.0",
           "type": "git",
           "dev": true
         },
-        "codalBinary": "DISCO_L475VG_IOT",
+        "codalBinary": "STM32",
         "serviceId": "codal2stm32",
-        "dockerImage": "letssteam/arm-gcc-none-eabi-toolchain:latest"
+        "dockerImage": "pext/yotta:latest"
       }
     }
   },
