@@ -28,9 +28,10 @@
     "libs/thermometer---hts221"
   ],
   "serial": {
+    "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
     "useHF2": false,
-    "useEditor": false,
-    "log": false,
+    "useEditor": true,
+    "log": true,
     "editorTheme": {
       "graphBackground": "#d9d9d9",
       "lineColors": [
@@ -41,7 +42,10 @@
         "#08415C",
         "#C200C0"
       ]
-    }
+    },
+    "vendorId": "0x0d28",
+    "productId": "0x0204",
+    "rawHID": true
   },
   "simulator": {
     "autoRun": true,
@@ -93,7 +97,7 @@
   "compile": {
     "isNative": true,
     "useUF2": false,
-    "webUSB": false,
+    "webUSB": true,
     "hasHex": true,
     "saveAsPNG": true,
     "deployDrives": ".*",
@@ -208,6 +212,8 @@
     "chooseBoardOnNewProject": true,
     "lightToc": true,
     "instructions": true,
+    "extendEditor": true,
+    "extendFieldEditors": false,
     "docMenu": [
       {
         "name": "About",
