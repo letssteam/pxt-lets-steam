@@ -10,8 +10,6 @@ import * as flash from "./stm_dap_flash";
 
 pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
 
-    pxt.options.debug = true;
-
     pxt.debug('loading STM target extensions...')
 
     const manyAny = Math as any;
