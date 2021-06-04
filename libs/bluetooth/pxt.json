@@ -1,0 +1,16 @@
+{
+  "name": "bluetooth",
+  "description": "Bluetooth services",
+  "files": [
+    "README.md",
+    "enums.d.ts",
+    "shims.d.ts",
+    "bluetooth.ts",
+    "bluetooth.cpp",
+    "target_bluetooth.h"
+  ],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
