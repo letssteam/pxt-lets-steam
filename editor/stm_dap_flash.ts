@@ -1,6 +1,5 @@
 import { USBDevice } from "webusb";
 import * as DAPjs from "dapjs";
-import { ReadStream } from "fs";
 
 const SERIAL_BAUDRATE = 115200;
 const PERIOD_SERIAL_SEND_MS = 500;
@@ -22,6 +21,7 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     private target : DAPjs.DAPLink = null;
     private lastSerialPrint : number = 0;
     private serialBuffer : string = "";
+    private lock_serial = false;
 
 
     constructor(public readonly io: pxt.packetio.PacketIO){
@@ -53,7 +53,8 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         log("Reconnect");
 
         await this.io.reconnectAsync();
-        await this.initDAP((this.io as any).dev, SERIAL_BAUDRATE);
+        await this.initDAP((this.io as any).dev);
+        await this.startSerial(SERIAL_BAUDRATE);
 
         return Promise.resolve();
     }
@@ -72,8 +73,6 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     async reflashAsync(resp: pxtc.CompileResult): Promise<void> {
-        log("resp : ", resp);
-
         var blob = new Blob([resp.outfiles[HEX_FILENAME]], {type: "text/plain"});
         const fileReader = new FileReader();
 
@@ -101,9 +100,18 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
 
-    private async initDAP( device : USBDevice, baudrateSerial: number ){
+    private async initDAP( device : USBDevice ){
         const transport = new DAPjs.WebUSB(device);
         this.target = new DAPjs.DAPLink(transport);
+
+        log("DAP initialized !");
+    }
+
+    private async startSerial(baudrateSerial: number){
+
+        if(this.lock_serial){
+            return;
+        }
 
         this.target.on( DAPjs.DAPLink.EVENT_SERIAL_DATA, (data: string) => {
             this.serialBuffer += data;
@@ -121,7 +129,13 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         await this.target.disconnect();
 
         this.target.startSerialRead().catch( (e) => log_error("ERROR startSerial : ", e) );
-        log("CONNECTED");
+        log("Serial Started");
+    }
+
+    private async stopSerial(){
+        this.target.on(DAPjs.DAPLink.EVENT_SERIAL_DATA, (data: string) => {});
+        this.target.stopSerialRead();
+        log("Serial Stopped");
     }
     
 
@@ -145,7 +159,7 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private async flashDevice(buffer: any) : Promise<void>{
 
-        log("Array buf : ", buffer)
+        log(`Flashing file ${buffer.byteLength} words long`);
 
         this.target.on(DAPjs.DAPLink.EVENT_PROGRESS, progress => {
             this.flashProgress(progress);
@@ -154,8 +168,8 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         try{
             pxt.tickEvent("hid.flash.start");
 
-            log("Stop Serial listening");
-            this.target.stopSerialRead();
+            this.lock_serial = true;
+            this.stopSerial();
 
             log("Connect");
             await this.target.connect().catch( (e) => log_error("ERROR connect : ", e) );
@@ -166,13 +180,14 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
             log("Disconnect");
             await this.target.disconnect().catch( (e) => log_error("ERROR disconnect : ", e) );
 
-
-            log("Start Serial listening");
-            await this.target.startSerialRead().catch( (e) => log_error("ERROR startSerialRead : ", e) );
         }
         catch(error){
             log_error("Failed to flash : ", error);
             throw new Error("Failed to flash ");
+        }
+        finally{
+            this.lock_serial = false;
+            this.startSerial(SERIAL_BAUDRATE);
         }
 
         pxt.tickEvent("hid.flash.success")
