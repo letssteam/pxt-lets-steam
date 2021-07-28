@@ -14,9 +14,12 @@ function log_error(msg: string, ...optionsParams: any[]){
 }
 
 
-class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
+export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     familyID: number;
     icon = "usb";
+
+    public onFlashProgress : (prg: number) => void = null;
+    public onFlashFinish : (error: any) => void = null;
 
     private target : DAPjs.DAPLink = null;
     private lastSerialPrint : number = 0;
@@ -77,7 +80,7 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         const fileReader = new FileReader();
 
         fileReader.onloadend = (evt) => {
-            this.flashDevice(evt.target.result);
+            return this.flashDevice(evt.target.result);
         };
 
         fileReader.onprogress = (evt) => {
@@ -86,13 +89,14 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         fileReader.onerror = (evt) => {
             log_error("Failed to load Blob file : ", fileReader.error);
+            return Promise.reject();
         };
 
 
 
         fileReader.readAsArrayBuffer(blob);
 
-        return Promise.resolve();
+        //return Promise.resolve();
     }
 
     sendCustomEventAsync(type: string, payload: Uint8Array): Promise<void> {
@@ -153,16 +157,15 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
     }
 
-    private flashProgress(prgs: any){
-        log(`Flash progress : ${prgs*100}%`)
-    }
-
     private async flashDevice(buffer: any) : Promise<void>{
 
+        var errorCatch = null;
         log(`Flashing file ${buffer.byteLength} words long`);
 
         this.target.on(DAPjs.DAPLink.EVENT_PROGRESS, progress => {
-            this.flashProgress(progress);
+            if( this.onFlashProgress != null ){
+                this.onFlashProgress(progress);
+            }
         });
 
         try{
@@ -172,22 +175,27 @@ class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
             this.stopSerial();
 
             log("Connect");
-            await this.target.connect().catch( (e) => log_error("ERROR connect : ", e) );
+            await this.target.connect().catch( (e) => {log_error("ERROR connect : ", e); throw e;} );
 
             log("Flash");
-            await this.target.flash(buffer).catch( (e) => log_error("ERROR flash : ", e) );
+            await this.target.flash(buffer).catch( (e) => {log_error("ERROR flash : ", e); throw e;} );
 
             log("Disconnect");
-            await this.target.disconnect().catch( (e) => log_error("ERROR disconnect : ", e) );
+            await this.target.disconnect().catch( (e) => {log_error("ERROR disconnect : ", e); throw e;} );
 
         }
         catch(error){
+            errorCatch = error;
             log_error("Failed to flash : ", error);
-            throw new Error("Failed to flash ");
+            return Promise.reject();
         }
         finally{
             this.lock_serial = false;
             this.startSerial(SERIAL_BAUDRATE);
+
+            if( this.onFlashFinish != null ){
+                this.onFlashFinish(errorCatch);
+            }
         }
 
         pxt.tickEvent("hid.flash.success")
