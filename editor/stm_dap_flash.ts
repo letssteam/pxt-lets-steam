@@ -79,6 +79,9 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         var blob = new Blob([resp.outfiles[HEX_FILENAME]], {type: "text/plain"});
         const fileReader = new FileReader();
 
+        console.log(resp);
+        // TODO : Remove useless part of the file to speed up the upload
+
         fileReader.onloadend = (evt) => {
             return this.flashDevice(evt.target.result);
         };
@@ -92,11 +95,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
             return Promise.reject();
         };
 
-
-
         fileReader.readAsArrayBuffer(blob);
-
-        //return Promise.resolve();
     }
 
     sendCustomEventAsync(type: string, payload: Uint8Array): Promise<void> {
