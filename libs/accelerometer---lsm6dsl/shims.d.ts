@@ -51,7 +51,8 @@ declare namespace input {
     function setAccelerometerRange(range: AcceleratorRange): void;
 
     /**
-     * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
+     * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the
+     * simulator.
      * @param dimension TODO
      */
     //% help=input/magnetic-force weight=51

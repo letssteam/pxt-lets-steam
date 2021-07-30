@@ -1,11 +1,11 @@
+#include "CoordinateSystem.h"
+#include "I2C.h"
+#include "Pin.h"
+#include "axis.h"
 #include "pxt.h"
 #include "target_accelerometer.h"
 #include "target_compass.h"
 #include "target_gyroscope.h"
-#include "axis.h"
-#include "Pin.h"
-#include "I2C.h"
-#include "CoordinateSystem.h"
 
 enum class Dimension {
     //% block=x
@@ -90,18 +90,18 @@ enum class Gesture {
     //% block="free fall"
     FreeFall = ACCELEROMETER_EVT_FREEFALL,
     /**
-    * Raised when a 3G shock is detected
-    */
+     * Raised when a 3G shock is detected
+     */
     //% block="3g"
     ThreeG = ACCELEROMETER_EVT_3G,
     /**
-    * Raised when a 6G shock is detected
-    */
+     * Raised when a 6G shock is detected
+     */
     //% block="6g"
     SixG = ACCELEROMETER_EVT_6G,
     /**
-    * Raised when a 8G shock is detected
-    */
+     * Raised when a 8G shock is detected
+     */
     //% block="8g"
     EightG = ACCELEROMETER_EVT_8G
 };
@@ -111,7 +111,7 @@ namespace pxt {
 SINGLETON(WAccel);
 SINGLETON(WCompas);
 SINGLETON(WGyro);
-}
+} // namespace pxt
 
 namespace input {
 /**
@@ -127,7 +127,7 @@ namespace input {
 //% gesture.fieldOptions.columns=3
 //% weight=92 blockGap=12
 void onGesture(Gesture gesture, Action body) {
-    auto acc = &getWAccel()->acc;
+    auto acc = getWAccel()->acc;
     acc->requestUpdate();
     int gi = (int)gesture;
     if (gi == ACCELEROMETER_EVT_3G && acc->getRange() < 3)
@@ -138,7 +138,7 @@ void onGesture(Gesture gesture, Action body) {
 }
 
 int getAccelerationStrength() {
-    auto acc = &getWAccel()->acc;
+    auto acc = getWAccel()->acc;
     float x = acc->getX();
     float y = acc->getY();
     float z = acc->getZ();
@@ -160,11 +160,11 @@ int getAccelerationStrength() {
 int acceleration(Dimension dimension) {
     switch (dimension) {
     case Dimension::X:
-        return getWAccel()->acc.getX();
+        return getWAccel()->acc->getX();
     case Dimension::Y:
-        return getWAccel()->acc.getY();
+        return getWAccel()->acc->getY();
     case Dimension::Z:
-        return getWAccel()->acc.getZ();
+        return getWAccel()->acc->getZ();
     case Dimension::Strength:
         return getAccelerationStrength();
     }
@@ -182,9 +182,9 @@ int acceleration(Dimension dimension) {
 int rotation(Rotation kind) {
     switch (kind) {
     case Rotation::Pitch:
-        return getWAccel()->acc.getPitch();
+        return getWAccel()->acc->getPitch();
     case Rotation::Roll:
-        return getWAccel()->acc.getRoll();
+        return getWAccel()->acc->getRoll();
     }
     return 0;
 }
@@ -199,29 +199,33 @@ int rotation(Rotation kind) {
 //% parts="accelerometer"
 //% group="More" weight=15 blockGap=8
 void setAccelerometerRange(AcceleratorRange range) {
-    getWAccel()->acc.setRange((int)range);
+    getWAccel()->acc->setRange((int)range);
 }
 
 /**
- * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
+ * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the
+ * simulator.
  * @param dimension TODO
  */
 //% help=input/magnetic-force weight=51
 //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
 //% parts="compass"
 int magneticForce(Dimension dimension) {
-    if (!getWCompas()->magnetometer.isCalibrated())
-    getWCompas()->magnetometer.calibrate();
+    if (!getWCompas()->magnetometer->isCalibrated())
+        getWCompas()->magnetometer->calibrate();
 
     switch (dimension) {
-        case Dimension::X: return getWCompas()->magnetometer.getX();
-        case Dimension::Y: return getWCompas()->magnetometer.getY();
-        case Dimension::Z: return getWCompas()->magnetometer.getZ();
-        case Dimension::Strength: return getWCompas()->magnetometer.getFieldStrength();
+    case Dimension::X:
+        return getWCompas()->magnetometer->getX();
+    case Dimension::Y:
+        return getWCompas()->magnetometer->getY();
+    case Dimension::Z:
+        return getWCompas()->magnetometer->getZ();
+    case Dimension::Strength:
+        return getWCompas()->magnetometer->getFieldStrength();
     }
     return 0;
 }
-
 
 /**
  * Get the current compass heading in degrees.
@@ -231,7 +235,7 @@ int magneticForce(Dimension dimension) {
 //% blockId=device_heading block="compass heading (°)" blockGap=8
 //% parts="compass"
 int compassHeading() {
-    return getWCompas()->magnetometer.heading();
+    return getWCompas()->magnetometer->heading();
 }
 
 /**
@@ -243,12 +247,16 @@ int compassHeading() {
 //% parts="gyroscope"
 int gyroscopicForce(Dimension dimension) {
     switch (dimension) {
-        case Dimension::X: return getWGyro()->gyroscope.getX();
-        case Dimension::Y: return getWGyro()->gyroscope.getY();
-        case Dimension::Z: return getWGyro()->gyroscope.getZ();
-        case Dimension::Strength: return 0; // getWGyro()->gyroscope.getStrength();
+    case Dimension::X:
+        return getWGyro()->gyroscope->getX();
+    case Dimension::Y:
+        return getWGyro()->gyroscope->getY();
+    case Dimension::Z:
+        return getWGyro()->gyroscope->getZ();
+    case Dimension::Strength:
+        return 0; // getWGyro()->gyroscope->getStrength();
     }
     return 0;
 }
 
-}
+} // namespace input
