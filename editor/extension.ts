@@ -37,8 +37,8 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
     content.style.transform = "translate(-50%, -50%)";
     content.style.borderRadius = "5px";
     content.style.overflow = "hidden";
-    content.innerHTML = `
-        <div style="padding: 8px; background-color: #e9407f; color: #ffffff;">
+    content.innerHTML =
+        `<div style="padding: 8px; background-color: #e9407f; color: #ffffff;">
             <h3>${lf("Uploading")}</h3>
         </div>
         <div style="padding: 16px; background-color: white;">
@@ -54,8 +54,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
             <div id="upload_modal_button" style="text-align: right; display: none;">
                 <button onclick="document.getElementById('upload_modal_container').style.display = 'none'" style="border-radius: 10px; padding: 8px 32px; border: none; background: #e9407f; color: white; font-weight: bold; margin-top: 8px; cursor: pointer;">${lf("Ok")}</button>
             </div>
-        </div>
-    `;
+        </div>`;
 
     container.appendChild(content);
     body.appendChild(container);
