@@ -3,10 +3,10 @@
 
 #include "Image.h"
 #include "MultiButton.h"
-#include "STM32Pin.h"
-#include "Timer.h"
-#include "STM32SPI.h"
 #include "STM32I2C.h"
+#include "STM32Pin.h"
+#include "STM32SPI.h"
+#include "Timer.h"
 
 #include "pinmap.h"
 
