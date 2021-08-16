@@ -35,6 +35,9 @@ namespace config {
     export const PIN_LED = DAL.PA_5;
     export const PIN_LED2 = DAL.PB_14;
     export const PIN_LED3 = DAL.PC_9;
+
+    export const PIN_BTN_USER = DAL.PC_13;
+    export const PIN_RESET = DAL.NO_CONN;
         
     export const PIN_ACCELEROMETER_INT = DAL.PD_11; 
     export const PIN_ACCELEROMETER_SCL = DAL.PB_10;
