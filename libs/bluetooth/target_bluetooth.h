@@ -1,4 +1,4 @@
-#include "STM32IotNode.h"
+#include "STM32DISCO_L475VG_IOT.h"
 #include "STM32SerialBLE.h"
 #include "pxt.h"
 
@@ -7,7 +7,7 @@ namespace pxt {
 class WBluetooth {
 
   public:
-    STM32IotNode iotNode;
+    STM32DISCO_L475VG_IOT iotNode;
     STM32SerialBLE *serialBle;
 
     WBluetooth() : serialBle(nullptr) {}
