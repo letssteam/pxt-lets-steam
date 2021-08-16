@@ -32,7 +32,7 @@ enum class BLE_Serial_Delimiters {
     SemiColon = 59,
 };
 
-STM32IotNode inode;
+STM32DISCO_L475VG_IOT inode;
 HCISpiTransportClass hci(inode.spi3, SPBTLE_RF, pinNametoDigitalPin(PD_13),
                          pinNametoDigitalPin(PE_6), pinNametoDigitalPin(PA_8), 8000000, 0);
 BLELocalDevice objBLE(&hci);

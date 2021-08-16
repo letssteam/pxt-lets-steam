@@ -1,4 +1,4 @@
-#include "STM32IotNode.h"
+#include "STM32DISCO_L475VG_IOT.h"
 #include "pxt.h"
 #include "ssd1306.h"
 
@@ -6,7 +6,7 @@ namespace pxt {
 class WSSD1306 {
   public:
     codal::SSD1306_I2C screen;
-    STM32IotNode iotNode;
+    STM32DISCO_L475VG_IOT iotNode;
 
     static constexpr uint16_t I2C_ADDRESS = 0x78;
     static constexpr uint16_t WIDTH = 128;
