@@ -12,6 +12,7 @@
   "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
   "dependencies": {
     "core---stm32": "file:../core---stm32",
+    "buttons": "file:../buttons",
     "distance---vl53l0x": "file:../distance---vl53l0x",
     "hygrometer---hts221": "file:../hygrometer---hts221",
     "thermometer---hts221": "file:../thermometer---hts221",
