@@ -10,6 +10,7 @@
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
     "libs/base",
+    "libs/buttons",
     "libs/core",
     "libs/core---stm32",
     "libs/datalogger",
