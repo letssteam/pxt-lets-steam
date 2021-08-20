@@ -214,7 +214,4 @@ declare namespace input {
     //% block="button USER" fixedInstance
     //% shim=pxt::getButton(0)
     const buttonUser: Button;
-
-
-    //shim=pxt::getButtonByPin(PIN_BTN_USER,BUTTON_ACTIVE_LOW_PULL_UP)
 }
