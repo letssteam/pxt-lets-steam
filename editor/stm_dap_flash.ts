@@ -13,7 +13,6 @@ function log_error(msg: string, ...optionsParams: any[]){
     console.error(`STM DAP : ${msg}`, ...optionsParams)
 }
 
-
 export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     familyID: number;
     icon = "usb";
@@ -138,6 +137,9 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     private async stopSerial(){
         this.target.on(DAPjs.DAPLink.EVENT_SERIAL_DATA, (data: string) => {});
         this.target.stopSerialRead();
+
+        await this.sleep(1000);
+
         log("Serial Stopped");
     }
     
@@ -170,8 +172,9 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         try{
             pxt.tickEvent("hid.flash.start");
 
+            log("Stopping Serial");
             this.lock_serial = true;
-            this.stopSerial();
+            await this.stopSerial();
 
             log("Connect");
             await this.target.connect().catch( (e) => {log_error("ERROR connect : ", e); throw e;} );
@@ -199,6 +202,10 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         pxt.tickEvent("hid.flash.success")
         return Promise.resolve();
+    }
+
+    private sleep(ms: number) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
 

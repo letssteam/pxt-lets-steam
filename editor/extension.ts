@@ -111,6 +111,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         document.getElementById("upload_modal_message").style.display = "none";
         document.getElementById("upload_modal_message").innerText = "";
         document.getElementById("upload_modal_button").style.display = "none";
+        wrapper.onFlashProgress(0);
 
         return wrapper.reflashAsync(r);
     }
