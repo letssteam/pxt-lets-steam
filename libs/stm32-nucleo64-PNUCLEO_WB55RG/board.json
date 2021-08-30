@@ -6,82 +6,104 @@
     "width": 450,
     "height": 482,
     "pinDist": 17.55,
-    "pinBlocks": [{
-            "x": 182,
-            "y": 400,
-            "labels": ["SCL", "SDA", "AREF", "GND0", "~D13", "~D12", "~D11", "~D10", "~D9", "~D8"]
-        },
-        {
-            "x": 30.5,
-            "y": 400,
-            "labels": ["D7", "~D6", "~D5", "~D4", "~D3", "D2", "TX/D1", "RX/D0"]
-        },
-        {
-            "x": 153,
-            "y": 67,
-            "labels": [" ", "IOREF", "RESET", "3.3V", "5V", "GND1", "GND2", "VIN"]
-        },
-        {
-            "x": 29,
-            "y": 67,
-            "labels": ["A0", "A1", "A2", "A3", "A4", "A5"]
-        }
+    "pinBlocks": [
+      {
+        "x": 182,
+        "y": 400,
+        "labels": [
+          "SCL",
+          "SDA",
+          "AREF",
+          "GND0",
+          "~D13",
+          "~D12",
+          "~D11",
+          "~D10",
+          "~D9",
+          "~D8"
+        ]
+      },
+      {
+        "x": 30.5,
+        "y": 400,
+        "labels": ["D7", "~D6", "~D5", "~D4", "~D3", "D2", "TX/D1", "RX/D0"]
+      },
+      {
+        "x": 153,
+        "y": 67,
+        "labels": [" ", "IOREF", "RESET", "3.3V", "5V", "GND1", "GND2", "VIN"]
+      },
+      {
+        "x": 29,
+        "y": 67,
+        "labels": ["A0", "A1", "A2", "A3", "A4", "A5"]
+      }
     ],
     "leds": [
-        {
-          "x": 7.5,
-          "y": 180,
-          "h": 7,
-          "w": 16.5,
-          "color": "#0000FF",
-          "label": "LED"
-        },
-        {
-          "x": 7.5,
-          "y": 192,
-          "h": 7,
-          "w": 16.5,
-          "color": "#00FF00",
-          "label": "LED2"
-        },
-        {
-          "x": 7.5,
-          "y": 204,
-          "h": 7,
-          "w": 16.5,
-          "color": "#FF0000",
-          "label": "LED3"
-        },
-        {
-          "x": 19,
-          "y": 303,
-          "h": 7,
-          "w": 16.5,
-          "color": "#FF0000",
-          "label": "LED4"
-        },
-        {
-          "x": 19,
-          "y": 312,
-          "h": 7,
-          "w": 16.5,
-          "color": "#FF0000",
-          "label": "LED5"
-        }
-      ],
-      "reset": {
-        "x": 12,
-        "y": 233,
-        "w": 7,
-        "h": 13
+      {
+        "x": 7.5,
+        "y": 180,
+        "h": 7,
+        "w": 16.5,
+        "color": "#0000FF",
+        "label": "LED"
+      },
+      {
+        "x": 7.5,
+        "y": 192,
+        "h": 7,
+        "w": 16.5,
+        "color": "#00FF00",
+        "label": "LED2"
+      },
+      {
+        "x": 7.5,
+        "y": 204,
+        "h": 7,
+        "w": 16.5,
+        "color": "#FF0000",
+        "label": "LED3"
       }
-    },
-"gpioPinBlocks": [
+    ],
+    "buttons": [
+      {
+        "x": 12,
+        "y": 88,
+        "w": 7,
+        "h": 13,
+        "index": 0,
+        "label": "SW1"
+      },
+      {
+        "x": 12,
+        "y": 120,
+        "w": 7,
+        "h": 13,
+        "index": 1,
+        "label": "SW2"
+      },
+      {
+        "x": 12,
+        "y": 153,
+        "w": 7,
+        "h": 13,
+        "index": 2,
+        "label": "SW3"
+      }
+    ],
+    "reset": {
+      "x": 12,
+      "y": 233,
+      "w": 7,
+      "h": 13
+    }
+  },
+  "gpioPinBlocks": [
     ["SCL", "SDA", "~D13", "~D12", "~D11", "~D10", "~D9", "~D8"],
     ["D7", "~D6", "~D5", "~D4", "~D3", "D2", "TX/D1", "RX/D0"],
     ["A0", "A1", "A2", "A3", "A4", "A5"]
-],
-"gpioPinMap": {
+  ],
+  "gpioPinMap": {
     "A0": "A0",
     "A1": "A1",
     "A2": "A2",
@@ -112,24 +134,19 @@
     "LCD_DATALINE5": "D10",
     "LCD_DATALINE6": "D11",
     "LCD_DATALINE7": "D12"
-},
-"spiPins": {
+  },
+  "spiPins": {
     "MOSI": "~D11",
     "MISO": "~D12",
     "SCK": "~D13"
-},
-"i2cPins": {
+  },
+  "i2cPins": {
     "SDA": "SDA",
     "SCL": "SCL"
-},
-"groundPins": ["GND1", "GND0", "GND2"],
-"threeVoltPins": ["3.3V"],
-"fiveVoltPins": ["5V"],
-"onboardComponents": [],
-"marginWhenBreadboarding": [
-    0,
-    0,
-    80,
-    0
-]
+  },
+  "groundPins": ["GND1", "GND0", "GND2"],
+  "threeVoltPins": ["3.3V"],
+  "fiveVoltPins": ["5V"],
+  "onboardComponents": [],
+  "marginWhenBreadboarding": [0, 0, 80, 0]
 }
