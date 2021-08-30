@@ -100,7 +100,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     isTargetReady() : boolean {
-        return (this.target != null && this.target.connected);
+        return (this.target != null);
     }
 
 
