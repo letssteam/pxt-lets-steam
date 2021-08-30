@@ -114,9 +114,10 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
             document.getElementById("upload_modal_button").style.display = "none";
             wrapper.onFlashProgress(0);
     
-            return wrapper.reflashAsync(r).catch( () => {return pxt.commands.saveOnlyAsync(r);} );
+            return wrapper.reflashAsync(r).catch( () => { console.error("Failed to upload..."); return pxt.commands.saveOnlyAsync(r);} );
         }
         else{
+            console.log("Target not ready !");
             return pxt.commands.saveOnlyAsync(r);
         }
     }
