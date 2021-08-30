@@ -81,39 +81,44 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
 
         var wrapper = await pxt.packetio.initAsync() as flash.STMDAPWrapper;
 
-        wrapper.onFlashFinish = (error) => {
-            wrapper.onFlashProgress = null;
-            wrapper.onFlashFinish = null;
-
-            if( error == null ){
-                document.getElementById("upload_modal_message").innerHTML = `<span style="color: #22AA22">Upload complete !</span>`
-            }
-            else if( error instanceof Error) {
-                document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: [${error.name}] ${error.message}`;
-            }
-            else {
-                document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: ${error}`;
-            }
-
-            document.getElementById("upload_modal_button").style.display = "block";
-            document.getElementById("upload_modal_message").style.display = "block";
-        };
+        if( wrapper.isTargetReady() ){
+            wrapper.onFlashFinish = (error) => {
+                wrapper.onFlashProgress = null;
+                wrapper.onFlashFinish = null;
     
-        wrapper.onFlashProgress = (prg) => {
-            let bar = document.getElementById("upload_modal_bar");
-            let text = document.getElementById("upload_modal_value");
-            
-            text.innerText = Math.round( prg * 100 ) + "%";
-            bar.style.width = `${prg*100}%`;
-        };
-
-        document.getElementById("upload_modal_container").style.display = "block";
-        document.getElementById("upload_modal_message").style.display = "none";
-        document.getElementById("upload_modal_message").innerText = "";
-        document.getElementById("upload_modal_button").style.display = "none";
-        wrapper.onFlashProgress(0);
-
-        return wrapper.reflashAsync(r);
+                if( error == null ){
+                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #22AA22">Upload complete !</span>`
+                }
+                else if( error instanceof Error) {
+                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: [${error.name}] ${error.message}`;
+                }
+                else {
+                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: ${error}`;
+                }
+    
+                document.getElementById("upload_modal_button").style.display = "block";
+                document.getElementById("upload_modal_message").style.display = "block";
+            };
+        
+            wrapper.onFlashProgress = (prg) => {
+                let bar = document.getElementById("upload_modal_bar");
+                let text = document.getElementById("upload_modal_value");
+                
+                text.innerText = Math.round( prg * 100 ) + "%";
+                bar.style.width = `${prg*100}%`;
+            };
+    
+            document.getElementById("upload_modal_container").style.display = "block";
+            document.getElementById("upload_modal_message").style.display = "none";
+            document.getElementById("upload_modal_message").innerText = "";
+            document.getElementById("upload_modal_button").style.display = "none";
+            wrapper.onFlashProgress(0);
+    
+            return wrapper.reflashAsync(r).catch( () => {return pxt.commands.saveOnlyAsync(r);} );
+        }
+        else{
+            return pxt.commands.saveOnlyAsync(r);
+        }
     }
 
     pxt.usb.setFilters([{

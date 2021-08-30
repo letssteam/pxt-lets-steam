@@ -38,8 +38,6 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.io.onData = (buf) => {
             log("Wrapper On DATA : " + pxt.Util.toHex(buf));
         }
-
-        log("Print IO", this.io);
     }
 
 
@@ -99,6 +97,10 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     sendCustomEventAsync(type: string, payload: Uint8Array): Promise<void> {
         throw new Error("Method not implemented.");
+    }
+
+    isTargetReady() : boolean {
+        return (this.target != null && this.target.connected);
     }
 
 
