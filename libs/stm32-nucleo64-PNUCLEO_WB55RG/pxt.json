@@ -1,25 +1,23 @@
 {
-    "name": "stm32-nucleo64-PNUCLEO_WB55RG",
-    "description": "PNUCLEO_WB55RG - beta",
-    "files": [
-        "README.md",
-        "ns.ts",
-        "config.ts",
-        "device.d.ts",
-        "board.json",
-        "board.svg"
-    ],
-    "compileServiceVariant": "stm32-PNUCLEO_WB55RG",
-    "dependencies": {
-        "core---stm32": "file:../core---stm32"
-    },
-    "core": true,
-    "public": true,
-    "dalDTS": {
-        "corePackage": "../core---stm32"
-    },
-    "features": [
-        "pina0",
-        "pina1"
-    ]
+  "name": "stm32-nucleo64-PNUCLEO_WB55RG",
+  "description": "PNUCLEO_WB55RG - beta",
+  "files": [
+    "README.md",
+    "ns.ts",
+    "config.ts",
+    "device.d.ts",
+    "board.json",
+    "board.svg"
+  ],
+  "compileServiceVariant": "stm32-PNUCLEO_WB55RG",
+  "dependencies": {
+    "core---stm32": "file:../core---stm32",
+    "buttons": "file:../buttons"
+  },
+  "core": true,
+  "public": true,
+  "dalDTS": {
+    "corePackage": "../core---stm32"
+  },
+  "features": ["pina0", "pina1"]
 }
