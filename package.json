@@ -38,18 +38,20 @@
   "devDependencies": {
     "@types/marked": "0.3.0",
     "@types/node": "8.10.66",
-    "@types/react": "16.4.7",
-    "@types/react-dom": "16.0.3",
+    "@types/node-hid": "^1.2.0",
+    "@types/usb": "^1.5.1",
+    "@types/w3c-web-usb": "^1.0.4",
     "@types/web-bluetooth": "0.0.4",
     "less": "2.7.3",
-    "react": "16.8.3",
-    "react-dom": "16.11.0",
     "semantic-ui-less": "2.2.14",
-    "typescript": "4.2.3"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
+    "dapjs": "^2.3.0",
+    "node-hid": "^2.1.1",
     "pxt-common-packages": "9.2.5",
     "pxt-core": "7.2.9",
+    "usb": "^1.6.3",
     "webusb": "^1.1.1"
   },
   "scripts": {
