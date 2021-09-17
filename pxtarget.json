@@ -31,7 +31,7 @@
   ],
   "serial": {
     "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
-    "useHF2": false,
+    "useHF2": true,
     "useEditor": true,
     "log": true,
     "editorTheme": {
@@ -91,6 +91,7 @@
       "extraFunctionEditorTypes": []
     },
     "onStartNamespace": "loops",
+     "onStartColor": "#40bf4a",
     "onStartWeight": 100,
     "pauseUntilBlock": {},
     "breakBlock": true,
@@ -305,5 +306,5 @@
     "errorList": true
   },
   "ignoreDocsErrors": true,
-  "uploadDocs": true
+  "uploadDocs": false
 }
