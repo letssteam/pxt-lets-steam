@@ -81,7 +81,11 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
 
         var wrapper = await pxt.packetio.initAsync() as flash.STMDAPWrapper;
 
-        if( wrapper.isTargetReady() ){
+        if( ! r.success ){
+            return Promise.reject();
+        }
+
+        if( wrapper.isTargetReady() && ! r.saveOnly ){
             wrapper.onFlashFinish = (error) => {
                 wrapper.onFlashProgress = null;
                 wrapper.onFlashFinish = null;
@@ -117,7 +121,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
             return wrapper.reflashAsync(r).catch( () => { console.error("Failed to upload..."); return pxt.commands.saveOnlyAsync(r);} );
         }
         else{
-            console.log("Target not ready !");
+            console.log("Target not ready or save only !");
             return pxt.commands.saveOnlyAsync(r);
         }
     }

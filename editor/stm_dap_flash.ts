@@ -64,7 +64,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         if( this.target != null ){
             await this.target.disconnect();
-            this.target.stopSerialRead();
+            this.stopSerial();
             this.target = null;
         }
 
@@ -112,6 +112,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async startSerial(baudrateSerial: number){
+        return; 
 
         if(this.lock_serial){
             return;
@@ -137,6 +138,8 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async stopSerial(){
+        return; 
+        
         this.target.on(DAPjs.DAPLink.EVENT_SERIAL_DATA, (data: string) => {});
         this.target.stopSerialRead();
 
@@ -183,6 +186,9 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
             log("Flash");
             await this.target.flash(buffer).catch( (e) => {log_error("ERROR flash : ", e); throw e;} );
+
+            log("Reset");
+            await this.target.reset().catch( (e) => {log_error("No reset available on target. Error : ", e);} );
 
             log("Disconnect");
             await this.target.disconnect().catch( (e) => {log_error("ERROR disconnect : ", e); throw e;} );
