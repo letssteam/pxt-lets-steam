@@ -110,7 +110,7 @@
     "codalTarget": {
       "name": "codal-stm32-NUCLEO_F4x1RE",
       "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-      "branch": "v1.0.0",
+      "branch": "v1.0.1",
       "type": "git",
       "dev": true
     },
@@ -133,7 +133,7 @@
         "codalTarget": {
           "name": "codal-stm32-NUCLEO_F4x1RE",
           "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-          "branch": "v1.0.0",
+          "branch": "v1.0.1",
           "type": "git",
           "dev": true
         },
@@ -153,7 +153,7 @@
         "codalTarget": {
           "name": "codal-stm32-PNUCLEO_WB55RG",
           "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
-          "branch": "v1.0.0",
+          "branch": "v1.0.1",
           "type": "git",
           "dev": true
         },
@@ -179,7 +179,7 @@
         "codalTarget": {
           "name": "codal-stm32-DISCO_L475VG_IOT",
           "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-          "branch": "v1.0.0",
+          "branch": "v1.0.1",
           "type": "git",
           "dev": true
         },
