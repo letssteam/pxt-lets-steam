@@ -6,6 +6,7 @@
 #include "STM32I2C.h"
 #include "STM32Pin.h"
 #include "STM32SPI.h"
+#include "STM32Serial.h"
 #include "Timer.h"
 
 #include "pinmap.h"
@@ -60,10 +61,11 @@ struct F4_Settings {
 // Codal doesn't yet distinguish between PWM and AIN
 #define DEV_ANALOG_PINS (DEV_PWM_PINS | DEV_AIN_PINS)
 
-#define CODAL_PIN STM32Pin
+#define CODAL_SERIAL codal::STM32Serial
+#define CODAL_PIN codal::STM32Pin
 #define CODAL_TIMER Timer
-#define CODAL_SPI STM32SPI
-#define CODAL_I2C STM32I2C
+#define CODAL_SPI codal::STM32SPI
+#define CODAL_I2C codal::STM32I2C
 #define CODAL_JACDAC_WIRE_SERIAL codal::ZSingleWireSerial
 
 #define PERF_NOW() (TIM5->CNT)
