@@ -1,20 +1,17 @@
-#include "STM32DISCO_L475VG_IOT.h"
 #include "VL53L0X_Distance.h"
 #include "pxt.h"
 
 namespace pxt {
 class WDistance {
+  private:
+    CODAL_I2C *i2c;
+
   public:
     codal::Sensor *sensor;
 
-    WDistance() {
-        if (codal::default_device_instance == nullptr) {
-            codal::default_device_instance = new codal::STM32DISCO_L475VG_IOT();
-        }
-
+    WDistance() : i2c(getI2C(LOOKUP_PIN(VL53L0X_SDA), LOOKUP_PIN(VL53L0X_SCL))) {
         sensor =
-            new codal::VL53L0X_Distance(DEVICE_ID_DISTANCE, codal::default_device_instance->i2c2,
-                                        codal::default_device_instance->io.pc6, 0x52);
+            new codal::VL53L0X_Distance(DEVICE_ID_DISTANCE, i2c, LOOKUP_PIN(VL53L0X_SHUT), 0x52);
     }
     ~WDistance() { delete sensor; }
 };
