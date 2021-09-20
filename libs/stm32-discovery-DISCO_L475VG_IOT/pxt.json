@@ -11,13 +11,14 @@
   ],
   "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
   "dependencies": {
-    "core---stm32": "file:../core---stm32",
+    "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl",
+    "barometer---lps22hb": "file:../barometer---lps22hb",
     "buttons": "file:../buttons",
+    "core---stm32": "file:../core---stm32",
     "distance---vl53l0x": "file:../distance---vl53l0x",
     "hygrometer---hts221": "file:../hygrometer---hts221",
-    "thermometer---hts221": "file:../thermometer---hts221",
-    "barometer---lps22hb": "file:../barometer---lps22hb",
-    "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl"
+    "microphone---mp34dt01": "file:../microphone---mp34dt01",
+    "thermometer---hts221": "file:../thermometer---hts221"
   },
   "core": true,
   "public": true,
