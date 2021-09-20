@@ -4,7 +4,7 @@
 namespace pxt {
 class WSSD1306 {
   private:
-    CODAL_I2C i2c;
+    CODAL_I2C *i2c;
 
   public:
     codal::SSD1306_I2C screen;
@@ -13,7 +13,9 @@ class WSSD1306 {
     static constexpr uint16_t WIDTH = 128;
     static constexpr uint16_t HEIGHT = 64;
 
-    WSSD1306() : i2c(*LOOKUP_PIN(SDA), *LOOKUP_PIN(SCL)), screen(i2c, I2C_ADDRESS, WIDTH, HEIGHT) {
+    WSSD1306()
+        : i2c(pxt::getI2C(LOOKUP_PIN(SDA), LOOKUP_PIN(SCL))),
+          screen(i2c, I2C_ADDRESS, WIDTH, HEIGHT, false) {
         screen.init();
     }
 };
