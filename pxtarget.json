@@ -17,7 +17,7 @@
     "libs/distance---vl53l0x",
     "libs/hygrometer---hts221",
     "libs/lcd",
-    "libs/microphone",
+    "libs/microphone---mp34dt01",
     "libs/music",
     "libs/serial",
     "libs/servo",

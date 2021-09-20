@@ -1,0 +1,7 @@
+{
+  "name": "microphone---mp34dt01",
+  "dependencies": {
+    "core": "file:../core---stm32"
+  },
+  "additionalFilePath": "../../node_modules/pxt-common-packages/libs/microphone"
+}
