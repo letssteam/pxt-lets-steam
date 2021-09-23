@@ -18,7 +18,7 @@
     "libs/hygrometer---hts221",
     "libs/lcd",
     "libs/microphone---mp34dt01",
-    "libs/music",
+    "libs/music---pwm",
     "libs/serial",
     "libs/servo",
     "libs/ssd1306",

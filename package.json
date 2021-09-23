@@ -49,8 +49,8 @@
   "dependencies": {
     "dapjs": "^2.3.0",
     "node-hid": "^2.1.1",
-    "pxt-common-packages": "9.2.5",
-    "pxt-core": "7.2.14",
+    "pxt-common-packages": "9.2.7",
+    "pxt-core": "7.2.17",
     "usb": "^1.6.3",
     "webusb": "^1.1.1"
   },
