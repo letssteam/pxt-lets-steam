@@ -7,11 +7,11 @@ class WTemp {
     CODAL_I2C *i2c;
 
   public:
-    codal::Sensor *sensor;
+    codal::HTS221_Temperature *sensor;
 
-    WTemp() : i2c(getI2C(LOOKUP_PIN(HTS221_SDA), LOOKUP_PIN(HTS221_SCL))) {
-        sensor = new codal::HTS221_Temperature(DEVICE_ID_THERMOMETER, i2c, 0xBE);
-    }
+    WTemp()
+        : i2c(getI2C(LOOKUP_PIN(HTS221_SDA), LOOKUP_PIN(HTS221_SCL))),
+          sensor(new codal::HTS221_Temperature(DEVICE_ID_THERMOMETER, i2c, 0xBE)) {}
     ~WTemp() { delete sensor; }
 };
 } // namespace pxt
