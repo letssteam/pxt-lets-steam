@@ -1,5 +1,4 @@
 #include "LPS22HB_Pressure.h"
-#include "Sensor.h"
 #include "pxt.h"
 
 namespace pxt {
@@ -8,7 +7,7 @@ class WBarometer {
     CODAL_I2C *i2c;
 
   public:
-    codal::Sensor *sensor;
+    codal::LPS22HB_Pressure *sensor;
 
     WBarometer()
         : i2c(getI2C(LOOKUP_PIN(LPS22HB_SDA), LOOKUP_PIN(LPS22HB_SCL))),

@@ -8,7 +8,7 @@ class WHygrometer {
     CODAL_I2C *i2c;
 
   public:
-    codal::Sensor *sensor;
+    codal::HTS221_Humidity *sensor;
 
     WHygrometer()
         : i2c(getI2C(LOOKUP_PIN(HTS221_SDA), LOOKUP_PIN(HTS221_SCL))),
