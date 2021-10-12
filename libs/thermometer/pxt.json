@@ -1,0 +1,13 @@
+{
+  "name": "thermometer",
+  "files": [
+    "thermometer.cpp",
+    "target_thermometer.h",
+    "shims.d.ts",
+    "enums.d.ts",
+    "ns.ts"
+  ],
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
