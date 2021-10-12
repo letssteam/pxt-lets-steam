@@ -9,7 +9,7 @@ declare namespace input {
      */
     //% blockId=input_on_temperature_condition_changed block="on temperature %condition|at %temperature|%unit"
     //% parts="thermometer"
-    //% help=input/on-temperature-condition-changed blockExternalInputs=0
+    //% help=input/on-temperature-condition-changed blockExternalInputs=0 
     //% group="More" weight=76 shim=input::onTemperatureConditionChanged
     function onTemperatureConditionChanged(condition: TemperatureCondition, temperature: int32, unit: TemperatureUnit, handler: () => void): void;
 

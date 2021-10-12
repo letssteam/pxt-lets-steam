@@ -1,7 +1,7 @@
 {
-    "name": "thermometer---hts221",
-    "dependencies": {
-        "core": "file:../core---stm32"
-    },
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/thermometer"
+  "name": "thermometer---hts221",
+  "dependencies": {
+    "core": "file:../core---stm32"
+  },
+  "additionalFilePath": "../thermometer"
 }
