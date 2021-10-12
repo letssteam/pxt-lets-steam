@@ -183,12 +183,16 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
 
             log("Connect");
             await this.target.connect().catch( (e) => {log_error("ERROR connect : ", e); throw e;} );
+            
+            log("Reset");
+            await this.target.reset().catch( (e) => {log_error("No reset available on target. Error : ", e);} );
 
             log("Flash");
             await this.target.flash(buffer).catch( (e) => {log_error("ERROR flash : ", e); throw e;} );
 
             log("Reset");
             await this.target.reset().catch( (e) => {log_error("No reset available on target. Error : ", e);} );
+            await this.sleep(1000);
 
             log("Disconnect");
             await this.target.disconnect().catch( (e) => {log_error("ERROR disconnect : ", e); throw e;} );
