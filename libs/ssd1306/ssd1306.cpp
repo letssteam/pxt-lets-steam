@@ -39,6 +39,7 @@ constexpr uint16_t toLocalColor(PixelColor color) {
 //% parts="ssd1306"
 void printString(String str, PixelColor color, uint8_t x, uint8_t y) {
     getWSSD1306()->screen.drawText(str->getUTF8Data(), x, y, toLocalColor(color));
+    getWSSD1306()->screen.show();
 }
 
 /**
@@ -52,6 +53,7 @@ void printString(String str, PixelColor color, uint8_t x, uint8_t y) {
 //% parts="ssd1306"
 void fillScreen(PixelColor color) {
     getWSSD1306()->screen.fill(toLocalColor(color));
+    getWSSD1306()->screen.show();
 }
 
 /**
@@ -67,6 +69,7 @@ void fillScreen(PixelColor color) {
 //% parts="ssd1306"
 void setPixel(uint8_t x, uint8_t y, PixelColor color) {
     getWSSD1306()->screen.drawPixel(x, y, toLocalColor(color));
+    getWSSD1306()->screen.show();
 }
 
 /**
@@ -80,5 +83,6 @@ void setPixel(uint8_t x, uint8_t y, PixelColor color) {
 //% parts="ssd1306"
 void invertScreen(bool invert) {
     getWSSD1306()->screen.invert(invert);
+    getWSSD1306()->screen.show();
 }
 } // namespace screen
