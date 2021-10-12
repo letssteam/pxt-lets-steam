@@ -133,7 +133,20 @@
     "LCD_DATALINE4": "D9",
     "LCD_DATALINE5": "D10",
     "LCD_DATALINE6": "D11",
-    "LCD_DATALINE7": "D12"
+    "LCD_DATALINE7": "D12",
+
+    "HTS221_SDA": "SDA",
+    "HTS221_SCL": "SCL",
+
+    "LPS22HB_SDA": "SDA",
+    "LPS22HB_SCL": "SCL",
+
+    "VL53L0X_SDA": "SDA",
+    "VL53L0X_SCL": "SCL",
+    "VL53L0X_SHUT": "D3",
+
+    "LSM6DSL_SDA": "SDA",
+    "LSM6DSL_SCL": "SCL"
   },
   "spiPins": {
     "MOSI": "~D11",
