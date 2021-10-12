@@ -38,8 +38,23 @@ namespace config {
 
     export const PIN_BTN_USER = DAL.PC_13;
     export const PIN_RESET = DAL.NO_CONN;
+    export const PIN_TEMPERATURE = DAL.NO_CONN;
         
     export const PIN_ACCELEROMETER_INT = DAL.PD_11; 
     export const PIN_ACCELEROMETER_SCL = DAL.PB_10;
-    export const PIN_ACCELEROMETER_SDA = DAL.PB_11; 
+    export const PIN_ACCELEROMETER_SDA = DAL.PB_11;
+
+
+    export const PIN_HTS221_SDA = DAL.PB_11;
+    export const PIN_HTS221_SCL = DAL.PB_10;
+
+    export const PIN_LPS22HB_SDA = DAL.PB_11;
+    export const PIN_LPS22HB_SCL = DAL.PB_10;
+
+    export const PIN_VL53L0X_SDA = DAL.PB_11;
+    export const PIN_VL53L0X_SCL = DAL.PB_10;
+    export const PIN_VL53L0X_SHUT = DAL.PC_6;
+
+    export const PIN_LSM6DSL_SDA = DAL.PB_11;
+    export const PIN_LSM6DSL_SCL = DAL.PB_10;
 }
