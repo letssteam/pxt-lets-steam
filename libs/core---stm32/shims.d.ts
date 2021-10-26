@@ -130,9 +130,11 @@ declare interface DigitalInOutPin {
     //% help=pins/on-event weight=20 blockGap=8
     //% blockId=pinsonevent block="on|pin %pin|%event"
     //% blockNamespace=pins
+    //% parts="slideswitch"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.width=220
-    //% pin.fieldOptions.columns=4 shim=DigitalInOutPinMethods::onEvent
+    //% pin.fieldOptions.columns=4
+    //% trackArgs=0 shim=DigitalInOutPinMethods::onEvent
     onEvent(event: PinEvent, body: () => void): void;
 
     /**
