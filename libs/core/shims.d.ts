@@ -53,9 +53,11 @@ declare interface AnalogInPin {
     //% help=pins/analog-read weight=53
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
     //% blockNamespace=pins
+    //% parts="photocell"
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=AnalogInPinMethods::analogRead
+    //% name.fieldOptions.columns=4
+    //% trackArgs=0 shim=AnalogInPinMethods::analogRead
     analogRead(): int32;
 }
 
@@ -69,10 +71,12 @@ declare interface AnalogOutPin {
     //% help=pins/analog-write weight=52
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% blockNamespace=pins
+    //%parts="analogled"
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
     //% name.fieldOptions.columns=4
-    //% value.min=0 value.max=1023 shim=AnalogOutPinMethods::analogWrite
+    //% value.min=0 value.max=1023
+    //% trackArgs=0 shim=AnalogOutPinMethods::analogWrite
     analogWrite(value: int32): void;
 }
 
@@ -85,9 +89,11 @@ declare interface DigitalInOutPin {
     //% help=pins/digital-read weight=61
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
     //% blockNamespace=pins
+    //% parts="slideswitch"
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=DigitalInOutPinMethods::digitalRead
+    //% name.fieldOptions.columns=4
+    //% trackArgs=0 shim=DigitalInOutPinMethods::digitalRead
     digitalRead(): boolean;
 
     /**
@@ -97,10 +103,12 @@ declare interface DigitalInOutPin {
      */
     //% help=pins/digital-write weight=60
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value=toggleHighLow"
+    //% parts="led"
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=DigitalInOutPinMethods::digitalWrite
+    //% name.fieldOptions.columns=4
+    //% trackArgs=0 shim=DigitalInOutPinMethods::digitalWrite
     digitalWrite(value: boolean): void;
 
     /**
@@ -117,7 +125,7 @@ declare interface DigitalInOutPin {
     onPulsed(pulse: PulseValue, body: () => void): void;
 
     /**
-     * Register code to run when a pin event occurs. 
+     * Register code to run when a pin event occurs.
      */
     //% help=pins/on-event weight=20 blockGap=8
     //% blockId=pinsonevent block="on|pin %pin|%event"
