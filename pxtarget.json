@@ -23,7 +23,6 @@
     "libs/servo",
     "libs/ssd1306",
     "libs/stm32-discovery-DISCO_L475VG_IOT",
-    "libs/stm32-nucleo64-NUCLEO_F4x1RE",
     "libs/stm32-nucleo64-PNUCLEO_WB55RG",
     "libs/storage",
     "libs/thermometer---hts221",
@@ -109,8 +108,8 @@
   "compileService": {
     "buildEngine": "codal",
     "codalTarget": {
-      "name": "codal-stm32-NUCLEO_F4x1RE",
-      "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
+      "name": "codal-stm32-DISCO_L475VG_IOT",
+      "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
       "branch": "v1.0.5",
       "type": "git",
       "dev": true
@@ -123,26 +122,6 @@
   },
 
   "variants": {
-    "stm32-NUCLEO_F4x1RE": {
-      "compile": {
-        "hasHex": true,
-        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32f4x.cfg]",
-        "flashChecksumAddr": 0,
-        "uf2Family": "0x57755a57"
-      },
-      "compileService": {
-        "codalTarget": {
-          "name": "codal-stm32-NUCLEO_F4x1RE",
-          "url": "https://github.com/letssteam/codal-stm32-NUCLEO_F4x1RE",
-          "branch": "v1.0.5",
-          "type": "git",
-          "dev": true
-        },
-        "codalBinary": "STM32",
-        "serviceId": "codal2stm32",
-        "dockerImage": "pext/yotta:latest"
-      }
-    },
     "stm32-PNUCLEO_WB55RG": {
       "compile": {
         "hasHex": true,
