@@ -13,20 +13,12 @@
     "libs/buttons",
     "libs/core",
     "libs/core---stm32",
-    "libs/datalogger",
     "libs/distance---vl53l0x",
     "libs/hygrometer---hts221",
-    "libs/lcd",
-    "libs/microphone---mp34dt01",
-    "libs/music---pwm",
-    "libs/serial",
-    "libs/servo",
     "libs/ssd1306",
     "libs/stm32-discovery-DISCO_L475VG_IOT",
     "libs/stm32-nucleo64-PNUCLEO_WB55RG",
-    "libs/storage",
-    "libs/thermometer---hts221",
-    "libs/bluetooth"
+    "libs/thermometer---hts221"
   ],
   "serial": {
     "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
