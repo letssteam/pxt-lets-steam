@@ -8,8 +8,7 @@
     "target_ssd1306.h",
     "shims.d.ts",
     "enums.d.ts",
-    "pxtparts.json",
-    "SSD1306_128x64.svg"
+    "pxtparts.json"
   ],
   "public": true,
   "dependencies": {
