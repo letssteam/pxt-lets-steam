@@ -7,19 +7,32 @@
   "description": "A Blocks / JavaScript code editor for the Let's STEAM project",
   "corepkg": "core",
   "bundleddirs": [
-    "libs/accelerometer---lsm6dsl",
-    "libs/barometer---lps22hb",
     "libs/base",
-    "libs/buttons",
     "libs/core",
     "libs/core---stm32",
-    "libs/distance---vl53l0x",
-    "libs/hygrometer---hts221",
-    "libs/ssd1306",
     "libs/stm32-discovery-DISCO_L475VG_IOT",
-    "libs/stm32-nucleo64-PNUCLEO_WB55RG",
-    "libs/thermometer---hts221"
+    "libs/buttons",
+    "libs/accelerometer---lsm6dsl",
+    "libs/barometer---lps22hb",
+    "libs/distance---vl53l0x",
+    "libs/thermometer---hts221",
+    "libs/hygrometer---hts221",
+    "libs/ssd1306"
   ],
+  "cloud": {
+    "workspace": false,
+    "packages": true,
+    "sharing": true,
+    "thumbnails": true,
+    "publishing": true,
+    "importing": true,
+    "preferredPackages": [],
+    "githubPackages": true,
+    "cloudProviders": {
+      "github": {}
+    }
+  },
+
   "serial": {
     "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
     "useHF2": false,
@@ -56,19 +69,7 @@
       }
     }
   },
-  "cloud": {
-    "workspace": false,
-    "packages": true,
-    "sharing": true,
-    "thumbnails": true,
-    "publishing": true,
-    "importing": true,
-    "preferredPackages": [],
-    "githubPackages": true,
-    "cloudProviders": {
-      "github": {}
-    }
-  },
+
   "runtime": {
     "mathBlocks": true,
     "loopsBlocks": true,
@@ -89,13 +90,20 @@
     "continueBlock": true
   },
   "compile": {
-    "isNative": true,
+    "isNative": false,
     "useUF2": false,
     "webUSB": true,
     "hasHex": true,
-    "saveAsPNG": true,
     "deployDrives": ".*",
-    "flashCodeAlign": 256
+    "deployFileMarker": "MBED.HTM",
+    "driveName": "DIS_L4IOT",
+    "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]",
+    "flashCodeAlign": 1024,
+    "flashChecksumAddr": 0,
+    "gc": false,
+    "utf8": false,
+    "floatingPoint": true,
+    "taggedInts": true
   },
   "compileService": {
     "buildEngine": "codal",
@@ -112,40 +120,13 @@
     "serviceId": "codal2stm32",
     "dockerImage": "pext/yotta:latest"
   },
-
   "variants": {
-    "stm32-PNUCLEO_WB55RG": {
-      "compile": {
-        "hasHex": true,
-        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32wbx.cfg]",
-        "flashChecksumAddr": 0,
-        "uf2Family": "0x70d16653"
-      },
-      "compileService": {
-        "codalTarget": {
-          "name": "codal-stm32-PNUCLEO_WB55RG",
-          "url": "https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG",
-          "branch": "v1.0.5",
-          "type": "git",
-          "dev": true
-        },
-        "codalBinary": "STM32",
-        "serviceId": "codal2stm32",
-        "dockerImage": "pext/yotta:latest"
-      }
-    },
     "stm32-DISCO_L475VG_IOT": {
       "compile": {
         "hasHex": true,
         "deployFileMarker": "MBED.HTM",
         "driveName": "DIS_L4IOT",
-        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]",
-        "flashChecksumAddr": 0,
-        "uf2Family": "0x00ff6919",
-        "gc": true,
-        "floatingPoint": true,
-        "taggedInts": true,
-        "vtableShift": 4
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]"
       },
       "compileService": {
         "codalTarget": {
