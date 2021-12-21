@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "setup": "npm install",
-    "serve": "pxt serve --just --no-browser --no-serial -h 0.0.0.0 -p8080 -w8081",
+    "serve": "pxt serve --just --no-browser --no-serial -h 0.0.0.0 -p 8080 -w 8081",
     "test": "pxt ci",
     "build": "npm run setup && pxt buildtarget",
     "staticpackage": "pxt staticpkg",
@@ -46,7 +46,7 @@
   "engines": {
     "node": "14.x",
     "yarn": "^1.22.x",
-    "npm": "^7.10.x"
+    "npm": "^8.3.x"
   },
   "devDependencies": {
     "@types/marked": "0.3.0",
