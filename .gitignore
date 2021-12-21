@@ -21,8 +21,6 @@ temp/
 projects/
 packaged
 gh-pages
-package-lock.json
-
 
 videos/**
 *.user
