@@ -1,4 +1,4 @@
-name: "Download and build approved github packages"
+name: "Publish static package to pxt-lets-steam-static"
 
 on:
   workflow_dispatch:
@@ -15,8 +15,6 @@ jobs:
       image: letssteam/makecode-toolchain:latest
       options: --user 1001 --security-opt no-new-privileges
     env:
-      PXT_FORCE_LOCAL: 1
-      PXT_NODOCKER: 1
       PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
     steps:
@@ -27,30 +25,32 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: npm install
         run: |
           npm install -g pxt
           npm install
-      - name: pxt buildtarget
-        run: pxt buildtarget
+      - name: build static package
+        run: yarn run staticpackage
       - name: cache build output
         uses: actions/cache@v1
         env:
           cache-name: cache-testghpkgs
         with:
-          path: temp/ghpkgs
+          path: built/packaged
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: pxt testghpkgs
-        run: pxt testghpkgs
+      - name: Pushes to pxt-lets-steam-static repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
-          PXT_FORCE_GITHUB_PROXY: 1
-      - name: upload build log
-        uses: actions/upload-artifact@v2
-        if: ${{ always() }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          name: logs-${{ matrix.branch }}
-          path: temp/ghpkgs/*.txt
+          source-directory: "built/packaged"
+          destination-github-username: "letssteam"
+          destination-repository-name: "pxt-lets-steam-static"
+          user-email: sebastien@nedjar.com
+          user-name: nedseb
+          target-branch: main
