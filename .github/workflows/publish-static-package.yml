@@ -1,8 +1,9 @@
 name: "Publish static package to pxt-lets-steam-static"
 
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
