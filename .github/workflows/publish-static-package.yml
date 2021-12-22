@@ -7,14 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
-        branch: [main]
-    container:
-      image: letssteam/makecode-toolchain:latest
-      options: --user 1001 --security-opt no-new-privileges
     env:
       PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
@@ -23,20 +18,17 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install
 
-      - name: npm install
-        run: |
-          npm install -g pxt
-          npm install
-      - name: build static package
-        run: yarn run staticpackage
+      - run: npm run staticpackage
+
       - name: cache build output
         uses: actions/cache@v1
         env:
-          cache-name: cache-testghpkgs
+          cache-name: cache-staticpackage
         with:
           path: built/packaged
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
@@ -44,6 +36,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Pushes to pxt-lets-steam-static repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
