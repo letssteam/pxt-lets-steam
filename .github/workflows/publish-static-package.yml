@@ -25,18 +25,6 @@ jobs:
 
       - run: npm run staticpackage
 
-      - name: cache build output
-        uses: actions/cache@v1
-        env:
-          cache-name: cache-staticpackage
-        with:
-          path: built/packaged
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
       - name: Pushes to pxt-lets-steam-static repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
