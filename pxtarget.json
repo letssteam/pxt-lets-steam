@@ -21,13 +21,12 @@
   ],
   "cloud": {
     "workspace": false,
-    "packages": true,
     "sharing": true,
     "thumbnails": true,
-    "publishing": true,
     "importing": true,
+    "packages": true,
+    "publishing": true,
     "preferredPackages": [],
-    "githubPackages": true,
     "cloudProviders": {
       "github": {}
     }
@@ -244,13 +243,9 @@
     "python": true,
     "pythonToolbox": true,
     "addNewTypeScriptFile": true,
-    "alwaysGithubItemBlocks": true,
-    "alwaysGithubItem": true,
-    "githubBlocksDiff": true,
     "nameProjectFirst": true,
     "showProjectSettings": true,
     "selectLanguage": false,
-    "githubEditor": true,
     "tutorialBlocksDiff": true,
     "tutorialExplicitHints": true,
     "chooseLanguageRestrictionOnNewProject": true,
