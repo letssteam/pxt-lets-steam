@@ -10,7 +10,7 @@ declare namespace input {
     //% blockId=input_on_humidity_condition_changed block="on humidity %condition|at %humidity percent"
     //% help=input/on-humidity-condition-changed blockExternalInputs=0
     //% parts="humidity"
-    //% group="More" weight=76 shim=input::onHumidityConditionChanged
+    //% group="Humidity" weight=76 shim=input::onHumidityConditionChanged
     function onHumidityConditionChanged(condition: HumidityCondition, humidity: int32, handler: () => void): void;
 
     /**
@@ -19,6 +19,7 @@ declare namespace input {
     //% help=input/humidity
     //% blockId=device_humidity block="relative humidity in percent"
     //% parts="humidity"
+    //% group="Humidity"
     //% weight=26 shim=input::humidity
     function humidity(): int32;
 }

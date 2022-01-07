@@ -10,7 +10,7 @@ declare namespace input {
     //% blockId=input_on_distance_condition_changed block="on distance %condition|at %distance|%unit"
     //% parts="distance"
     //% help=input/on-distance-condition-changed blockExternalInputs=0
-    //% group="More" weight=76 shim=input::onDistanceConditionChanged
+    //% group="Distance" weight=76 shim=input::onDistanceConditionChanged
     function onDistanceConditionChanged(condition: DistanceCondition, distance: int32, unit: DistanceUnit, handler: () => void): void;
 
     /**
@@ -19,6 +19,7 @@ declare namespace input {
     //% help=input/distance
     //% blockId=device_distance block="distance in %unit"
     //% parts="distance"
+    //% group="Distance"
     //% weight=26 shim=input::distance
     function distance(unit: DistanceUnit): number;
 }

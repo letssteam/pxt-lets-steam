@@ -12,6 +12,7 @@ declare namespace input {
     //% gesture.fieldEditor="gridpicker"
     //% gesture.fieldOptions.width=220
     //% gesture.fieldOptions.columns=3
+    //% group="Movement"
     //% weight=92 blockGap=12 shim=input::onGesture
     function onGesture(gesture: Gesture, body: () => void): void;
 
@@ -26,6 +27,7 @@ declare namespace input {
     //% dimension.fieldEditor="gridpicker"
     //% dimension.fieldOptions.width=180
     //% dimension.fieldOptions.columns=2
+    //% group="Movement"
     //% weight=42 blockGap=8 shim=input::acceleration
     function acceleration(dimension: Dimension): int32;
 
@@ -36,6 +38,7 @@ declare namespace input {
     //% help=input/rotation
     //% blockId=device_get_rotation block="rotation (°)|%NAME"
     //% parts="accelerometer"
+    //% group="Movement"
     //% weight=38 shim=input::rotation
     function rotation(kind: Rotation): int32;
 
@@ -45,9 +48,10 @@ declare namespace input {
      */
     //% help=input/set-accelerometer-range
     //% blockId=device_set_accelerometer_range block="set accelerometer|range %range"
-    //% weight=5
+    //% weight=5 advanced=true
     //% parts="accelerometer"
-    //% group="More" weight=15 blockGap=8 shim=input::setAccelerometerRange
+    //% group="Movement"
+    //% weight=15 blockGap=8 shim=input::setAccelerometerRange
     function setAccelerometerRange(range: AcceleratorRange): void;
 
     /**
@@ -56,7 +60,8 @@ declare namespace input {
      * @param dimension TODO
      */
     //% help=input/magnetic-force weight=51
-    //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
+    //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME"
+    //% group="Movement" blockGap=8
     //% parts="compass" shim=input::magneticForce
     function magneticForce(dimension: Dimension): int32;
 
@@ -65,7 +70,8 @@ declare namespace input {
      */
     //% help=input/compass-heading
     //% weight=56
-    //% blockId=device_heading block="compass heading (°)" blockGap=8
+    //% blockId=device_heading block="compass heading (°)"
+    //% group="Movement" blockGap=8
     //% parts="compass" shim=input::compassHeading
     function compassHeading(): int32;
 
@@ -74,7 +80,8 @@ declare namespace input {
      * @param dimension TODO
      */
     //% help=input/gyroscopic-force weight=51
-    //% blockId=device_get_gyroscopic_force block="angular acceleration|%NAME" blockGap=8
+    //% blockId=device_get_gyroscopic_force block="angular acceleration|%NAME"
+    //% group="Movement" blockGap=8
     //% parts="gyroscope" shim=input::gyroscopicForce
     function gyroscopicForce(dimension: Dimension): int32;
 }

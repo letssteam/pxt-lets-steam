@@ -125,6 +125,7 @@ namespace input {
 //% gesture.fieldEditor="gridpicker"
 //% gesture.fieldOptions.width=220
 //% gesture.fieldOptions.columns=3
+//% group="Movement"
 //% weight=92 blockGap=12
 void onGesture(Gesture gesture, Action body) {
     auto acc = getWAccel()->acc;
@@ -156,6 +157,7 @@ int getAccelerationStrength() {
 //% dimension.fieldEditor="gridpicker"
 //% dimension.fieldOptions.width=180
 //% dimension.fieldOptions.columns=2
+//% group="Movement"
 //% weight=42 blockGap=8
 int acceleration(Dimension dimension) {
     switch (dimension) {
@@ -178,6 +180,7 @@ int acceleration(Dimension dimension) {
 //% help=input/rotation
 //% blockId=device_get_rotation block="rotation (°)|%NAME"
 //% parts="accelerometer"
+//% group="Movement"
 //% weight=38
 int rotation(Rotation kind) {
     switch (kind) {
@@ -195,9 +198,10 @@ int rotation(Rotation kind) {
  */
 //% help=input/set-accelerometer-range
 //% blockId=device_set_accelerometer_range block="set accelerometer|range %range"
-//% weight=5
+//% weight=5 advanced=true
 //% parts="accelerometer"
-//% group="More" weight=15 blockGap=8
+//% group="Movement"
+//% weight=15 blockGap=8
 void setAccelerometerRange(AcceleratorRange range) {
     getWAccel()->acc->setRange((int)range);
 }
@@ -208,7 +212,8 @@ void setAccelerometerRange(AcceleratorRange range) {
  * @param dimension TODO
  */
 //% help=input/magnetic-force weight=51
-//% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
+//% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME"
+//% group="Movement" blockGap=8
 //% parts="compass"
 int magneticForce(Dimension dimension) {
     if (!getWCompas()->magnetometer->isCalibrated())
@@ -232,7 +237,8 @@ int magneticForce(Dimension dimension) {
  */
 //% help=input/compass-heading
 //% weight=56
-//% blockId=device_heading block="compass heading (°)" blockGap=8
+//% blockId=device_heading block="compass heading (°)"
+//% group="Movement" blockGap=8
 //% parts="compass"
 int compassHeading() {
     return getWCompas()->magnetometer->heading();
@@ -243,7 +249,8 @@ int compassHeading() {
  * @param dimension TODO
  */
 //% help=input/gyroscopic-force weight=51
-//% blockId=device_get_gyroscopic_force block="angular acceleration|%NAME" blockGap=8
+//% blockId=device_get_gyroscopic_force block="angular acceleration|%NAME"
+//% group="Movement" blockGap=8
 //% parts="gyroscope"
 int gyroscopicForce(Dimension dimension) {
     switch (dimension) {

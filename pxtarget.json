@@ -81,8 +81,6 @@
       "useNewFunctions": true,
       "extraFunctionEditorTypes": []
     },
-    "onStartNamespace": "loops",
-    "onStartColor": "#40bf4a",
     "onStartWeight": 100,
     "pauseUntilBlock": {},
     "breakBlock": true,
@@ -223,8 +221,8 @@
     },
     "blockColors": {
       "input": "#E9407F",
-      "loops": "#fdc400",
-      "logic": "#61b22f",
+      "loops": "#61b22f",
+      "logic": "#fdc400",
       "math": "#62549f",
       "variables": "#140e4e",
       "text": "#3BBDD6",
@@ -253,5 +251,5 @@
     "errorList": true
   },
   "ignoreDocsErrors": true,
-  "uploadDocs": false
+  "uploadDocs": true
 }

@@ -9,8 +9,8 @@ declare namespace input {
      */
     //% blockId=input_on_temperature_condition_changed block="on temperature %condition|at %temperature|%unit"
     //% parts="thermometer"
-    //% help=input/on-temperature-condition-changed blockExternalInputs=0 
-    //% group="More" weight=76 shim=input::onTemperatureConditionChanged
+    //% help=input/on-temperature-condition-changed blockExternalInputs=0
+    //% group="Temperature" weight=76 shim=input::onTemperatureConditionChanged
     function onTemperatureConditionChanged(condition: TemperatureCondition, temperature: int32, unit: TemperatureUnit, handler: () => void): void;
 
     /**
@@ -19,6 +19,7 @@ declare namespace input {
     //% help=input/temperature
     //% blockId=device_temperature block="temperature in %unit"
     //% parts="thermometer"
+    //% group="Temperature"
     //% weight=26 shim=input::temperature
     function temperature(unit: TemperatureUnit): int32;
 }

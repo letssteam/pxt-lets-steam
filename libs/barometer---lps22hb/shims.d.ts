@@ -10,7 +10,8 @@ declare namespace input {
     //% blockId=input_on_pressure_condition_changed block="on pressure %condition|at %pressure |%unit"
     //% help=input/on-pressure-condition-changed blockExternalInputs=0
     //% parts="pressure"
-    //% group="More" weight=76 shim=input::onPressureConditionChanged
+    //% group="Pressure"
+    //% weight=76 shim=input::onPressureConditionChanged
     function onPressureConditionChanged(condition: PressureCondition, pressure: int32, unit: PressureUnit, handler: () => void): void;
 
     /**
@@ -19,6 +20,7 @@ declare namespace input {
     //% help=input/pressure
     //% blockId=device_pressure block="pressure in %unit"
     //% parts="pressure"
+    //% group="Pressure"
     //% weight=26 shim=input::pressure
     function pressure(unit: PressureUnit): int32;
 }

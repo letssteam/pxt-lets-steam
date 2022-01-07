@@ -37,8 +37,7 @@ Button *getButtonByPin(int pin, int flags) {
             pull = PullMode::None;
         else
             target_panic(42);
-        btn = new Button(*lookupPin(pin), cpid, DEVICE_BUTTON_ALL_EVENTS,
-                         (ButtonPolarity)(flags & 0xf), pull);
+        btn = new Button(*lookupPin(pin), cpid, DEVICE_BUTTON_ALL_EVENTS, (ButtonPolarity)(flags & 0xf), pull);
     }
     return btn;
 }
@@ -126,6 +125,7 @@ namespace ButtonMethods {
 //% help=input/button/on-event
 //% blockId=buttonEvent block="on %button|%event"
 //% parts="buttons"
+//% group="Buttons"
 //% blockNamespace=input
 //% weight=96 blockGap=12
 //% button.fieldEditor="gridpicker"
@@ -144,6 +144,7 @@ void onEvent(Button_ button, ButtonEvent ev, Action body) {
 //% block="%button|is pressed"
 //% blockId=buttonIsPressed
 //% parts="buttons"
+//% group="Buttons"
 //% blockNamespace=input
 //% button.fieldEditor="gridpicker"
 //% button.fieldOptions.width=220
@@ -162,11 +163,12 @@ bool isPressed(Button_ button) {
 //% block="%button|was pressed"
 //% blockId=buttonWasPressed
 //% parts="buttons"
+//% group="Buttons" advanced=true
 //% blockNamespace=input
 //% button.fieldEditor="gridpicker"
 //% button.fieldOptions.width=220
 //% button.fieldOptions.columns=3
-//% group="More" weight=46 blockGap=8
+//% weight=46 blockGap=8
 //% trackArgs=0
 bool wasPressed(Button_ button) {
     return button->wasPressed();

@@ -1,4 +1,5 @@
 //% color="#d65cd6" weight=90
+//% groups='["Buttons", "Temperature", "Humidity", "Pressure", "Distance", "Movement"]'
 namespace input {
 }
 
@@ -6,12 +7,12 @@ namespace input {
 namespace pins {
 }
 
-//% color="#00b295" weight=70  advanced=false
+//% color="#00b295" weight=70  advanced=true
 namespace control {
 
 }
 
-//% color="#40bf4a" weight=70 
+//% color="#61b22f" weight=70 
 namespace loops {
 
 }

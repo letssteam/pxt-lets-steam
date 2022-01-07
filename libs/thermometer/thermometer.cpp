@@ -29,8 +29,8 @@ namespace input {
  */
 //% blockId=input_on_temperature_condition_changed block="on temperature %condition|at %temperature|%unit"
 //% parts="thermometer"
-//% help=input/on-temperature-condition-changed blockExternalInputs=0 
-//% group="More" weight=76
+//% help=input/on-temperature-condition-changed blockExternalInputs=0
+//% group="Temperature" weight=76
 void onTemperatureConditionChanged(TemperatureCondition condition, int temperature, TemperatureUnit unit, Action handler) {
     auto thermo = getWTemp();
     if (!thermo)
@@ -54,6 +54,7 @@ void onTemperatureConditionChanged(TemperatureCondition condition, int temperatu
 //% help=input/temperature
 //% blockId=device_temperature block="temperature in %unit"
 //% parts="thermometer"
+//% group="Temperature"
 //% weight=26
 int temperature(TemperatureUnit unit) {
     auto thermo = getWTemp();
