@@ -36,3 +36,11 @@ jobs:
           user-email: sebastien@nedjar.com
           user-name: nedseb
           target-branch: main
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Deploy to digital ocean
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID}}
