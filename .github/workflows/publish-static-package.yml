@@ -10,9 +10,14 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+    container:
+      image: letssteam/makecode-toolchain:latest
+      options: --user 1001 --security-opt no-new-privileges
     env:
       PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+      PXT_FORCE_LOCAL: 1
+      PXT_NODOCKER: 1
     steps:
       - uses: actions/checkout@v2
         with:
@@ -37,10 +42,14 @@ jobs:
           user-name: nedseb
           target-branch: main
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Deploy to digital ocean
-        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID}}
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID}} --force-rebuild
