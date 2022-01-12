@@ -1,5 +1,6 @@
 namespace config {
-    export const PIN_SPEAKER_AMP = DAL.PA_5;
+    export const PIN_SPEAKER_AMP = DAL.PD_14;
+    
     export const PIN_A0 = DAL.PC_5;
     export const PIN_A1 = DAL.PC_4;
     export const PIN_A2 = DAL.PC_3;
