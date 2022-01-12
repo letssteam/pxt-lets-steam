@@ -12,6 +12,7 @@
     "libs/core---stm32",
     "libs/stm32-discovery-DISCO_L475VG_IOT",
     "libs/buttons",
+    "libs/settings",
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
     "libs/distance---vl53l0x",
