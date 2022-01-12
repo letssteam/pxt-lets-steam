@@ -17,7 +17,7 @@ namespace loops {
 
 }
 
-//% color="#006E90" weight=30  advanced=false
+//% color="#006E90" weight=30  advanced=false icon="\uf1e6"
 namespace serial {
 
 }
