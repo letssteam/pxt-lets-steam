@@ -16,6 +16,7 @@ jobs:
     env:
       PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+      PXT_FORCE_LOCAL: 1
       PXT_NODOCKER: 1
     steps:
       - uses: actions/checkout@v2
