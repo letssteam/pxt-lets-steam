@@ -13,7 +13,6 @@
     "libs/stm32-discovery-DISCO_L475VG_IOT",
     "libs/buttons",
     "libs/music",
-    "libs/settings",
     "libs/serial",
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
