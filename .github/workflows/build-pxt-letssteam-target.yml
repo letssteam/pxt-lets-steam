@@ -17,7 +17,6 @@ jobs:
       options: --user 1001 --security-opt no-new-privileges
     env:
       CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
-      PXT_FORCE_LOCAL: 1
       PXT_NODOCKER: 1
       PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
       PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
