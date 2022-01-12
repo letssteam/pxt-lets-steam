@@ -14,6 +14,7 @@
     "libs/buttons",
     "libs/music",
     "libs/serial",
+    "libs/datalogger",
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
     "libs/distance---vl53l0x",
@@ -245,12 +246,15 @@
     "addNewTypeScriptFile": true,
     "nameProjectFirst": true,
     "showProjectSettings": true,
-    "selectLanguage": false,
     "tutorialBlocksDiff": true,
     "tutorialExplicitHints": true,
     "chooseLanguageRestrictionOnNewProject": true,
     "openProjectNewTab": true,
-    "errorList": true
+    "errorList": true,
+    "crowdinProject": "kindscript",
+    "selectLanguage": true,
+
+    "availableLocales": ["en", "fr", "it", "gr", "nl", "es-ES", "bg"]
   },
   "ignoreDocsErrors": true,
   "uploadDocs": true
