@@ -17,7 +17,12 @@ namespace loops {
 
 }
 
-//% color="#006E90" weight=30  advanced=false icon="\uf1e6"
+//% color="#006E90" weight=30 icon="\uf1e6" advanced=false
 namespace serial {
+
+}
+
+//% color=#00c0c1 weight=5 icon="\uf07b" avanced=true
+namespace storage {
 
 }

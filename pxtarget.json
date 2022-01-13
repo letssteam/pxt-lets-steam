@@ -127,6 +127,7 @@
         "hasHex": true,
         "deployFileMarker": "MBED.HTM",
         "driveName": "DIS_L4IOT",
+        "uf2Family": "0x57755a57",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/stm32l4x.cfg]"
       },
       "compileService": {
