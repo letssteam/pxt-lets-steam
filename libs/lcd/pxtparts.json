@@ -1,0 +1,61 @@
+{
+  "lcd": {
+    "simulationBehavior": "lcd",
+    "visual": {
+      "builtIn": "lcd",
+      "width": 322.7900085449219,
+      "height": 129.2734832763672,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 10,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 25,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 40,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 55,
+          "y": 8.037069860858837
+        }
+      ]
+    },
+    "numberOfPins": 4,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "ground",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "threeVolt",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "SDA",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "SCL",
+        "style": "male",
+        "orientation": "-Z"
+      }
+    ],
+    "assembly": [
+      { "part": true },
+      { "pinIndices": [0] },
+      { "pinIndices": [1] },
+      { "pinIndices": [2, 3] }
+    ]
+  }
+}

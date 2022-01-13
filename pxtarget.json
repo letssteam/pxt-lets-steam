@@ -14,7 +14,7 @@
     "libs/buttons",
     "libs/music",
     "libs/serial",
-    "libs/datalogger",
+    "libs/lcd",
     "libs/storage",
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
@@ -111,7 +111,7 @@
     "codalTarget": {
       "name": "codal-stm32-DISCO_L475VG_IOT",
       "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-      "branch": "v1.0.5",
+      "branch": "v1.0.6",
       "type": "git",
       "dev": true
     },
@@ -134,7 +134,7 @@
         "codalTarget": {
           "name": "codal-stm32-DISCO_L475VG_IOT",
           "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-          "branch": "v1.0.5",
+          "branch": "v1.0.6",
           "type": "git",
           "dev": true
         },
