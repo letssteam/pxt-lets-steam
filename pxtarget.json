@@ -253,8 +253,7 @@
     "errorList": true,
     "crowdinProject": "kindscript",
     "selectLanguage": true,
-
-    "availableLocales": ["en", "fr", "it", "gr", "nl", "es-ES", "bg"]
+    "availableLocales": ["en", "fr", "it", "el", "nl", "es-ES", "bg"]
   },
   "ignoreDocsErrors": true,
   "uploadDocs": true
