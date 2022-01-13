@@ -1,4 +1,18 @@
 {
+  "name": "storage",
+  "dependencies": {
+    "core": "file:../core---stm32"
+  },
+  "files": [
+    "SNORFS.cpp",
+    "SNORFS.h",
+    "GhostSNORFS.cpp",
+    "GhostSNORFS.h",
+    "storage.cpp",
+    "storage.ts",
+    "shims.d.ts",
+    "ns.ts"
+  ],
   "hidden": true,
   "additionalFilePath": "../../node_modules/pxt-common-packages/libs/storage"
 }
