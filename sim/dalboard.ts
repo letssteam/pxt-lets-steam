@@ -169,8 +169,8 @@ namespace pxsim {
             this.builtinPartVisuals["dotstar"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
 
             this.builtinParts["lcd"] =  this.lcdState;
-            this.builtinVisuals["lcd"] = () => new visuals.LCDView();
-            this.builtinPartVisuals["lcd"] = (xy: visuals.Coord) => visuals.mkLCDPart(xy);
+            this.builtinVisuals["lcd"] = () => new visuals.LCD2View();
+            this.builtinPartVisuals["lcd"] = (xy: visuals.Coord) => visuals.mkLCD2Part(xy);
 
             this.builtinPartVisuals["buttons"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
 
