@@ -3,7 +3,7 @@ declare const enum PixelColor {
     White = 1
 }
 
-namespace pxsim.screen{
+namespace pxsim.oled{
 
     const BLACK_COLOR_SVG = "#00435E";
     const WHITE_COLOR_SVG = "#FFFFFF";

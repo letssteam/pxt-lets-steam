@@ -1,5 +1,5 @@
 // Auto-generated. Do not edit.
-declare namespace screen {
+declare namespace oled {
 
     /**
      * @brief Print string on screen at the given position
@@ -12,7 +12,7 @@ declare namespace screen {
     //% group="More" advanced=true
     //% help=screen/printString
     //% blockId=print_string_ssd1306 block="print %str on screen in %color at x: %x|y: %y"
-    //% parts="ssd1306" shim=screen::printString
+    //% parts="ssd1306" shim=oled::printString
     function printString(str: string, color: PixelColor, x: uint8, y: uint8): void;
 
     /**
@@ -23,7 +23,7 @@ declare namespace screen {
     //% group="More" advanced=true
     //% help=screen/fillScreen
     //% blockId=fill_screen_ssd1306 block="fill the screen in %color"
-    //% parts="ssd1306" shim=screen::fillScreen
+    //% parts="ssd1306" shim=oled::fillScreen
     function fillScreen(color: PixelColor): void;
 
     /**
@@ -36,7 +36,7 @@ declare namespace screen {
     //% group="More" advanced=true
     //% help=screen/setPixel
     //% blockId=set_pixel_ssd1306 block="set pixel at %x, %y to %color"
-    //% parts="ssd1306" shim=screen::setPixel
+    //% parts="ssd1306" shim=oled::setPixel
     function setPixel(x: uint8, y: uint8, color: PixelColor): void;
 
     /**
@@ -47,7 +47,7 @@ declare namespace screen {
     //% group="More" advanced=true
     //% help=screen/invertScreen
     //% blockId=invert_screen_ssd1306 block="invert the screen : %invert"
-    //% parts="ssd1306" shim=screen::invertScreen
+    //% parts="ssd1306" shim=oled::invertScreen
     function invertScreen(invert: boolean): void;
 }
 

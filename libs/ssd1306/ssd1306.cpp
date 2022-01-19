@@ -12,7 +12,7 @@ namespace pxt {
 SINGLETON(WSSD1306);
 }
 
-namespace screen {
+namespace oled {
 
 /**
  * @brief Transform a pixel color in unsigned int
@@ -85,4 +85,4 @@ void invertScreen(bool invert) {
     getWSSD1306()->screen.invert(invert);
     getWSSD1306()->screen.show();
 }
-} // namespace screen
+} // namespace oled

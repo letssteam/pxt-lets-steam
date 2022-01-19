@@ -43,7 +43,7 @@ namespace pxsim.visuals {
             this.initDom();
             this.attachEvents();
 
-            pxsim.screen.fillScreen(PixelColor.Black);
+            pxsim.oled.fillScreen(PixelColor.Black);
         }
 
         public moveToCoord(xy: Coord) {

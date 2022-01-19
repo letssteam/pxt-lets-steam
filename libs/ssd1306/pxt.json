@@ -1,6 +1,6 @@
 {
   "name": "ssd1306",
-  "description": "SSD1306 Driver",
+  "description": "Support for OLED display based on the SSD1306",
   "files": [
     "ns.ts",
     "screen.ts",
