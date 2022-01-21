@@ -61,12 +61,11 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Synchronize editors
         run: |
-          git checkout master
           git config user.name nedseb
           git config user.email sebastien@nedjar.com
           git remote add letssteam https://github.com/letssteam/pxt-lets-steam
           git fetch letssteam --no-tags
-          git merge letssteam/main -m "merge with pxt-lets-steam:$SOURCE_TAG" -s ours
+          git merge letssteam/main -m "merge with pxt-lets-steam:$SOURCE_TAG" -s ours --allow-unrelated-histories
           git tag -a $SOURCE_TAG -m "$SOURCE_TAG"
           git push origin $SOURCE_TAG
         env:
