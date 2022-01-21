@@ -1,0 +1,55 @@
+name: "Publish static package to pxt-lets-steam-static and deploy makecode-beta.lets-steam.eu"
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    container:
+      image: letssteam/makecode-toolchain:latest
+      options: --user 1001 --security-opt no-new-privileges
+    env:
+      PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
+      PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+      PXT_FORCE_LOCAL: 1
+      PXT_NODOCKER: 1
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.branch }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+
+      - run: npm run staticpackage
+
+      - name: Pushes to pxt-lets-steam-static repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: "built/packaged"
+          destination-github-username: "letssteam"
+          destination-repository-name: "pxt-lets-steam-static"
+          user-email: sebastien@nedjar.com
+          user-name: nedseb
+          target-branch: main
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Deploy to digital ocean
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID}} --force-rebuild

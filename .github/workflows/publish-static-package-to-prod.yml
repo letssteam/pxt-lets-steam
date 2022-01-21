@@ -1,9 +1,9 @@
-name: "Publish static package to pxt-lets-steam-static"
+name: "Publish static package to pxt-lets-steam-static and deploy makecode.lets-steam.eu"
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - v1.*
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,4 +52,4 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Deploy to digital ocean
-        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID}} --force-rebuild
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APPLICATION_ID_PROD}} --force-rebuild
