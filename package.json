@@ -1,5 +1,5 @@
 {
-  "name": "pxt-lets-steam",
+  "name": "pxt-stm32-iot-node",
   "version": "0.0.62",
   "description": "MakeCode editor for Let's STEAM project",
   "public": true,
