@@ -61,7 +61,7 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Synchronize editors
         run: |
-          git checkout origin/master
+          git checkout master
           git config user.name nedseb
           git config user.email sebastien@nedjar.com
           git remote add letssteam https://github.com/letssteam/pxt-lets-steam
