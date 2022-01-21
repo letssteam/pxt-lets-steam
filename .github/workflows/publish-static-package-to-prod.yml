@@ -67,8 +67,8 @@ jobs:
           git config user.email sebastien@nedjar.com
           git remote add letssteam https://github.com/letssteam/pxt-lets-steam
           git fetch letssteam --no-tags
-          git merge letssteam/main -m "merge with pxt-lets-steam:${ SOURCE_TAG }"
-          git tag -a ${ SOURCE_TAG } -m "${ SOURCE_TAG }"
+          git merge letssteam/main -m "merge with pxt-lets-steam:$SOURCE_TAG"
+          git tag -a $SOURCE_TAG -m "$SOURCE_TAG"
           git push origin master
         env:
           SOURCE_NAME: ${{ steps.branch_name.outputs.SOURCE_NAME }}
