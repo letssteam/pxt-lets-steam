@@ -2,6 +2,8 @@ name: "Publish static package to pxt-lets-steam-static and deploy makecode.lets-
 
 on:
   push:
+    branches-ignore:
+      - "!main"
     tags:
       - v1.*
 jobs:
@@ -41,6 +43,22 @@ jobs:
           user-email: sebastien@nedjar.com
           user-name: nedseb
           target-branch: main
+
+  synchronize:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: "microsoft/pxt-stm32-iot-node"
+      - run: |
+        git config user.name nedseb
+        git config user.email sebastien@nedjar.com
+        git remote add letssteam https://github.com/letssteam/pxt-lets-steam
+        git fetch letssteam
+        git merge letssteam/main -m "bump ${{ github.event.ref }}"
+        git tag -a ${{ github.event.release.tag_name }} -m "bump ${{ github.event.release.tag_name }}"
+        git push origin master
 
   deploy:
     needs: build
