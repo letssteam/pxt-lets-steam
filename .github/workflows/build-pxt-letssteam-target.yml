@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-
+    paths-ignore:
+      - ".github/**"
+      - "package.json"
+      - "package-lock.json"
 jobs:
   build:
     runs-on: ubuntu-latest

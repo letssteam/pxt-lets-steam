@@ -6,6 +6,10 @@ on:
       - main
     tags-ignore:
       - "*.*"
+    paths-ignore:
+      - ".github/**"
+      - "package.json"
+      - "package-lock.json"
 jobs:
   build:
     runs-on: ubuntu-latest
