@@ -54,6 +54,7 @@ jobs:
         with:
           repository: "microsoft/pxt-stm32-iot-node"
           ref: master
+          token: ${{ secrets.API_TOKEN_GITHUB }}
       - run: |
           git config user.name nedseb
           git config user.email sebastien@nedjar.com
