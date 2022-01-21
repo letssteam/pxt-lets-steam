@@ -3,7 +3,7 @@ name: "Publish static package to pxt-lets-steam-static and deploy makecode.lets-
 on:
   push:
     branches-ignore:
-      - "!main"
+      - "*"
     tags:
       - v1.*
 jobs:
@@ -51,6 +51,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: "microsoft/pxt-stm32-iot-node"
+          ref: master
       - run: |
           git config user.name nedseb
           git config user.email sebastien@nedjar.com
