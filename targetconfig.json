@@ -1,18 +1,19 @@
 {
-    "packages": {
-        "approvedOrgs": [
-            "Microsoft",
-            "letssteam",
-            "LabAixBidouille"
-        ],
-        "approvedRepos": [],
-        "preferredRepos": []
-    },
-    "galleries": {
-        "Nucleo 32": "/boards/stm32-nucleo32",
-        "Nucleo 64": "/boards/stm32-nucleo64",
-        "Nucleo 144": "/boards/stm32-nucleo144",
-        "Discovery": "/boards/stm32-discovery",
-        "Boards": "/boards"
-    }
+  "packages": {
+    "approvedOrgs": [
+      "Microsoft",
+      "letssteam",
+      "LabAixBidouille",
+      "STMicroelectronics"
+    ],
+    "approvedRepos": [],
+    "preferredRepos": []
+  },
+  "galleries": {
+    "Nucleo 32": "/boards/stm32-nucleo32",
+    "Nucleo 64": "/boards/stm32-nucleo64",
+    "Nucleo 144": "/boards/stm32-nucleo144",
+    "Discovery": "/boards/stm32-discovery",
+    "Boards": "/boards"
+  }
 }
