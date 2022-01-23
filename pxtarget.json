@@ -15,7 +15,6 @@
     "libs/music",
     "libs/serial",
     "libs/lcd",
-    "libs/storage",
     "libs/accelerometer---lsm6dsl",
     "libs/barometer---lps22hb",
     "libs/distance---vl53l0x",
