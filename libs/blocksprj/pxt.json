@@ -1,7 +1,7 @@
 {
   "name": "{0} block",
   "dependencies": {
-    "core": "file:../stm32-nucleo64-NUCLEO_F4x1RE"
+    "core": "file:../stm32-discovery-DISCO_L475VG_IOT"
   },
   "description": "",
   "files": ["main.blocks", "main.ts", "README.md"]
