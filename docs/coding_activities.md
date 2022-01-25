@@ -1,4 +1,4 @@
-# Activity sheets
+# Activités de découverte
 
 ## Basic
 

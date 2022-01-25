@@ -10,6 +10,8 @@
     "preferredRepos": []
   },
   "galleries": {
-    "Activity sheets": "activities"
+    "Coding activities": "coding_activities",
+    "Inclusiveness": "inclusiveness_activities",
+    "Project Ideas": "project_ideas"
   }
 }
