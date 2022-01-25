@@ -33,6 +33,8 @@
 @pageBackground: @darkGrey;
 @lightPrimaryColor   : @lightBlue;	
 @lightSecondaryColor : @lightGrey;
+@lightTextColor: rgba(255, 255, 255, 0.68);
+
 
 /*--------------
    Form Input
@@ -131,13 +133,13 @@
 --------------------*/
 
 @homeScreenBackground: @darkGrey;
-@homeCardBackgroundColor: @darkGreen;
+@homeCardBackgroundColor: lighten(@blue, 15%);
 @homeHeaderColor: white;
 @homeCardColor: #bdcadb;
 @homeCardBorderRadius: 5px;
 @homeCardBorderSize: 2px;
 @homeCardBorderColor: lighten(@darkGreen, 10%);
-@homeCardHoverBorderColor: #bdcadb;
+@homeCardHoverBorderColor: white;
 @homeCardImageBorderRadius: 5px;
 
 /*-------------------

@@ -66,13 +66,13 @@
 },
 {
   "name": "Fabriquer un thermomètre très très lisible",
-  "description": "",
+  "description": "Dans cette activité, nous allons apprendre à quel point il est facile de lire le capteur de température de la carte et d'afficher sa valeur sur un écran LCD",
   "url": "https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS11-Thermometre.pdf",
   "imageUrl": "/static/activities/11.png"
 },
 {
   "name": "Alarme de détection de mouvement",
-  "description": "",
+  "description": "Dans cette fiche d'activité, nous allons travailler sur un détecteur de mouvement comprenant une alarme avec 2 types de protections",
   "url": "https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS12-Alarme_détection_mouvement.pdf",
   "imageUrl": "/static/activities/12.png"
 },
@@ -90,7 +90,7 @@
 },
 {
   "name": "Collecter des données",
-  "description": "",
+  "description": "Cette fiche d'activité explique comment collecter les données d'un capteur environnemental et les exporter vers un ordinateur afin d'effectuer une analyse simple à l'aide d'un tableur.",
   "url": "https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS15-Collecter_donnees.pdf",
   "imageUrl": "/static/activities/15.png"
 }

@@ -1,3 +1,18 @@
 # Projects
 
 * [Activity sheets](/activities)
+  * [Faisons clignoter une LED](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS01-Faisons_clignoter_une_led.pdf)
+  * [Breadboard](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS02-Breadboard.pdf)
+  * [Boutons et affichage LED](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS03-Boutons_affichage_LED.pdf)
+  * [Capteur de lumière](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS04-Capteurs_lumiere.pdf)
+  * [Potentiomètre](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS05-Potentiomètre.pdf)
+  * [Code Morse](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS06-Code_morse.pdf)
+  * [Fabriquer un thérémine](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS07-Theremine.pdf)
+  * [Musique](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS08-Musique.pdf)
+  * [Capteur d'inclinaison avec un accéléromètre](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS09-Capteur_inclinaison.pdf)
+  * [Affichage texte avec un écran OLED](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS10-Affichage_texte.pdf)
+  * [Fabriquer un thermomètre très très lisible](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS11-Thermometre.pdf)
+  * [Alarme de détection de mouvement](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS12-Alarme_détection_mouvement.pdf)
+  * [Les servos font bouger les choses](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS13-Servomoteur.pdf)
+  * [Créer un minuteur pour avoir des oeufs parfaitement cuits](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS14-Minuteur_oeufs.pdf)
+  * [Collecter des données](https://nbviewer.org/github/letssteam/ActivitySheets/blob/main/FR/R1/R1AS15-Collecter_donnees.pdf)
