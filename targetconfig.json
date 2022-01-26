@@ -43,11 +43,7 @@
       "makecode-extensions/HTS221",
       "microsoft/ExpressivePixelsMakeCode"
     ],
-    "preferredRepos": [
-      "Microsoft/pxt-neopixel",
-      "Microsoft/pxt-sonar",
-      "Microsoft/pxt-microturtle"
-    ],
+    "preferredRepos": ["Microsoft/pxt-neopixel"],
 
     "approvedEditorExtensionUrls": [
       "https://microsoft.github.io/ml4f/",
