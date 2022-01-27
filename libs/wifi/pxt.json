@@ -1,6 +1,6 @@
 {
   "name": "wifi",
-  "description": "Wifi services",
+  "description": "Wifi support for the module ISM43362-M3G-L44",
   "files": ["enums.d.ts", "shims.d.ts", "wifi.ts", "wifi.cpp"],
   "public": true,
   "dependencies": {

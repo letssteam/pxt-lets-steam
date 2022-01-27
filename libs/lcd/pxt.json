@@ -1,6 +1,6 @@
 {
   "name": "lcd",
-  "description": "Characeter lcd driver",
+  "description": "Support for I2C Characeter LCD display with RGB backlight",
   "dependencies": {
     "core": "file:../core---stm32"
   },

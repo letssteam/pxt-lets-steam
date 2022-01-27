@@ -1,5 +1,6 @@
 {
-  "name": "radio-ble",
+  "name": "magnetics",
+  "description": "Radio service for mesh networking",
   "files": [
     "radioBLE.cpp",
     "target_radioBLE.h",

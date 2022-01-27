@@ -1,5 +1,5 @@
 {
-  "name": "ssd1306",
+  "name": "oled",
   "description": "Support for OLED display based on the SSD1306",
   "files": [
     "ns.ts",
