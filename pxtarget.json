@@ -21,11 +21,8 @@
     "libs/thermometer---hts221",
     "libs/hygrometer---hts221",
     "libs/ssd1306",
-<<<<<<< HEAD
-    "libs/wifi"
-=======
+    "libs/wifi",
     "libs/radio-ble"
->>>>>>> Add BLE radio first version
   ],
   "cloud": {
     "workspace": false,
