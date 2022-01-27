@@ -20,9 +20,9 @@
     "libs/distance---vl53l0x",
     "libs/thermometer---hts221",
     "libs/hygrometer---hts221",
-    "libs/ssd1306",
+    "libs/oled",
     "libs/wifi",
-    "libs/radio-ble"
+    "libs/magnetics"
   ],
   "cloud": {
     "workspace": false,
