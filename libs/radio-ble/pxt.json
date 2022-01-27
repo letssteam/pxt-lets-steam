@@ -1,0 +1,13 @@
+{
+  "name": "radio-ble",
+  "files": [
+    "radioBLE.cpp",
+    "target_radioBLE.h",
+    "shims.d.ts",
+    "enums.d.ts",
+    "ns.ts"
+  ],
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}

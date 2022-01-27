@@ -36,9 +36,9 @@ struct F4_Settings {
 #define BOOT_RTC_SIGNATURE 0x71a21877
 #define APP_RTC_SIGNATURE 0x24a22d12
 #define HF2_RTC_SIGNATURE 0x39a63a78
-#define QUICK_BOOT(v)                                                                              \
-    do {                                                                                           \
-        RTC->BKP0R = v ? APP_RTC_SIGNATURE : HF2_RTC_SIGNATURE;                                    \
+#define QUICK_BOOT(v)                                                                                                            \
+    do {                                                                                                                         \
+        RTC->BKP0R = v ? APP_RTC_SIGNATURE : HF2_RTC_SIGNATURE;                                                                  \
     } while (0)
 #else
 #define QUICK_BOOT(v) ((void)0)
@@ -142,6 +142,23 @@ struct F4_Settings {
 #define PD_13 0x3D
 #define PD_14 0x3E
 #define PD_15 0x3F
+
+#define PE_0 0x40
+#define PE_1 0x41
+#define PE_2 0x42
+#define PE_3 0x43
+#define PE_4 0x44
+#define PE_5 0x45
+#define PE_6 0x46
+#define PE_7 0x47
+#define PE_8 0x48
+#define PE_9 0x49
+#define PE_10 0x4A
+#define PE_11 0x4B
+#define PE_12 0x4C
+#define PE_13 0x4D
+#define PE_14 0x4E
+#define PE_15 0x4F
 #endif
 
 #endif

@@ -17,7 +17,8 @@
     "core---stm32": "file:../core---stm32",
     "distance---vl53l0x": "file:../distance---vl53l0x",
     "hygrometer---hts221": "file:../hygrometer---hts221",
-    "thermometer---hts221": "file:../thermometer---hts221"
+    "thermometer---hts221": "file:../thermometer---hts221",
+    "radio-ble": "file:../radio-ble"
   },
   "core": true,
   "public": true,
