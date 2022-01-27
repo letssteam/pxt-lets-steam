@@ -58,4 +58,11 @@ namespace config {
 
     export const PIN_LSM6DSL_SDA = DAL.PB_11;
     export const PIN_LSM6DSL_SCL = DAL.PB_10;
+
+    export const PIN_BLE_SPI_MOSI = DAL.PC_12;
+    export const PIN_BLE_SPI_MISO = DAL.PC_11;
+    export const PIN_BLE_SPI_SCLK = DAL.PC_10;
+    export const PIN_BLE_SPI_CS = DAL.PD_13;
+    export const PIN_BLE_SPI_IRQ = DAL.PE_6;
+    export const PIN_BLE_RST = DAL.PA_8;
 }
