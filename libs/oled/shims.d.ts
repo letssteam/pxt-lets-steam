@@ -2,6 +2,16 @@
 declare namespace oled {
 
     /**
+     * @brief Initialized screen
+     *
+     */
+    //% group="More" advanced=true
+    //% help=screen/ssd1306_init_screen
+    //% blockId=ssd1306_init_screen block="Initialized screen on address 0x%address, with width %width and height %height"
+    //% parts="ssd1306" weight=95 address.defl=78 width.defl=128 height.defl=64 shim=oled::initScreen
+    function initScreen(address?: string, width?: uint16, height?: uint16): void;
+
+    /**
      * @brief Print string on screen at the given position
      *
      * @param x pixel coordinate on X axis
