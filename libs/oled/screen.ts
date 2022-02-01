@@ -24,6 +24,7 @@ namespace oled {
         return ((screenHeight - textOffset) / lineHeight()) >> 0
     }
 
+
     /**
      * Fill a rectangle with specific color
      * @param x x-coordinate in pixel of the upper left corner

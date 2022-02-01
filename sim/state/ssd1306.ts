@@ -8,6 +8,8 @@ namespace pxsim.oled{
     const BLACK_COLOR_SVG = "#00435E";
     const WHITE_COLOR_SVG = "#FFFFFF";
 
+    export function initScreen(address?: string, width?: number, height?: number) : void{}
+
     export function printString(str: string, color: PixelColor, x: number, y: number): void{
 
         let state = ssd1306State();
