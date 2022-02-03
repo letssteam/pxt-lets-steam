@@ -26,7 +26,7 @@ namespace wifi {
     //% blockId=wifi_attach block="connect to the wifi network|SSID %ssid|password %password"
     //% blockExternalInputs=1
     export function attach(ssid: string, password: string): void {
-
+        connectToANetwork(ssid, password);
     }
 
     /**
@@ -35,7 +35,7 @@ namespace wifi {
     //% weight=209
     //% blockId=wifi_is_connected block="network connected?"
     export function isAttached(ssid: string = null): boolean {
-        return false;
+        return connected();
     }
 
     /**
@@ -44,6 +44,7 @@ namespace wifi {
     //% weight=209
     //% blockId=wifi_detach block="disconnect from wifi network"
     export function detach(): void {
+        disconnectFromANetwork();
     }
 
     /**

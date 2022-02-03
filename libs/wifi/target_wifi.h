@@ -8,6 +8,7 @@ class WWifi {
 
   public:
     IsmDrvClass wifi;
+    uint8_t wifi_status = WL_IDLE_STATUS;
 
     WWifi()
         : spi(pxt::getSPI(LOOKUP_PIN(WIFI_ISM43362_MOSI), LOOKUP_PIN(WIFI_ISM43362_MISO), LOOKUP_PIN(WIFI_ISM43362_SCK))),
