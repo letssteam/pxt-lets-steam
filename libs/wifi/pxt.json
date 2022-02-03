@@ -1,7 +1,7 @@
 {
   "name": "wifi",
   "description": "Wifi support for the module ISM43362-M3G-L44",
-  "files": ["enums.d.ts", "shims.d.ts", "wifi.ts", "wifi.cpp"],
+  "files": ["enums.d.ts", "shims.d.ts", "wifi.ts", "wifi.cpp", "target_wifi.h"],
   "public": true,
   "dependencies": {
     "core": "file:../core"

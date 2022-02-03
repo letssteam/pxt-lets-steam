@@ -16,7 +16,7 @@ namespace wifi {
     //% weight=209
     //% blockId=wifi_networks_visible block="Get the number of visible wifi networks"
     export function networksVisible():number{
-        return 1;
+        return numberOfNetworksVisible();
     }
 
     /**
