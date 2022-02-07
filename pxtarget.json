@@ -38,7 +38,7 @@
   },
 
   "serial": {
-    "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
+    "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP|STM32L475 CMSIS-DAP)",
     "useHF2": false,
     "useEditor": true,
     "log": true,
