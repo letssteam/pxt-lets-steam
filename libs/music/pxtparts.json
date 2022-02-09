@@ -19,7 +19,7 @@
     },
     "pinDefinitions": [
       {
-        "target": "D2",
+        "target": "D3",
         "style": "croc",
         "orientation": "Y"
       },
