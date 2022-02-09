@@ -72,17 +72,32 @@ struct F4_Settings {
 
 #define IMAGE_BITS 4
 
+#define ALT0 0x000
+#define ALT1 0x100
+#define ALT2 0x200
+
 // The parameters below needs tuning!
 
 #ifdef JUST_FOR_DAL_D_TS_CPP_WILL_IGNORE
+
 #define PA_0 0x00
+#define PA_0_ALT0 PA_0 | ALT0
 #define PA_1 0x01
+#define PA_1_ALT0 PA_1 | ALT0
 #define PA_2 0x02
+#define PA_2_ALT0 PA_2 | ALT0
 #define PA_3 0x03
+#define PA_3_ALT0 PA_3 | ALT0
 #define PA_4 0x04
+#define PA_4_ALT0 PA_4 | ALT0
 #define PA_5 0x05
+#define PA_5_ALT0 PA_5 | ALT0
 #define PA_6 0x06
+#define PA_6_ALT0 PA_6 | ALT0
 #define PA_7 0x07
+#define PA_7_ALT0 PA_7 | ALT0
+#define PA_7_ALT1 PA_7 | ALT1
+#define PA_7_ALT2 PA_7 | ALT2
 #define PA_8 0x08
 #define PA_9 0x09
 #define PA_10 0x0A
@@ -91,41 +106,71 @@ struct F4_Settings {
 #define PA_13 0x0D
 #define PA_14 0x0E
 #define PA_15 0x0F
-
+#define PA_15_ALT0 PA_15 | ALT0
 #define PB_0 0x10
+#define PB_0_ALT0 PB_0 | ALT0
+#define PB_0_ALT1 PB_0 | ALT1
 #define PB_1 0x11
+#define PB_1_ALT0 PB_1 | ALT0
+#define PB_1_ALT1 PB_1 | ALT1
 #define PB_2 0x12
 #define PB_3 0x13
+#define PB_3_ALT0 PB_3 | ALT0
 #define PB_4 0x14
+#define PB_4_ALT0 PB_4 | ALT0
 #define PB_5 0x15
+#define PB_5_ALT0 PB_5 | ALT0
 #define PB_6 0x16
+#define PB_6_ALT0 PB_6 | ALT0
 #define PB_7 0x17
+#define PB_7_ALT0 PB_7 | ALT0
 #define PB_8 0x18
+#define PB_8_ALT0 PB_8 | ALT0
 #define PB_9 0x19
+#define PB_9_ALT0 PB_9 | ALT0
 #define PB_10 0x1A
 #define PB_11 0x1B
 #define PB_12 0x1C
 #define PB_13 0x1D
+#define PB_13_ALT0 PB_13 | ALT0
 #define PB_14 0x1E
+#define PB_14_ALT0 PB_14 | ALT0
+#define PB_14_ALT1 PB_14 | ALT1
 #define PB_15 0x1F
-
+#define PB_15_ALT0 PB_15 | ALT0
+#define PB_15_ALT1 PB_15 | ALT1
 #define PC_0 0x20
+#define PC_0_ALT0 PC_0 | ALT0
+#define PC_0_ALT1 PC_0 | ALT1
 #define PC_1 0x21
+#define PC_1_ALT0 PC_1 | ALT0
+#define PC_1_ALT1 PC_1 | ALT1
 #define PC_2 0x22
+#define PC_2_ALT0 PC_2 | ALT0
+#define PC_2_ALT1 PC_2 | ALT1
 #define PC_3 0x23
+#define PC_3_ALT0 PC_3 | ALT0
+#define PC_3_ALT1 PC_3 | ALT1
 #define PC_4 0x24
+#define PC_4_ALT0 PC_4 | ALT0
 #define PC_5 0x25
+#define PC_5_ALT0 PC_5 | ALT0
 #define PC_6 0x26
+#define PC_6_ALT0 PC_6 | ALT0
 #define PC_7 0x27
+#define PC_7_ALT0 PC_7 | ALT0
 #define PC_8 0x28
+#define PC_8_ALT0 PC_8 | ALT0
 #define PC_9 0x29
+#define PC_9_ALT0 PC_9 | ALT0
 #define PC_10 0x2A
+#define PC_10_ALT0 PC_10 | ALT0
 #define PC_11 0x2B
+#define PC_11_ALT0 PC_11 | ALT0
 #define PC_12 0x2C
 #define PC_13 0x2D
 #define PC_14 0x2E
 #define PC_15 0x2F
-
 #define PD_0 0x30
 #define PD_1 0x31
 #define PD_2 0x32
@@ -142,7 +187,6 @@ struct F4_Settings {
 #define PD_13 0x3D
 #define PD_14 0x3E
 #define PD_15 0x3F
-
 #define PE_0 0x40
 #define PE_1 0x41
 #define PE_2 0x42
@@ -159,6 +203,7 @@ struct F4_Settings {
 #define PE_13 0x4D
 #define PE_14 0x4E
 #define PE_15 0x4F
+
 #endif
 
 #endif

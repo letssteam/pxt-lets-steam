@@ -10,7 +10,7 @@ struct TimerConfig {
     TIM_TypeDef *addr;
 };
 
-#define DEF_TIM(n)                                                                                 \
+#define DEF_TIM(n)                                                                                                               \
     { 0x10 + n, TIM##n##_IRQn, TIM##n }
 
 static const TimerConfig timers[] = {
@@ -59,8 +59,7 @@ static const TimerConfig timers[] = {
 #ifdef TIM15
     DEF_TIM(15),
 #endif
-{0,0,0}
-};
+    {0, 0, 0}};
 
 #ifdef STM32F1
 #define DEF_TIMERS 0x14120000 // TIM4 TIM2
@@ -95,11 +94,9 @@ LowLevelTimer *allocateTimer() {
     return NULL;
 }
 
-
 void initAccelRandom();
 #ifdef STM32F4
-extern "C" void apply_clock_init(RCC_OscInitTypeDef *oscInit, RCC_ClkInitTypeDef *clkConfig,
-                                 uint32_t flashLatency) {
+extern "C" void apply_clock_init(RCC_OscInitTypeDef *oscInit, RCC_ClkInitTypeDef *clkConfig, uint32_t flashLatency) {
 
     int mhz = getConfig(CFG_CPU_MHZ, 84);
 
@@ -143,8 +140,7 @@ extern "C" void apply_clock_init(RCC_OscInitTypeDef *oscInit, RCC_ClkInitTypeDef
         target_panic(PANIC_CODAL_HARDWARE_CONFIGURATION_ERROR);
     }
 
-    DMESG("CPU clock: %dMHz -> %dMHz", mhz,
-          oscInit->PLL.PLLN / (oscInit->PLL.PLLP == RCC_PLLP_DIV4 ? 4 : 2));
+    DMESG("CPU clock: %dMHz -> %dMHz", mhz, oscInit->PLL.PLLN / (oscInit->PLL.PLLP == RCC_PLLP_DIV4 ? 4 : 2));
 
     if (mhz > 108) {
         clkConfig->APB1CLKDivider = RCC_HCLK_DIV4;
