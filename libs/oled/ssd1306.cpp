@@ -8,6 +8,13 @@ enum class PixelColor {
     White = 1
 };
 
+enum class AddressScreen {
+    //% block="0x78"
+    x74 = 0x78,
+    //% block="0x7A"
+    x7A = 0x7A
+};
+
 namespace pxt {
 SINGLETON(WSSD1306);
 }
@@ -25,25 +32,16 @@ constexpr uint16_t toLocalColor(PixelColor color) {
     return (color == PixelColor::Black ? 0 : 1);
 }
 
-uint16_t parseStrHex(std::string str) {
-
-    if (str.size() > 4) {
-        return std::stoul(str.substr(0, 4), nullptr, 16);
-    }
-
-    return std::stoul(str, nullptr, 16);
-}
-
 /**
  * @brief Initialized screen
  *
  */
 //% group="More" advanced=true
 //% help=screen/ssd1306_init_screen
-//% blockId=ssd1306_init_screen block="Initialized screen on address 0x%address, with width %width and height %height"
-//% parts="ssd1306" weight=95 address.defl=78 width.defl=128 height.defl=64
-void initScreen(String address, uint16_t width, uint16_t height) {
-    getWSSD1306()->initScreen(parseStrHex(address->getUTF8Data()), width, height);
+//% blockId=ssd1306_init_screen block="Initialized screen on address %address, with width %width and height %height"
+//% parts="ssd1306" weight=95 address.defl=0x74 width.defl=128 height.defl=64
+void initScreen(AddressScreen address, uint16_t width, uint16_t height) {
+    getWSSD1306()->initScreen((uint16_t)address, width, height);
 }
 
 /**
