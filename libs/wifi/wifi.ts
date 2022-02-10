@@ -1,128 +1,117 @@
-enum MessageType {
-    UDP,
-    TCP
-}
-
 /**
  * Support for additional wifi services.
  */
-//%weight=40 icon="\uf1eb" color=#ff5caa 
+//%weight=40 icon="\uf1eb" color=#ff5caa
 namespace wifi {
-    let ERROR = false;
+  let attached: boolean = false;
+  let initialized: boolean = false;
 
-    /**
-     * Get the number of networks visible.
-     */
-    //% weight=209
-    //% blockId=wifi_networks_visible block="Get the number of visible wifi networks"
-    export function networksVisible():number{
-        return numberOfNetworksVisible();
-    }
+  let onReceivedHttpResponseHandler: (code: number, message: string) => void;
 
-    /**
-     * Connect to the wifi network.
-     */
-    //% weight=209
-    //% blockId=wifi_attach block="connect to the wifi network|SSID %ssid|password %password"
-    //% blockExternalInputs=1
-    export function attach(ssid: string, password: string): void {
-        connectToANetwork(ssid, password);
-    }
+  function handleDataReceived(): void {
+    onReceivedHttpResponseHandler(200, "OK");
+  }
 
-    /**
-     * Check if we are connected to the wifi network.
-     */
-    //% weight=209
-    //% blockId=wifi_is_connected block="network connected?"
-    export function isAttached(ssid: string = null): boolean {
-        return connected();
-    }
+  function init() {
+    if (initialized) return;
+    onReceivedData(handleDataReceived);
+    initialized = true;
+  }
 
-    /**
-     * Disconnect from the wifi network.
-     */
-    //% weight=209
-    //% blockId=wifi_detach block="disconnect from wifi network"
-    export function detach(): void {
-        disconnectFromANetwork();
-    }
+  /**
+   * Registers code to run when data are available on the socket.
+   */
+  //% group=HTTP
+  //% blockId=wifi_http_on_received_response
+  //% block="on HTTP-Response received"
+  //% draggableParameters=reporter
+  //% blockGap = 16
+  //% weight=39
+  export function onReceivedHttpResponse(
+    cb: (code: number, message: string) => void
+  ): void {
+    init();
+    onReceivedHttpResponseHandler = cb;
+  }
 
-    /**
-     * Send a message via wifi.
-     * @param {string} type send as TCP or UDP, eg: MessageType.TCP
-     * @param {string} address the server address
-     * @param {number} port the server port to send to, eg: 8080
-     * @param {string} message the actual data to send
-     */
-    //% weight=70 advanced=true
-    //% blockId=wifi_send block="send raw message|type %type|server %address|port %port|message %message"
-    //% blockExternalInputs=1
-    export function send(type: MessageType, address: string, port: number, message: string): void {
-    }
+  /**
+   * Get the number of networks visible.
+   */
+  //% weight=209
+  //% blockId=wifi_networks_visible block="Get the number of visible wifi networks"
+  //% shim=wifi::networksVisible
+  export function networksVisible(): number {
+    return 1;
+  }
 
-    /**
-     * Check if the last send operation was successful.
-     * Also reset the status.
-     */
-    //% weight=70 advanced=true
-    //% blockId=wifi_sendOk block="send success?"
-    export function sendOk(): boolean {
-        return false;
-    }
+  /**
+   * Connect to the wifi network.
+   */
+  //% weight=209
+  //% blockId=wifi_attach block="connect to the wifi network|SSID %ssid|password %password"
+  //% blockExternalInputs=1
+  //% shim=wifi::attach
+  export function attach(ssid: string, passphrase: string): void {
+    attached = true;
+  }
 
-    /**
-     * The HTTP get request.url(string):URL:time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
-    */
-    //%group=HTTP
-    //% weight=79
-    //% blockId=wifi_http_get
-    //% block="HTTP GET|url %url|timeout(ms) %time"
-    //% advanced=false
-    export function sendHttpGet(url: string, time: number): void {
-    }
+  /**
+   * Check if we are connected to the wifi network.
+   */
+  //% weight=209
+  //% blockId=wifi_is_connected block="network connected?"
+  //% shim=wifi::isAttached
+  export function isAttached(): boolean {
+    return attached;
+  }
 
-    /**
-     * The HTTP post request.url(string): URL; content(string):content
-     * time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
-    */
-    //%group=HTTP advanced=true
-    //% weight=78
-    //% blockId=wifi_http_post
-    //% block="HTTP POST|url %url|content %content|timeout(ms) %time"
-    export function sendHttpPost(url: string, content: string, time: number): void { 
-    }
+  /**
+   * Disconnect from the wifi network.
+   */
+  //% weight=209
+  //% blockId=wifi_detach block="disconnect from wifi network"
+  //% shim=wifi::detach
+  export function detach(): void {
+    attached = false;
+  }
 
-    /**
-     * The HTTP put request.url(string): URL; content(string):content
-     * time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
-    */
-    //%group=HTTP advanced=true
-    //% weight=78
-    //% blockId=wifi_http_put
-    //% block="HTTP PUT|url %url|content %content|timeout(ms) %time"
-    export function sendHttpPut(url: string, content: string, time: number): void { 
-    }
+  /**
+   * The HTTP get request.
+   * @param url url to get
+   * @param time set timeout, eg: 10000
+   */
+  //%group=HTTP
+  //% weight=79
+  //% blockId=wifi_http_get
+  //% block="HTTP GET|host %host|path %urlPath|timeout(ms) %time"
+  //% advanced=false
+  export function sendHttpGet(
+    host: string,
+    urlPath: string,
+    time: number
+  ): void {
+    executeHttpMethod(HttpMethod.GET, host, 80, urlPath, "", "", time);
 
-    /**
-     * The HTTP delete request.url(string): URL; content(string):content
-     * time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
-    */
-    //%group=HTTP advanced=true
-    //% weight=78
-    //% blockId=wifi_http_delete
-    //% block="HTTP DELETE|url %url|content %content|timeout(ms) %time"
-    export function sendHttpDelete(url: string, content: string, time: number): void { 
-    }
+    let url = "http://" + host + urlPath;
+    console.log("HTTP GET: " + url);
+  }
 
-    //% group=HTTP
-    //% blockId=wifi_http_on_received_response block="on HTTP-Response received" 
-    //% blockGap = 16
-    //% weight=39	
-    export function onReceivedHttpResponse(cb: (code: number, message: string) => void): void {
-        
-    }
+  /**
+   * The HTTP post request.
+   * @param time set timeout, eg: 10000
+   */
+  //%group=HTTP advanced=true
+  //% weight=78
+  //% blockId=wifi_http_post
+  //% block="HTTP POST|host %host|path %urlPath|content %content|timeout(ms) %time"
+  export function sendHttpPost(
+    host: string,
+    urlPath: string,
+    content: string,
+    time: number
+  ): void {
+    executeHttpMethod(HttpMethod.POST, host, 80, urlPath, "", content, time);
+    let url = "http://" + host + urlPath;
+    console.log("HTTP POST: " + url + " " + content);
+  }
 }
