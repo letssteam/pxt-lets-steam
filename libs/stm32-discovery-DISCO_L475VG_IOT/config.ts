@@ -107,8 +107,8 @@ namespace config {
     export const PIN_D14 = DAL.PB_9;
     export const PIN_D15 = DAL.PB_8;
 
-    export const PIN_RX = PIN_UART3_RX;
-    export const PIN_TX = PIN_UART3_TX;
+    export const PIN_RX = PIN_UART1_RX;
+    export const PIN_TX = PIN_UART1_TX;
 
     export const PIN_MISO = PIN_SPI1_MISO;
     export const PIN_MOSI = PIN_SPI1_MOSI;
