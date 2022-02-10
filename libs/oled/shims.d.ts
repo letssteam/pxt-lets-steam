@@ -8,7 +8,7 @@ declare namespace oled {
     //% group="More" advanced=true
     //% help=screen/ssd1306_init_screen
     //% blockId=ssd1306_init_screen block="Initialized screen on address %address, with width %width and height %height"
-    //% parts="ssd1306" weight=95 address.defl=0x78 width.defl=128 height.defl=64 shim=oled::initScreen
+    //% parts="ssd1306" weight=95 address.defl=0x74 width.defl=128 height.defl=64 shim=oled::initScreen
     function initScreen(address?: AddressScreen, width?: uint16, height?: uint16): void;
 
     /**
