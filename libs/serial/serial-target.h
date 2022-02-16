@@ -6,22 +6,21 @@ enum class SerialEvent;
 enum class BaudRate;
 enum class Delimiters;
 
-namespace serial {
+namespace Serial {
 
-class CodalSerialDeviceProxy {
+class CodalSTMSerialDeviceProxy {
   private:
     DevicePin *tx;
     DevicePin *rx;
 
   public:
     CODAL_SERIAL ser;
-    CodalSerialDeviceProxy *next;
+    CodalSTMSerialDeviceProxy *next;
 
-    CodalSerialDeviceProxy(DevicePin *_tx, DevicePin *_rx, uint16_t id) : tx(_tx), rx(_rx), ser(*tx, *rx), next(NULL) {
+    CodalSTMSerialDeviceProxy(DevicePin *_tx, DevicePin *_rx, uint16_t id) : tx(_tx), rx(_rx), ser(*tx, *rx), next(NULL) {
         if (id <= 0)
             id = allocateNotifyEvent();
         ser.id = id;
-        // ser.setBaud(115200);
         ser.init(115200);
     }
 
@@ -88,6 +87,6 @@ class CodalSerialDeviceProxy {
     }
 };
 
-typedef CodalSerialDeviceProxy *SerialDevice;
+typedef CodalSTMSerialDeviceProxy *STMSerialDevice;
 
-} // namespace serial
+} // namespace Serial

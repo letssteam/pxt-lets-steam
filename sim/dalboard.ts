@@ -35,7 +35,8 @@ namespace pxsim {
         HygrometerBoard,
         BarometerBoard,
         CompassBoard,
-        SSD1306Board{
+        SSD1306Board,
+        SerialBoard{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -64,6 +65,8 @@ namespace pxsim {
         pressureUnitState: PressureUnit;
         compassState: CompassState;
         ssd1306State: SSD1306State;
+
+        serialState: STMSerialState;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -134,7 +137,7 @@ namespace pxsim {
             this.barometerState = new AnalogSensorState(DAL.DEVICE_ID_PRESSURE, 980, 1050);
             this.pressureUnitState = PressureUnit.HectoPascal;
             this.ssd1306State = new SSD1306State();
-
+            this.serialState = new STMSerialState(runtime, this);
 
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -214,11 +217,14 @@ namespace pxsim {
 
             this.builtinParts["barometer"] = () => new BarometerState( this.hygrometerState, this.pressureUnitState );
             this.builtinVisuals["barometer"] = () => new visuals.BarometerView();
+
             this.builtinParts["compass"] = this.compassState = new CompassState();
 
             this.builtinParts["ssd1306"] = this.ssd1306State;
             this.builtinVisuals["ssd1306"] = () => new visuals.SSD1306View();
             this.builtinPartVisuals["ssd1306"] = (xy: visuals.Coord) => visuals.mkSSD1306Part(xy);
+
+            this.builtinParts["serial"] = this.serialState;
         }
 
         kill() {
