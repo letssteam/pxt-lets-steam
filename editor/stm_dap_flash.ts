@@ -112,7 +112,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async startSerial(baudrateSerial: number){
-        return; 
+        //return; 
 
         if(this.lock_serial){
             return;
@@ -138,7 +138,7 @@ export class STMDAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async stopSerial(){
-        return; 
+        //return; 
         
         this.target.on(DAPjs.DAPLink.EVENT_SERIAL_DATA, (data: string) => {});
         this.target.stopSerialRead();
