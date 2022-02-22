@@ -22,7 +22,8 @@
     "libs/hygrometer---hts221",
     "libs/oled",
     "libs/wifi",
-    "libs/magnetics"
+    "libs/magnetics",
+    "libs/datalogger"
   ],
   "cloud": {
     "workspace": false,
