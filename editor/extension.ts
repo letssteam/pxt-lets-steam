@@ -43,7 +43,8 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         </div>
         <div style="padding: 16px; background-color: white;">
             <p>
-                ${lf("Your program is uploading to your target, please wait.")}
+                ${lf("Your program is uploading to your target, please wait.")}<br/><br/>
+                <i>${lf("Do not unplugged your board, do not close this tab nor change tab during uploading.")}</i><br/>
             </p>
             <div style="background-color: #cfcfcf; height: 20px; border-radius: 10px; overflow: hidden;">
                 <p id="upload_modal_value" style="float: left; width: 100%; height: 100%; text-align: center">0%</p>
@@ -94,10 +95,10 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
                     document.getElementById("upload_modal_message").innerHTML = `<span style="color: #22AA22">Upload complete !</span>`
                 }
                 else if( error instanceof Error) {
-                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: [${error.name}] ${error.message}`;
+                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: [${error.name}] ${error.message}<br/><br/>Try unplugging your card and then plugging it back in.`;
                 }
                 else {
-                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: ${error}`;
+                    document.getElementById("upload_modal_message").innerHTML = `<span style="color: #FF5500">Upload failed !</span><br>Reason: ${error}<br/><br/>Try unplugging your card and then plugging it back in.`;
                 }
     
                 document.getElementById("upload_modal_button").style.display = "block";
