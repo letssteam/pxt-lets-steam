@@ -63,25 +63,30 @@ namespace datalogger {
             if (!_headersWritten) {
                 //_storage.appendHeaders(_headers);
                 sendHeaders();
-                if (_console)
-                    console.log(_headers.slice(1, _headers.length).join(', '));
+                if (_console){
+                    console.log(_headers.slice(1));
+                }
                 _headersWritten = true;
             }
             // commit row data
             if (_samplingInterval <= 0 || control.millis() - _lastSampleTime >= _samplingInterval) {
+
                 // average data
                 if (_sampleCount > 1) {
                     for(let i = 1; i < _row.length; ++i) {
                         _row[i] /= _sampleCount;
                     }
                 }
+
                 // append row
                 //_storage.appendRow(_row);
                 sendRow();
+
                 if (_console) {
                     // drop time
-                    console.log(_row.slice(1, _row.length).join(','));
+                    console.log(_row.slice(1));
                 }
+
                 // clear values
                 _row = undefined;
                 _sampleCount = 1;
@@ -119,17 +124,25 @@ namespace datalogger {
     //% help=datalogger/add-value
     export function addValue(name: string, value: number) {
         if (!_row) return;
+
+        let idx = -1;
+
         // happy path
         if (_headers[_row.length] === name)
-            _row.push(value);
+            //_row.push(value);
+            idx = _row.length;
         else {
-            let i = _headers.indexOf(name);
-            if (i < 0) {
+            idx = _headers.indexOf(name);
+            if (idx < 0) {
                 _headers.push(name);
-                i = _headers.length - 1;
+                idx = _headers.length - 1;
             }
-            _row[i] += value;
         }
+
+        if( _row[idx] == undefined )
+            _row[idx] = value;
+        else
+            _row[idx] += value;
     }
 
     /**
