@@ -1,20 +1,11 @@
-enum LogSeparator {
-    //% block="tab"
-    Tab = 0x09,
-    //% block="comma"
-    Comma = 0x2c,
-    //% block="semicolon"
-    Semicolon = 0x3b
-};
-
 /**
  * A tiny data logging framework
  */
 //% weight=80 color=#00a0a0 icon="" blockGap=8
 //% groups='["Data", "Configuration"]'
 namespace datalogger {
-    export let SEPARATOR = String.fromCharCode(LogSeparator.Tab);
 
+    let separator = ',';
     let _headers: string[] = undefined;
     let _headersWritten: boolean = false;
     let _row: number[] = undefined;
@@ -31,13 +22,13 @@ namespace datalogger {
     }
 
     function sendHeaders(){
-        const line = _headers.join(SEPARATOR);
-        Serial.writeLine(`sep=${SEPARATOR}`);
+        const line = _headers.join(separator);
+        Serial.writeLine(`sep=${separator}`);
         Serial.writeLine(line);
     }
 
     function sendRow(){
-        const line = _row.join(SEPARATOR);
+        const line = _row.join(separator);
         Serial.writeLine(line);
     }
 
@@ -53,7 +44,7 @@ namespace datalogger {
         _sampleCount = 1;
         _lastSampleTime = control.millis();
         const s = (_lastSampleTime - _start) / 1000;
-        addValue("time (s)", s);
+        addValue("time", s);
     }
 
     function commitRow() {
@@ -187,18 +178,5 @@ namespace datalogger {
     //% help=datalogger/send-to-console
     export function sendToConsole(enabled: boolean) {
         _console = enabled;
-    }
-
-    /**
-     * Set the character used to separate values in a row.
-     * @param separator the value separator character, eg: "\t"
-     */
-    //% group="Configuration"
-    //% blockId="datalogSeparator" block="data logger set separator $separator"
-    //% help=datalogger/set-separator
-    export function setSeparator(separator: LogSeparator) {
-        if (!_enabled) {
-            SEPARATOR = String.fromCharCode(separator);
-        }
     }
 }
