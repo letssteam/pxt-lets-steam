@@ -21,6 +21,10 @@ class CodalSTMSerialDeviceProxy {
         if (id <= 0)
             id = allocateNotifyEvent();
         ser.id = id;
+
+        ser.setRxBufferSize(64);
+        ser.setTxBufferSize(64);
+
         ser.init(115200);
     }
 
