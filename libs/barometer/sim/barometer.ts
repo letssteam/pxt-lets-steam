@@ -27,6 +27,7 @@ namespace pxsim.input {
     
     export function pressure(unit: PressureUnit): number {
         let state = barometerState();
+        setPressureUnit(unit);
         state.setUsed();
         const pressure = state.getLevel();
         return pressure ;
