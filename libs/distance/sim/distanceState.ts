@@ -1,5 +1,5 @@
-/// <reference path="../../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../../built/common-sim.d.ts"/>
+/// <reference path="../../../built/common-sim.d.ts"/>
+/// <reference path="../../../node_modules/pxt-core/built/pxtsim.d.ts"/>
 
 namespace pxsim{
     export class DistanceState { 
@@ -10,6 +10,10 @@ namespace pxsim{
 
     export function distanceState(): AnalogSensorState {
         return (board() as DistanceBoard).distanceState;
+    }
+
+    export function distanceUnit(): DistanceUnit {
+        return (board() as DistanceBoard).distanceUnitState;
     }
 
     export function setDistanceUnit(unit: DistanceUnit) {

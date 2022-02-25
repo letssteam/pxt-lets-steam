@@ -58,6 +58,7 @@ namespace pxsim.input {
         let b = distanceState();
         b.setUsed();
         const distance = b.getLevel();
+        setDistanceUnit(unit);
         switch (unit)
         {
             case DistanceUnit.Millimeter:
