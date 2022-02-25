@@ -12,4 +12,8 @@ namespace pxsim{
     export function setPressureUnit(unit: PressureUnit) {
         (board() as BarometerBoard).pressureUnitState = unit;
     }
+
+    export function pressureUnit() : PressureUnit{
+        return (board() as BarometerBoard).pressureUnitState;
+    }
 }
