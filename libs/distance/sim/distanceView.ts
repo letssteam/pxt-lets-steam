@@ -20,8 +20,11 @@ namespace pxsim.visuals {
         private readonly INPUT_ID : string = "DISTANCE-RANGE";
         private readonly BOARD_ICON_ID : string = `BUTTON-${this.INPUT_ID}`;
         private readonly ICON_SVG : string = `<rect x="0" y="0" width="504" height="359.92" fill="#00000000"/><g transform="rotate(-90,250.98,278.98)"><path d="m170.04 28h201.73v504h-201.73v-504m181.66 246.98v-36.289h-92.863v-10.035l92.863 4e-3v-36.289h-46.324v-10.246h46.324v-36.289h-92.863v-10.035h92.863v-36.289h-46.324v-10.035h46.324v-36.289h-161.39v453.62l161.39 4e-3v-36.289h-46.324v-10.035h46.324v-36.289h-92.863v-10.035h92.863v-36.289h-46.324v-10.031h46.324v-36.508h-92.863v-10.035l92.863 4e-3v-36.289h-46.324v-10.035h46.324"/><path d="m529.96 28v12.594h-100.76v-12.594h100.76"/><path d="m529.96 532v-12.594h-100.76v12.594h100.76"/><path d="m473.17 462.84h-43.977l50.379 50.383 50.383-50.383h-44.191v-365.67h44.191l-50.383-50.383-50.379 50.383h43.977v365.67"/></g>`;
+        private readonly BACKGROUND_COLOR : string = "#39474e";
+        
         private readonly dmin = 0;
         private readonly dmax = 2000;
+        private readonly unitPerKeyPress = 5;
 
         public init(bus: EventBus, state: DistanceState, svgEl: SVGSVGElement, otherParams: Map<string>) {
             this.state = state;
@@ -50,6 +53,7 @@ namespace pxsim.visuals {
                     this.svgEl.appendChild(this.text);
                     document.body.appendChild(this.sliderDiv);
                     this.updateDistance();
+                    this.board_icon.dispatchEvent(new Event("click"));
                 }
             }
         }
@@ -94,6 +98,22 @@ namespace pxsim.visuals {
                 this.isOpen = false;
             });
 
+            document.addEventListener( "keydown", (ev: KeyboardEvent) => {
+
+                if(!this.isOpen){ return; }
+
+                switch( ev.key ){
+                    case "ArrowUp":
+                        this.slider.valueAsNumber += this.unitPerKeyPress; 
+                        break;
+
+                    case "ArrowDown":
+                        this.slider.valueAsNumber -= this.unitPerKeyPress;
+                        break;
+                }
+
+            });
+
             this.sliderDiv.style.position = "absolute";
             this.sliderDiv.style.top = "0";
             this.sliderDiv.style.left = "0";
@@ -101,12 +121,14 @@ namespace pxsim.visuals {
             this.sliderDiv.style.height = "15px";
             this.sliderDiv.style.transform = "translate(-50%) rotate(270deg) translate(-50%, 50%)";
             this.sliderDiv.style.display = "none";
+            this.sliderDiv.style.backgroundColor = this.BACKGROUND_COLOR;
             
             icon.style.width = "15px";
             icon.style.position = "absolute";
             icon.style.top = "50%";
             icon.style.right = "0";
             icon.style.transform = "translate(0, -50%) rotate(90deg)";
+            icon.style.backgroundColor = this.BACKGROUND_COLOR;
             icon.innerHTML = this.generateIcon();
 
             this.slider.id = this.INPUT_ID;
@@ -173,7 +195,7 @@ namespace pxsim.visuals {
                     break;
             }
             
-            this.text.textContent = `${"0".repeat(Math.max( 0, nbDigit - this.slider.value.length))}${t + unit}`;
+            this.text.textContent = `${t + unit}`;
             accessibility.setLiveContent(t + unit);
         }
 
