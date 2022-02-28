@@ -18,9 +18,7 @@ namespace pxsim.visuals {
         private isOpen: boolean = false;
 
         private readonly INPUT_ID : string = "DISTANCE-RANGE";
-        private readonly BOARD_ICON_ID : string = `BUTTON-${this.INPUT_ID}`;
         private readonly ICON_SVG : string = `<rect x="0" y="0" width="504" height="359.92" fill="#00000000"/><g transform="rotate(-90,250.98,278.98)"><path d="m170.04 28h201.73v504h-201.73v-504m181.66 246.98v-36.289h-92.863v-10.035l92.863 4e-3v-36.289h-46.324v-10.246h46.324v-36.289h-92.863v-10.035h92.863v-36.289h-46.324v-10.035h46.324v-36.289h-161.39v453.62l161.39 4e-3v-36.289h-46.324v-10.035h46.324v-36.289h-92.863v-10.035h92.863v-36.289h-46.324v-10.031h46.324v-36.508h-92.863v-10.035l92.863 4e-3v-36.289h-46.324v-10.035h46.324"/><path d="m529.96 28v12.594h-100.76v-12.594h100.76"/><path d="m529.96 532v-12.594h-100.76v12.594h100.76"/><path d="m473.17 462.84h-43.977l50.379 50.383 50.383-50.383h-44.191v-365.67h44.191l-50.383-50.383-50.379 50.383h43.977v365.67"/></g>`;
-        private readonly BACKGROUND_COLOR : string = "#39474e";
         
         private readonly dmin = 0;
         private readonly dmax = 2000;
@@ -76,42 +74,38 @@ namespace pxsim.visuals {
             let icon = document.createElement("div");
             this.slider = document.createElement("input")
             this.board_icon = svg.elt("g");
-            this.text = svg.elt("text", {x: 25, y: 515, "font-family": "monospace", "font-size": 25, fill: "#FFFFFF" });
+            this.text = svg.elt("text", {x: 8, y: 520, "font-family": "monospace", "font-size": 25, fill: "#FFFFFF" });
 
-            this.board_icon.id = this.BOARD_ICON_ID;
             this.board_icon.style.cursor = "pointer";
-            this.board_icon.innerHTML = this.generateIcon( 60, 60, 25, 438 );
+            this.board_icon.innerHTML = this.generateIcon( 60, 60, 10, 440 );
             this.board_icon.onclick = () => {
                 this.sliderDiv.style.display = "block";
-                setTimeout( () => {this.isOpen = true;}, 250);  // Avoid immediate closing
+                SimGaugeMessage.askClose(this.INPUT_ID);
+                this.isOpen = true;
             };
-
-
-            document.addEventListener( "click", (ev: any) => {
-                if(!this.isOpen) { return; }
-
-                for( let i = 0; i < ev.path.length; ++i){
-                    if( ev.path[i].id == this.INPUT_ID || ev.path[i].id == this.BOARD_ICON_ID ){ return; }
-                }
-
-                this.sliderDiv.style.display = "none";
-                this.isOpen = false;
-            });
 
             document.addEventListener( "keydown", (ev: KeyboardEvent) => {
 
                 if(!this.isOpen){ return; }
 
+                let newValue = 0;
+
                 switch( ev.key ){
                     case "ArrowUp":
-                        this.slider.valueAsNumber += this.unitPerKeyPress; 
+                        newValue = this.constraintValue( this.slider.valueAsNumber + this.unitPerKeyPress );
                         break;
 
                     case "ArrowDown":
-                        this.slider.valueAsNumber -= this.unitPerKeyPress;
+                        newValue = this.constraintValue( this.slider.valueAsNumber - this.unitPerKeyPress );
                         break;
+
+                    default:
+                        return;
                 }
 
+                this.slider.valueAsNumber = newValue;
+                this.state.distanceState.setLevel( newValue );
+                this.updateDistance();
             });
 
             this.sliderDiv.style.position = "absolute";
@@ -121,14 +115,12 @@ namespace pxsim.visuals {
             this.sliderDiv.style.height = "15px";
             this.sliderDiv.style.transform = "translate(-50%) rotate(270deg) translate(-50%, 50%)";
             this.sliderDiv.style.display = "none";
-            this.sliderDiv.style.backgroundColor = this.BACKGROUND_COLOR;
             
             icon.style.width = "15px";
             icon.style.position = "absolute";
             icon.style.top = "50%";
             icon.style.right = "0";
             icon.style.transform = "translate(0, -50%) rotate(90deg)";
-            icon.style.backgroundColor = this.BACKGROUND_COLOR;
             icon.innerHTML = this.generateIcon();
 
             this.slider.id = this.INPUT_ID;
@@ -158,6 +150,13 @@ namespace pxsim.visuals {
             this.sliderDiv.append(icon);
             this.sliderDiv.append(this.slider);
             this.sliderDiv.append(this.text);
+            
+            SimGaugeMessage.registerOnAskClose( this.INPUT_ID, (id: string) => {
+                if(!this.isOpen) { return; }
+
+                this.sliderDiv.style.display = "none";
+                this.isOpen = false;
+            });
         }
 
         private updateDistance() {
@@ -219,6 +218,10 @@ namespace pxsim.visuals {
             }
 
             return `${svgTag}>${this.ICON_SVG}</svg>`;
+        }
+
+        private constraintValue(value: number){
+            return Math.min( this.dmax, Math.max( this.dmin, value ) );
         }
     }
 }
