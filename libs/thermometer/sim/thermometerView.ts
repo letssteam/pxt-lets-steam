@@ -19,9 +19,7 @@ namespace pxsim.visuals {
         private isOpen: boolean = false;
 
         private readonly INPUT_ID : string = "TEMPERATURE-RANGE";
-        private readonly BOARD_ICON_ID : string = `BUTTON-${this.INPUT_ID}`;
         private readonly ICON_SVG : string = `<rect x="0" y="0" width="237.9964" height="498.67801" fill="#00000000" /><g id="g148" transform="translate(-231.003,-30.6692)"> <path d="m 359.8,362.63 v -85.289 h -22.398 v 85.289 c -22.438,5.0977 -39.199,25.129 -39.199,49.113 0,27.836 22.562,50.398 50.398,50.398 27.836,0 50.398,-22.562 50.398,-50.398 0,-23.988 -16.762,-44.02 -39.199,-49.113 z" id="path70" /><path d="M 460.6,218.54 H 421.944 V 179.341 H 460.6 c 4.6406,0 8.3984,-3.7617 8.3984,-8.3984 0,-4.6367 -3.7578,-8.3984 -8.3984,-8.3984 h -38.656 v -58.801 c 0,-40.359 -32.711,-73.074 -73.07,-73.074 -40.359,0 -73.07,32.715 -73.07,73.074 v 215.75 c -27.254,21.539 -44.801,54.812 -44.801,92.254 0,64.961 52.641,117.6 117.6,117.6 64.961,0 117.6,-52.641 117.6,-117.6 0,-37.199 -17.309,-70.297 -44.258,-91.844 v -84.559 h 38.656 c 4.6406,0 8.3984,-3.7617 8.3984,-8.3984 0,-4.6406 -3.7617,-8.4023 -8.4023,-8.4023 z m -49.152,114.47 c 24.121,19.285 37.953,47.98 37.953,78.73 0,55.578 -45.219,100.8 -100.8,100.8 -55.578,0 -100.8,-45.219 -100.8,-100.8 0,-30.957 14,-59.781 38.414,-79.07 l 6.3828,-5.0391 v -8.1367 l 0.004,-215.76 c 0,-31.031 25.246,-56.273 56.27,-56.273 31.023,0 56.27,25.246 56.27,56.273 v 58.801 h -50.941 c -4.6406,0 -8.3984,3.7617 -8.3984,8.3984 0,4.6367 3.7578,8.3984 8.3984,8.3984 h 50.941 v 39.199 l -50.941,0.004 c -4.6406,0 -8.3984,3.7617 -8.3984,8.3984 0,4.6367 3.7578,8.3984 8.3984,8.3984 h 50.941 v 92.629 z" id="path72" /></g>`;
-        private readonly BACKGROUND_COLOR : string = "#39474e";
 
         // Celsius
         private readonly tmin = -5;
@@ -77,42 +75,38 @@ namespace pxsim.visuals {
             let icon = document.createElement("div");
             this.slider = document.createElement("input")
             this.board_icon = svg.elt("g");
-            this.text = svg.elt("text", {x: 75, y: 30, "font-family": "monospace", "font-size": 25, fill: "#FFFFFF" });
+            this.text = svg.elt("text", {x: 40, y: 30, "font-family": "monospace", "font-size": 25, fill: "#FFFFFF" });
 
-            this.board_icon.id = this.BOARD_ICON_ID;
             this.board_icon.style.cursor = "pointer";
-            this.board_icon.innerHTML = this.generateIcon( 65, 65, 25, 15 );
+            this.board_icon.innerHTML = this.generateIcon( 30, 65, 10, 18 );
             this.board_icon.onclick = () => {
                 this.sliderDiv.style.display = "block";
-                setTimeout( () => {this.isOpen = true;}, 250);  // Avoid immediate closing
+                SimGaugeMessage.askClose(this.INPUT_ID);
+                this.isOpen = true;
             };
-
-
-            document.addEventListener( "click", (ev: any) => {
-                if(!this.isOpen) { return; }
-
-                for( let i = 0; i < ev.path.length; ++i){
-                    if( ev.path[i].id == this.INPUT_ID || ev.path[i].id == this.BOARD_ICON_ID ){ return; }
-                }
-
-                this.sliderDiv.style.display = "none";
-                this.isOpen = false;
-            });
 
             document.addEventListener( "keydown", (ev: KeyboardEvent) => {
 
                 if(!this.isOpen){ return; }
 
+                let newValue = 0;
+
                 switch( ev.key ){
                     case "ArrowUp":
-                        this.slider.valueAsNumber += this.unitPerKeyPress; 
+                        newValue = this.constraintValue( this.slider.valueAsNumber + this.unitPerKeyPress );
                         break;
 
                     case "ArrowDown":
-                        this.slider.valueAsNumber -= this.unitPerKeyPress;
+                        newValue = this.constraintValue( this.slider.valueAsNumber - this.unitPerKeyPress );
                         break;
+
+                    default:
+                        return;
                 }
 
+                this.slider.valueAsNumber = newValue;
+                this.state.thermometerState.setLevel( newValue );
+                this.updateTemperature();
             });
 
             this.sliderDiv.style.position = "absolute";
@@ -122,14 +116,12 @@ namespace pxsim.visuals {
             this.sliderDiv.style.height = "15px";
             this.sliderDiv.style.transform = "translate(-50%) rotate(270deg) translate(-50%, 50%)";
             this.sliderDiv.style.display = "none";
-            this.sliderDiv.style.backgroundColor = this.BACKGROUND_COLOR;
             
             icon.style.width = "12px";
             icon.style.position = "absolute";
             icon.style.top = "50%";
             icon.style.right = "2px";
             icon.style.transform = "translate(0, -50%) rotate(90deg)";
-            icon.style.backgroundColor = this.BACKGROUND_COLOR;
             icon.innerHTML = this.generateIcon();
 
             this.slider.id = this.INPUT_ID;
@@ -159,6 +151,14 @@ namespace pxsim.visuals {
             this.sliderDiv.append(icon);
             this.sliderDiv.append(this.slider);
             this.sliderDiv.append(this.text);
+
+            
+            SimGaugeMessage.registerOnAskClose( this.INPUT_ID, (id: string) => {
+                if(!this.isOpen) { return; }
+
+                this.sliderDiv.style.display = "none";
+                this.isOpen = false;
+            });
         }
 
         private updateTemperature() {
@@ -207,6 +207,10 @@ namespace pxsim.visuals {
             }
 
             return `${svgTag}>${this.ICON_SVG}</svg>`;
+        }
+
+        private constraintValue(value: number){
+            return Math.min( this.tmax, Math.max( this.tmin, value ) );
         }
     }
 }
