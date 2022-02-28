@@ -80,7 +80,7 @@ namespace pxsim.visuals {
 
             this.board_icon.id = this.BOARD_ICON_ID;
             this.board_icon.style.cursor = "pointer";
-            this.board_icon.innerHTML = this.generateIcon( 60, 60, 25, 435 );
+            this.board_icon.innerHTML = this.generateIcon( 60, 60, 25, 438 );
             this.board_icon.onclick = () => {
                 this.sliderDiv.style.display = "block";
                 setTimeout( () => {this.isOpen = true;}, 250);  // Avoid immediate closing
