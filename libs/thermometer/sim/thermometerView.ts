@@ -26,6 +26,7 @@ namespace pxsim.visuals {
         // Celsius
         private readonly tmin = -5;
         private readonly tmax = 50;
+        private readonly unitPerKeyPress = 1;
 
         public init(bus: EventBus, state: ThermometerState, svgEl: SVGSVGElement, otherParams: Map<string>) {
             this.state = state;
@@ -54,6 +55,7 @@ namespace pxsim.visuals {
                     this.svgEl.appendChild(this.text);
                     document.body.appendChild(this.sliderDiv);
                     this.updateTemperature();
+                    this.board_icon.dispatchEvent(new Event("click"));
                 }
             }
         }
@@ -95,6 +97,22 @@ namespace pxsim.visuals {
 
                 this.sliderDiv.style.display = "none";
                 this.isOpen = false;
+            });
+
+            document.addEventListener( "keydown", (ev: KeyboardEvent) => {
+
+                if(!this.isOpen){ return; }
+
+                switch( ev.key ){
+                    case "ArrowUp":
+                        this.slider.valueAsNumber += this.unitPerKeyPress; 
+                        break;
+
+                    case "ArrowDown":
+                        this.slider.valueAsNumber -= this.unitPerKeyPress;
+                        break;
+                }
+
             });
 
             this.sliderDiv.style.position = "absolute";
@@ -161,13 +179,7 @@ namespace pxsim.visuals {
                     break;
             }
 
-            if( t < 0 ){
-                this.text.textContent = `-${"0".repeat(3 - this.slider.value.length)}${Math.abs(t) + unit}`;
-            }
-            else{
-                this.text.textContent = `${"0".repeat(3 - this.slider.value.length)}${t + unit}`;
-            }
-
+            this.text.textContent = `${t + unit}`;
             accessibility.setLiveContent(t + unit);
         }
 
