@@ -63,6 +63,8 @@ void setLocalName(String name) {
 //% help=magnetics/ble_set_user_string_data weight=71
 void setAdvertisingUserStringData(String data) {
     getWRadioBLE()->configure();
+
+    getWRadioBLE()->advertising.clearData();
     getWRadioBLE()->advertising.setServiceData(0x181C, (uint8_t *)data->getUTF8Data(), data->getLength());
 }
 
@@ -76,10 +78,11 @@ void setAdvertisingKeyValueData(String key, float value) {
     getWRadioBLE()->configure();
 
     int32_t intPart = (int32_t)value;
-    int8_t fracPart = (value * 100) - (intPart * 100);
+    int8_t fracPart = ((int32_t)value * 100) - (intPart * 100);
 
     int size = sprintf(stringBuffer, "%s:%d.%d", key->getUTF8Data(), intPart, fracPart);
 
+    getWRadioBLE()->advertising.clearData();
     if (size < 0) {
         getWRadioBLE()->advertising.setServiceData(0x181C, (uint8_t *)"ERROR. KEY/VALUE", 16);
     } else {
