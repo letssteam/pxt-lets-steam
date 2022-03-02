@@ -251,6 +251,8 @@ namespace pxsim {
                 fnArgs: fnArgs,
                 maxWidth: "100%",
                 maxHeight: "100%",
+                forceBreadboardLayout: true,
+                forceBreadboardRender: true
             };
             this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
                 visual: boardDef.visual,
