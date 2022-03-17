@@ -1,55 +1,55 @@
-# Idées de projet
+# Project Ideas
 
 ## Basic
 
 ```codecard
 [
 {
-  "name": "Comment rendre visible l'invisible ?",
-  "description": "Comment rendre visible l'invisible ? Vous allez reproduire l'environnement naturel des grenouilles afin d'assurer leur survie",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Rendre_visible_linvisible.pdf",
+  "name": "How to make the invisible visible?",
+  "description": "Reproduce the natural environment of frogs to ensure their survival",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Vivarium_full.pdf",
   "imageUrl": "/static/activities/16.png"
 },
 {
-  "name": "Préserver la biodiversité",
-  "description": "Surveillez le nombre d'espèces végétales dans votre quartier. Explorez les rues et les parcs de votre quartier pour en savoir plus sur l'écosystème et utilisez la technologie pour faciliter ce processus ! Utilisez la carte STM32 pour enregistrer vos trouvailles !",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Preserver_biodiversite.pdf",
+  "name": "Preserve biodiversity",
+  "description": "Monitor the number of plant species in your neighbourhood. Explore the streets and parks in your neighbourhood to find out more about the ecosystem and use technology to make this process easier! Use the STM32 card to record your findings!",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Preserve_biodiversity.pdf",
   "imageUrl": "/static/activities/17.png"
 },
 {
-  "name": "Contrôle de la température dans la classe",
-  "description": "Il fait trop chaud dans la salle de classe. Lorsque les élèves entrent, ils savent qu'ils doivent fermer les stores, mais pendant la pause, la classe devient vraiment chaude. Comment créer un système plus autonome grâce à la programmation ?",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Controle_de_temperature.pdf",
+  "name": "Temperature control in the classroom",
+  "description": "It is too hot in the classroom. When students come in, they know to close the blinds, but during break time, the classroom gets really hot. How can we create a more autonomous system through programming?",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Temperature_control.pdf",
   "imageUrl": "/static/activities/18.png"
 },
 {
-  "name": "Construire une salle de classe accueillante",
-  "description": "Identifiez les besoins en intensité lumineuse particulière dans votre classe pour réaliser une activité spécifique.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Intensite_lumineuse.pdf",
+  "name": "Build a welcoming classroom. ",
+  "description": "Identify the particular light intensity needs in your classroom to perform a specific activity",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Light_Intensity.pdf",
   "imageUrl": "/static/activities/19.png"
 },
 {
-  "name": "Votre maison idéale (et durable)",
-  "description": "Rêvez à l'endroit où vous aimeriez vivre, à ce que serait votre maison idéale et à la façon dont cette maison idéale pourrait être plus durable.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Maison_Ideale.pdf",
+  "name": "Your ideal (and sustainable) home",
+  "description": "Dream about where you would like to live, what your ideal home would be like and how this ideal home could be more sustainable",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Ideal_home.pdf",
   "imageUrl": "/static/activities/20.png"
 },
 {
-  "name": "Gestes barrières",
-  "description": "Nous devons nous assurer que les enfants se lavent les mains en revenant de la cour de récréation. Bien que de nouvelles routines aient été mises en place pour s'assurer que tous les enfants se lavent les mains, nous ne sommes pas sûrs qu'ils le fassent suffisamment bien. Comment la programmation pourrait-elle nous aider à mieux respecter les gestes barrières ?",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Gestes_Barrieres.pdf",
+  "name": "Washing hands",
+  "description": "We need to ensure that children wash their hands when they come back from the playground. Although new routines have been put in place to ensure that all children wash their hands, we are not sure that they do it well enough. How can programming help us stick to the barrier actions?",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Washing_hands.pdf",
   "imageUrl": "/static/activities/21.png"
 },
 {
-  "name": "Consommation raisonnable de chauffage",
-  "description": "Identifiez la position optimale d'utilisation des appareils de chauffage, à des moments donnés, pour économiser l'électricité.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Consommation_chauffage.pdf",
+  "name": "Reasonable heating use",
+  "description": "Identify the optimum position for using heating appliances at given times to save electricity",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Reasonable_heating.pdf",
   "imageUrl": "/static/activities/22.png"
 },
 {
-  "name": "Musique : Pouvez-vous jouer ce que vous entendez ?",
-  "description": "Avez-vous déjà souhaité pouvoir jouer une chanson au piano simplement en l'écoutant ?",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/Projet/Projet_Musique.pdf",
+  "name": "Can you play what you hear?",
+  "description": "Have you ever wished you could play a song on the piano just by listening to it?",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/5_Projects_Ideas/Project_Music.pdf",
   "imageUrl": "/static/activities/23.png"
 }
 ]
