@@ -6,94 +6,95 @@
 [
 {
   "name": "Faisons clignoter une LED",
-  "description": "Activité de prise en main pour aborder le concept de broche",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS01-Faisons_clignoter_une_led.pdf",
+  "description": "Getting started activity to approach the concept of a pin",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS01EN.pdf",
   "imageUrl": "/static/activities/1.png",
   "label": "New? Start Here!",
   "labelClass": "purple ribbon large"
 },
 {
   "name": "Breadboard",
-  "description": "Activité de découverte pour apprendre à connecter des composants entre eux grâce à une breadboard",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS02-Breadboard.pdf",
+  "description": "Make a simple circuit on a breadboard",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS02EN.pdf",
   "imageUrl": "/static/activities/2.png"
 },
 {
-  "name": "Boutons et affichage LED",
-  "description": "Nous allons apprendre à interagir avec la carte en utilisant un simple bouton-poussoir. Il en existe de toutes les formes et de toutes les tailles, mais ils nécessitent tous l'interaction la plus simple : appuyer dessus !",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS03-Boutons_affichage_LED.pdf",
+  "name": "Buttons and LEDs",
+  "description": "To learn how to use a button, let's play a quiz game!",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS03EN.pdf",
   "imageUrl": "/static/activities/3.png"
 },
 {
-  "name": "Capteur de lumière",
-  "description": "Cette fiche d'activité aborde les résistances. Une photorésistance (light dependent resistor - LDR) est un composant utilisé pour mesurer l’intensité de la lumière.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS04-Capteurs_lumiere.pdf",
+  "name": "Light sensor",
+  "description": "Create a simple light sensor with a few electronic components on
+a breadboard and connect it to the board",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS04EN.pdf",
   "imageUrl": "/static/activities/4.png"
 },
 {
-  "name": "Potentiomètre",
-  "description": "Dans cette fiche d'activité, nous allons apprendre ce qu'est un potentiomètre en programmant la carte pour régler la luminosité d'une LED en tournant un bouton.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS05-Potentiomètre.pdf",
+  "name": "Potentiometer",
+  "description": "Read an analog input using a potentiometer",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS05EN.pdf",
   "imageUrl": "/static/activities/5.png"
 },
 {
-  "name": "Code Morse",
-  "description": "Le code Morse est une méthode utilisée dans les télécommunications pour coder les caractères d’un texte sous forme de séquences normalisées de deux durées de signal différentes, appelées points et tirets",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS06-Code_morse.pdf",
+  "name": "Morse code",
+  "description": "Communicate with Morse code",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS06EN.pdf",
   "imageUrl": "/static/activities/6.png"
 },
 {
-  "name": "Fabriquer un thérémine",
-  "description": "Un thérémine est un instrument de musique électronique dont on peut jouer sans le toucher",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS07-Theremine.pdf",
+  "name": "Make a theremin",
+  "description": "Make music with a really strange instrument",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS07EN.pdf",
   "imageUrl": "/static/activities/7.png"
 },
 {
-  "name": "Musique",
-  "description": "Créons une mélodie agréable à nos oreilles, inspirée des consoles 8 bits",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS08-Musique.pdf",
+  "name": "Let's play music !s",
+  "description": "Play music with a programming board",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS08EN.pdf",
   "imageUrl": "/static/activities/8.png"
 },
 {
-  "name": "Capteur d'inclinaison avec un accéléromètre",
-  "description": "Les accéléromètres sont de petits capteurs qui peuvent détecter la force de l'accélération et sont parfaits pour détecter le mouvement et l'orientation.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS09-Capteur_inclinaison.pdf",
+  "name": "Accelerometers",
+  "description": "Use an accelerometer by reading the value of the acceleration on each axis",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS09EN.pdf",
   "imageUrl": "/static/activities/9.png"
 },
 {
-  "name": "Affichage texte avec un écran OLED",
-  "description": "Un écran qui vous permet d'afficher des informations nichées dans vos composants électroniques",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS10-Affichage_texte.pdf",
+  "name": "Text display",
+  "description": "Connect an OLED Screen to your board",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS10EN.pdf",
   "imageUrl": "/static/activities/10.png"
 },
 {
-  "name": "Fabriquer un thermomètre très très lisible",
-  "description": "Dans cette activité, nous allons apprendre à quel point il est facile de lire le capteur de température de la carte et d'afficher sa valeur sur un écran LCD",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS11-Thermometre.pdf",
+  "name": "Make a very readable thermemeter",
+  "description": "Read the temperature sensor and display it on an LCD screen",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS11EN.pdf",
   "imageUrl": "/static/activities/11.png"
 },
 {
-  "name": "Alarme de détection de mouvement",
-  "description": "Dans cette fiche d'activité, nous allons travailler sur un détecteur de mouvement comprenant une alarme avec 2 types de protections",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS12-Alarme_détection_mouvement.pdf",
+  "name": "Motion detection alarm",
+  "description": "Make a motion detection alarm",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS12EN.pdf",
   "imageUrl": "/static/activities/12.png"
 },
 {
-  "name": "Les servos font bouger les choses",
-  "description": "Le servomoteur est un moteur pilotable en position. Il permet de conserver un angle précisément",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS13-Servomoteur.pdf",
+  "name": "Use a servo to set an object in motion",
+  "description": "Set an object in motion",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS13EN.pdf",
   "imageUrl": "/static/activities/13.png"
 },
 {
-  "name": "Créer un minuteur pour avoir des oeufs parfaitement cuits",
-  "description": "Créons un objet simple mais utile, un minuteur à œufs !",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS14-Minuteur_oeufs.pdf",
+  "name": "Create an Egg timer",
+  "description": "Let's create a simple but useful object, an egg timer!",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS14EN.pdf",
   "imageUrl": "/static/activities/14.png"
 },
 {
-  "name": "Collecter des données",
-  "description": "Cette fiche d'activité explique comment collecter les données d'un capteur environnemental et les exporter vers un ordinateur afin d'effectuer une analyse simple à l'aide d'un tableur.",
-  "url": "https://letssteam.github.io/ActivitySheets/FR/R1/R1AS15-Collecter_donnees.pdf",
+  "name": "Collecting data",
+  "description": "This activity sheet will focus on how collecting data from an environmental sensor and to export them to a computer enabling to perform a simple analysis with a spreadsheet.",
+  "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS15EN.pdf",
   "imageUrl": "/static/activities/15.png"
 }
 ]
