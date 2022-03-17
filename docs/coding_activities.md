@@ -1,4 +1,4 @@
-# Activités de découverte
+# Coding activities
 
 ## Basic
 
