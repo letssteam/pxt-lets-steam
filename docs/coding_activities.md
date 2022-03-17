@@ -26,8 +26,7 @@
 },
 {
   "name": "Light sensor",
-  "description": "Create a simple light sensor with a few electronic components on
-a breadboard and connect it to the board",
+  "description": "Create a simple light sensor with a few electronic components on a breadboard and connect it to the board",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS04EN.pdf",
   "imageUrl": "/static/activities/4.png"
 },
@@ -93,7 +92,7 @@ a breadboard and connect it to the board",
 },
 {
   "name": "Collecting data",
-  "description": "This activity sheet will focus on how collecting data from an environmental sensor and to export them to a computer enabling to perform a simple analysis with a spreadsheet.",
+  "description": "This activity sheet will focus on how collecting data from an environmental sensor and to export them to a spreadsheet",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS15EN.pdf",
   "imageUrl": "/static/activities/15.png"
 }
