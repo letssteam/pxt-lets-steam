@@ -1,14 +1,14 @@
 # Projects
 
 * [Coding activities](/coding_activities)
-  * [Faisons clignoter une LED](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS01EN.pdf)
+  * [Blink a LED](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS01EN.pdf)
   * [Breadboard](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS02EN.pdf)
   * [Buttons and LEDs](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS03EN.pdf)
   * [Light sensor](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS04EN.pdf)
   * [Potentiometer](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS05EN.pdf)
   * [Morse code](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS06EN.pdf)
   * [Make a theremin](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS07EN.pdf)
-  * [Let's play music !s](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS08EN.pdf)
+  * [Play music !](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS08EN.pdf)
   * [Accelerometers](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS09EN.pdf)
   * [Text display](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS10EN.pdf)
   * [Make a very readable thermemeter](https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS11EN.pdf)

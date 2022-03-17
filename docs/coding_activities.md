@@ -5,7 +5,7 @@
 ```codecard
 [
 {
-  "name": "Faisons clignoter une LED",
+  "name": "Blink a LED",
   "description": "Getting started activity to approach the concept of a pin",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS01EN.pdf",
   "imageUrl": "/static/activities/1.png",
@@ -20,7 +20,7 @@
 },
 {
   "name": "Buttons and LEDs",
-  "description": "To learn how to use a button, let's play a quiz game!",
+  "description": "To learn how to use a button, play a quiz game!",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS03EN.pdf",
   "imageUrl": "/static/activities/3.png"
 },
@@ -49,7 +49,7 @@
   "imageUrl": "/static/activities/7.png"
 },
 {
-  "name": "Let's play music !s",
+  "name": "Play music !",
   "description": "Play music with a programming board",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS08EN.pdf",
   "imageUrl": "/static/activities/8.png"
@@ -86,7 +86,7 @@
 },
 {
   "name": "Create an Egg timer",
-  "description": "Let's create a simple but useful object, an egg timer!",
+  "description": "Create a simple but useful object, an egg timer!",
   "url": "https://letssteam.github.io/ActivitySheets/EN/2_R1/R1AS14EN.pdf",
   "imageUrl": "/static/activities/14.png"
 },
