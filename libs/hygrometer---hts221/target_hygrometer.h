@@ -12,7 +12,7 @@ class WHygrometer {
 
     WHygrometer()
         : i2c(getI2C(LOOKUP_PIN(HTS221_SDA), LOOKUP_PIN(HTS221_SCL))),
-          sensor(new codal::HTS221_Humidity(DEVICE_ID_HUMIDITY, i2c, 0xBE)) {}
+          sensor(new codal::HTS221_Humidity(DEVICE_ID_HUMIDITY, i2c, 0xBE, 1023)) {}
 
     ~WHygrometer() { delete sensor; }
 };

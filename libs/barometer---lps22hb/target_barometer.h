@@ -11,7 +11,7 @@ class WBarometer {
 
     WBarometer()
         : i2c(getI2C(LOOKUP_PIN(LPS22HB_SDA), LOOKUP_PIN(LPS22HB_SCL))),
-          sensor(new codal::LPS22HB_Pressure(DEVICE_ID_PRESSURE, i2c, 0xBA)) {}
+          sensor(new codal::LPS22HB_Pressure(DEVICE_ID_PRESSURE, i2c, 0xBA, 1023)) {}
 
     ~WBarometer() { delete sensor; }
 };
