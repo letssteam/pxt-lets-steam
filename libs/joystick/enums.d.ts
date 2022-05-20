@@ -35,7 +35,5 @@
     //% block="Vertical"
     Vertical = 1,
     }
-declare namespace Mjoystick {
-}
 
 // Auto-generated. Do not edit. Really.
