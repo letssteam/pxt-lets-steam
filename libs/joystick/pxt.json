@@ -1,7 +1,14 @@
 {
   "name": "joystick",
   "description": "A joystick library",
-  "files": ["joystick_target.h", "joystick.cpp", "enums.d.ts", "shims.d.ts"],
+  "files": [
+    "joystick.ts",
+    "enums.d.ts",
+    "pxtparts.json",
+    "shims.d.ts",
+    "joystick.cpp",
+    "joystick_target.h"
+  ],
   "public": true,
   "dependencies": {
     "core": "file:../core---stm32"
