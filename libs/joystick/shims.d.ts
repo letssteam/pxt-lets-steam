@@ -1,9 +1,5 @@
 // Auto-generated. Do not edit.
-
-
-
-    //% color="#56515c" weight=98 icon="\uf276"
-declare namespace Mjoystick {
+declare namespace Joystick {
 
     /**
      * @brief Gets the value of the given axis (Vertical/Horizontal)
@@ -11,8 +7,9 @@ declare namespace Mjoystick {
      * @param axis the axis to look the value for
      * @return int32_t in range [-100, 100]
      */
-    //% block="get | %axis | axis"
-    //% blockId="joystick_get_axis_block" shim=Mjoystick::getJoystickAxis
+    //% block="%axis | axis"
+    //% blockId="joystick_get_axis_block"
+    //% parts="joystick" shim=Joystick::getJoystickAxis
     function getJoystickAxis(axis: MJoystickAxis): int32;
 
     /**
@@ -23,8 +20,9 @@ declare namespace Mjoystick {
      * @return false
      */
     //% block="joystick is pointing to %direction"
-    //% blockId="is_joystick_pointing_to_block" shim=Mjoystick::isJoystingPointingTowards
-    function isJoystingPointingTowards(direction: MJoystickDirection): boolean;
+    //% blockId="is_joystick_pointing_to_block"
+    //% parts="joystick" shim=Joystick::isJoystickPointingTowards
+    function isJoystickPointingTowards(direction: MJoystickDirection): boolean;
 
     /**
      * @brief Checks if the joystick's button is currently pressed
@@ -32,8 +30,9 @@ declare namespace Mjoystick {
      * @return true
      * @return false
      */
-    //% block="button pressed"
-    //% blockId="is_button_pressed_block" shim=Mjoystick::isJoystickButtonPressed
+    //% block="button is pressed"
+    //% blockId="is_button_pressed_block"
+    //% parts="joystick" shim=Joystick::isJoystickButtonPressed
     function isJoystickButtonPressed(): boolean;
 
     /**
@@ -42,7 +41,8 @@ declare namespace Mjoystick {
      * @return uint16_t
      */
     //% block="deadzone"
-    //% blockId="get_deadzone_block" shim=Mjoystick::getJoystickDeadzone
+    //% blockId="get_deadzone_block"
+    //% parts="joystick" shim=Joystick::getJoystickDeadzone
     function getJoystickDeadzone(): uint16;
 
     /**
@@ -51,7 +51,8 @@ declare namespace Mjoystick {
      * @param newDeadzone the new value of the deadzone
      */
     //% block="set deadzone to %newDeadzone"
-    //% blockId="set_deadzone_block" shim=Mjoystick::setJoystickDeadzone
+    //% blockId="set_deadzone_block"
+    //% parts="joystick" shim=Joystick::setJoystickDeadzone
     function setJoystickDeadzone(newDeadzone: uint8): void;
 
     /**
@@ -61,7 +62,8 @@ declare namespace Mjoystick {
      * @param handler what the event does
      */
     //% block="on joysting pointing to %direction"
-    //% blockId="on_joystick_pointing_to_block" shim=Mjoystick::onJoystickPointingTo
+    //% blockId="on_joystick_pointing_to_block"
+    //% parts="joystick" shim=Joystick::onJoystickPointingTo
     function onJoystickPointingTo(direction: MJoystickDirection, handler: () => void): void;
 
     /**
@@ -71,7 +73,8 @@ declare namespace Mjoystick {
      * @param handler what the event does
      */
     //% block="on button %eventType"
-    //% blockId="on_joystick_button_block" shim=Mjoystick::onButton
+    //% blockId="on_joystick_button_block"
+    //% parts="joystick" shim=Joystick::onButton
     function onButton(eventType: MJoystickButtonEvent, handler: () => void): void;
 }
 
