@@ -36,8 +36,7 @@ namespace pxt {
 SINGLETON(WJoystick);
 }
 
-//% color="#56515c" weight=98 icon="\uf276"
-namespace Mjoystick {
+namespace Joystick {
 
 /**
  * @brief Gets the value of the given axis (Vertical/Horizontal)
@@ -45,9 +44,9 @@ namespace Mjoystick {
  * @param axis the axis to look the value for
  * @return int32_t in range [-100, 100]
  */
-
-//% block="get | %axis | axis"
+//% block="%axis | axis"
 //% blockId="joystick_get_axis_block"
+//% parts="joystick"
 int getJoystickAxis(MJoystickAxis axis) {
     return getWJoystick()->joystick->getAxis(static_cast<codal::JoystickAxis>(axis));
 }
@@ -61,20 +60,24 @@ int getJoystickAxis(MJoystickAxis axis) {
  */
 //% block="joystick is pointing to %direction"
 //% blockId="is_joystick_pointing_to_block"
-bool isJoystingPointingTowards(MJoystickDirection direction) {
+//% parts="joystick"
+bool isJoystickPointingTowards(MJoystickDirection direction) {
     return getWJoystick()->joystick->isJoystickPointingTo(static_cast<codal::JoystickDirection>(direction));
 }
+
 /**
  * @brief Checks if the joystick's button is currently pressed
  *
  * @return true
  * @return false
  */
-//% block="button pressed"
+//% block="button is pressed"
 //% blockId="is_button_pressed_block"
+//% parts="joystick"
 bool isJoystickButtonPressed() {
     return getWJoystick()->joystick->isButtonPressed();
 }
+
 /**
  * @brief Gives the joystick's deadzone, in [0, 100] range
  *
@@ -82,9 +85,11 @@ bool isJoystickButtonPressed() {
  */
 //% block="deadzone"
 //% blockId="get_deadzone_block"
+//% parts="joystick"
 uint16_t getJoystickDeadzone() {
     return getWJoystick()->joystick->getDeadzone();
 }
+
 /**
  * @brief Set the Joystick's the joystick deadzone, in [0, 100] range
  *
@@ -92,6 +97,7 @@ uint16_t getJoystickDeadzone() {
  */
 //% block="set deadzone to %newDeadzone"
 //% blockId="set_deadzone_block"
+//% parts="joystick"
 void setJoystickDeadzone(uint8_t newDeadzone) {
     getWJoystick()->joystick->setDeadzone(newDeadzone);
 }
@@ -108,6 +114,7 @@ void callAction() {
  */
 //% block="on joysting pointing to %direction"
 //% blockId="on_joystick_pointing_to_block"
+//% parts="joystick"
 void onJoystickPointingTo(MJoystickDirection direction, Action handler) {
     getWJoystick()->act = handler;
     getWJoystick()->joystick->registerDirectionEvent(static_cast<codal::JoystickDirection>(direction), callAction);
@@ -121,8 +128,9 @@ void onJoystickPointingTo(MJoystickDirection direction, Action handler) {
  */
 //% block="on button %eventType"
 //% blockId="on_joystick_button_block"
+//% parts="joystick"
 void onButton(MJoystickButtonEvent eventType, Action handler) {
     getWJoystick()->act = handler;
     getWJoystick()->joystick->registerJoystickButtonEvent(static_cast<codal::JoystickButtonEvent>(eventType), callAction);
 }
-} // namespace Mjoystick
+} // namespace Joystick
