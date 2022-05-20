@@ -36,7 +36,8 @@ namespace pxsim {
         BarometerBoard,
         CompassBoard,
         SSD1306Board,
-        SerialBoard{
+        SerialBoard,
+        JoystickBoard{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -67,6 +68,7 @@ namespace pxsim {
         ssd1306State: SSD1306State;
 
         serialState: STMSerialState;
+        joystickState: JoystickState;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -138,7 +140,7 @@ namespace pxsim {
             this.pressureUnitState = PressureUnit.HectoPascal;
             this.ssd1306State = new SSD1306State();
             this.serialState = new STMSerialState(runtime, this);
-
+            this.joystickState = new JoystickState();
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
             // this should be probably merged with buttonpair somehow
@@ -225,6 +227,10 @@ namespace pxsim {
             this.builtinPartVisuals["ssd1306"] = (xy: visuals.Coord) => visuals.mkSSD1306Part(xy);
 
             this.builtinParts["serial"] = this.serialState;
+            
+            this.builtinParts["joystick"] = this.joystickState;
+            this.builtinVisuals["joystick"] = () => new visuals.JoystickView();
+            this.builtinPartVisuals["joystick"] = (xy: visuals.Coord) => visuals.mkJoystickPart(xy);
         }
 
         kill() {
