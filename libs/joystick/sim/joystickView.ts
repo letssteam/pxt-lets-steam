@@ -15,7 +15,7 @@ namespace pxsim.visuals {
         let h = joystickHeight;
         let img = <SVGGElement>svg.elt("image");
 
-        console.log("Mk joystick !");
+
 
         svg.hydrate(img, {
             class: "sim-joystick", x: l, y: t, width: w, height: h,
