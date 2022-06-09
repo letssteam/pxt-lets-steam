@@ -1,0 +1,61 @@
+{
+  "lcd_i2c": {
+    "simulationBehavior": "lcd_i2c",
+    "visual": {
+      "builtIn": "lcd_i2c",
+      "width": 322.7900085449219,
+      "height": 147.52467,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 15,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 30,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 45,
+          "y": 8.037069860858837
+        },
+        {
+          "x": 60,
+          "y": 8.037069860858837
+        }
+      ]
+    },
+    "numberOfPins": 4,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "threeVolt",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "SDA",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "SCL",
+        "style": "croc",
+        "orientation": "-Z"
+      }
+    ],
+    "assembly": [
+      { "part": true },
+      { "pinIndices": [0] },
+      { "pinIndices": [1] },
+      { "pinIndices": [2, 3] }
+    ]
+  }
+}
