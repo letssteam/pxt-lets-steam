@@ -37,7 +37,8 @@ namespace pxsim {
         CompassBoard,
         SSD1306Board,
         SerialBoard,
-        JoystickBoard{
+        JoystickBoard,
+        LCDI2CBoard{
         // state & update logic for component services
         viewHost: visuals.BoardHost;
         view: SVGElement;
@@ -66,6 +67,7 @@ namespace pxsim {
         pressureUnitState: PressureUnit;
         compassState: CompassState;
         ssd1306State: SSD1306State;
+        lcdI2CState: LCDState;
 
         serialState: STMSerialState;
         joystickState: JoystickState;
@@ -141,6 +143,8 @@ namespace pxsim {
             this.ssd1306State = new SSD1306State();
             this.serialState = new STMSerialState(runtime, this);
             this.joystickState = new JoystickState();
+            this.lcdI2CState = new LCDState();
+
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
             // this should be probably merged with buttonpair somehow
@@ -231,6 +235,10 @@ namespace pxsim {
             this.builtinParts["joystick"] = this.joystickState;
             this.builtinVisuals["joystick"] = () => new visuals.JoystickView();
             this.builtinPartVisuals["joystick"] = (xy: visuals.Coord) => visuals.mkJoystickPart(xy);
+
+            this.builtinParts["lcd_i2c"] =  this.lcdI2CState;
+            this.builtinVisuals["lcd_i2c"] = () => new visuals.LCDI2C2View();
+            this.builtinPartVisuals["lcd_i2c"] = (xy: visuals.Coord) => visuals.mkLCDI2C2Part(xy);
         }
 
         kill() {

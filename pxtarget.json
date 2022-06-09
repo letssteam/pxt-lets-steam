@@ -23,7 +23,8 @@
     "libs/oled",
     "libs/wifi",
     "libs/magnetics",
-    "libs/datalogger"
+    "libs/datalogger",
+    "libs/lcd_i2c"
   ],
   "cloud": {
     "workspace": false,

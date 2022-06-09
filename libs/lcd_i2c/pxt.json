@@ -1,0 +1,16 @@
+{
+  "name": "lcd_i2c",
+  "description": "Support for I2C Characeter LCD display (not grove one)",
+  "dependencies": {
+    "core": "file:../core---stm32"
+  },
+  "files": [
+    "README.md",
+    "lcd_i2c.cpp",
+    "pxtparts.json",
+    "shims.d.ts",
+    "target_lcd_i2c.h",
+    "ns.ts"
+  ],
+  "public": "true"
+}
