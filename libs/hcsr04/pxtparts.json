@@ -1,0 +1,60 @@
+{
+  "hcsr04": {
+    "simulationBehavior": "hcsr04",
+    "visual": {
+      "builtIn": "hcsr04",
+      "width": 250,
+      "height": 116.3769,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 110,
+          "y": 10
+        },
+        {
+          "x": 121,
+          "y": 10
+        },
+        {
+          "x": 132,
+          "y": 10
+        },
+        {
+          "x": 143,
+          "y": 10
+        }
+      ]
+    },
+    "numberOfPins": 4,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "fiveVolt",
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "D6",
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "D7",
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "+Z"
+      }
+    ],
+    "assembly": [
+      {
+        "pinIndices": [0, 1, 2, 3]
+      }
+    ]
+  }
+}
