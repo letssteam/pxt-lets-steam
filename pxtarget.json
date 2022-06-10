@@ -23,7 +23,8 @@
     "libs/oled",
     "libs/wifi",
     "libs/magnetics",
-    "libs/datalogger"
+    "libs/datalogger",
+    "libs/hcsr04"
   ],
   "cloud": {
     "workspace": false,
