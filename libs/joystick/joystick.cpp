@@ -35,7 +35,7 @@ enum class MJoystickAxis {
 namespace pxt {
 SINGLETON(WJoystick);
 }
-
+//% color=#282828 icon="\uf276"
 namespace Joystick {
 
 /**
