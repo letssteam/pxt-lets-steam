@@ -2,7 +2,6 @@
   "name": "joystick",
   "description": "A joystick library",
   "files": [
-    "joystick.ts",
     "enums.d.ts",
     "pxtparts.json",
     "shims.d.ts",
