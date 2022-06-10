@@ -24,7 +24,7 @@ namespace pxt {
     SINGLETON(WHCSR04);
 }
 
-
+//% color="#456F93" icon="\uf028" blockGap=8
 namespace HCSR04 {
     
 /**
