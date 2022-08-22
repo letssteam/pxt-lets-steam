@@ -17,8 +17,7 @@
     "core---stm32": "file:../core---stm32",
     "distance---vl53l0x": "file:../distance---vl53l0x",
     "hygrometer---hts221": "file:../hygrometer---hts221",
-    "thermometer---hts221": "file:../thermometer---hts221",
-    "joystick": "file:../joystick"
+    "thermometer---hts221": "file:../thermometer---hts221"
   },
   "core": true,
   "public": true,
