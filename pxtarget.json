@@ -19,6 +19,7 @@
     "libs/barometer---lps22hb",
     "libs/distance---vl53l0x",
     "libs/thermometer---hts221",
+    "libs/thermometer---lps22hb",
     "libs/hygrometer---hts221",
     "libs/oled",
     "libs/wifi",
