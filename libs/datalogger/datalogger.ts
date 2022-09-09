@@ -9,10 +9,10 @@ namespace datalogger {
     let _headers: string[] = undefined;
     let _headersWritten: boolean = false;
     let _row: number[] = undefined;
+    let _samples: number[] = undefined;
     let _start: number;
     let _enabled = true;
     let _samplingInterval = -1;
-    let _sampleCount = 0;
     let _lastSampleTime = -1;
     let _console = false;
 
@@ -41,7 +41,7 @@ namespace datalogger {
             _start = control.millis();
         }
         _row = [];
-        _sampleCount = 1;
+        _samples = [];
         _lastSampleTime = control.millis();
         const s = (_lastSampleTime - _start) / 1000;
         addValue("time", s);
@@ -50,41 +50,35 @@ namespace datalogger {
     function commitRow() {
         // write row if any data
         if (_row && _row.length > 0) {
+            
             // write headers for the first row
             if (!_headersWritten) {
-                //_storage.appendHeaders(_headers);
                 sendHeaders();
                 if (_console){
-                    console.log(_headers.slice(1));
+                    console.log(_headers.slice(1).join(separator));
                 }
                 _headersWritten = true;
             }
+
             // commit row data
             if (_samplingInterval <= 0 || control.millis() - _lastSampleTime >= _samplingInterval) {
 
                 // average data
-                if (_sampleCount > 1) {
-                    for(let i = 1; i < _row.length; ++i) {
-                        _row[i] /= _sampleCount;
-                    }
+                for(let i = 1; i < _row.length; ++i) {
+                    _row[i] /= _samples[i];
                 }
 
                 // append row
-                //_storage.appendRow(_row);
                 sendRow();
 
                 if (_console) {
                     // drop time
-                    console.log(_row.slice(1));
+                    console.log(_row.slice(1).join(separator));
                 }
 
                 // clear values
                 _row = undefined;
-                _sampleCount = 1;
                 _lastSampleTime = -1;
-            } else {
-                // don't store the data yet
-                _sampleCount++;
             }
         }
     }
@@ -120,7 +114,6 @@ namespace datalogger {
 
         // happy path
         if (_headers[_row.length] === name)
-            //_row.push(value);
             idx = _row.length;
         else {
             idx = _headers.indexOf(name);
@@ -130,10 +123,14 @@ namespace datalogger {
             }
         }
 
-        if( _row[idx] == undefined )
+        if( _row[idx] == undefined ){
             _row[idx] = value;
-        else
+            _samples[idx] = 1;
+        }
+        else{
             _row[idx] += value;
+            _samples[idx] += 1;
+        }
     }
 
     /**
