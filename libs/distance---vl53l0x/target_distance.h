@@ -11,7 +11,7 @@ class WDistance {
 
     WDistance()
         : i2c(getI2C(LOOKUP_PIN(VL53L0X_SDA), LOOKUP_PIN(VL53L0X_SCL))),
-          sensor(new codal::VL53L0X_Distance(DEVICE_ID_DISTANCE, i2c, LOOKUP_PIN(VL53L0X_SHUT), 0x52, 1023)) {}
+          sensor(new codal::VL53L0X_Distance(DEVICE_ID_DISTANCE, i2c, LOOKUP_PIN(VL53L0X_SHUT), 0x52, 1023, 100)) {}
     ~WDistance() { delete sensor; }
 };
 } // namespace pxt
