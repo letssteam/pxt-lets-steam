@@ -1,6 +1,6 @@
 {
-  "name": "stm32-STEAM32",
-  "description": "STEAM23 - beta",
+  "name": "STEAM32",
+  "description": "STEAM32 - beta",
   "files": [
     "README.md",
     "ns.ts",
