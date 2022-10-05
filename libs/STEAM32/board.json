@@ -1,0 +1,130 @@
+{
+  "visual": {
+    "image": "pkg://board.svg",
+    "outlineImage": "pkg://boardwireframe.svg",
+    "useCrocClips": false,
+    "width": 350,
+    "height": 350,
+    "pinDist": 10,
+    "pinBlocks": [
+      {
+        "x": 111.893255123826,
+        "y": 93.3587830762523,
+        "labels": [
+          "SCL",
+          "SDA",
+          "AREF",
+          "GND0",
+          "~D13",
+          "~D12",
+          "~D11",
+          "~D10",
+          "~D9",
+          "~D8"
+        ]
+      },
+      {
+        "x": 216.74056057524268,
+        "y": 93.35989712141898,
+        "labels": ["D7", "~D6", "~D5", "~D4", "~D3", "D2", "TX/D1", "RX/D0"]
+      },
+      {
+        "x": 147.55630353559405,
+        "y": 277.17711508873947,
+        "labels": [" ", "IOREF", "RESET", "3.3V", "5V", "GND1", "GND2", "VIN"]
+      },
+      {
+        "x": 236.509741585078,
+        "y": 277.17711508873947,
+        "labels": ["A0", "A1", "A2", "A3", "A4", "A5"]
+      }
+    ],
+    "leds": [
+      {
+        "x": 369,
+        "y": 110,
+        "h": 7,
+        "w": 17,
+        "color": "#1EFF1E",
+        "label": "LED2"
+      },
+      {
+        "x": 332,
+        "y": 110,
+        "h": 7,
+        "w": 17,
+        "color": "#1EFF1E",
+        "label": "LED"
+      }
+    ],
+    "buttons": [
+      {
+        "x": 33.6,
+        "y": 163,
+        "w": 19,
+        "h": 19,
+        "index": 0,
+        "label": "USER"
+      }
+    ],
+    "reset": {
+      "x": 33.6,
+      "y": 235,
+      "w": 19,
+      "h": 19
+    }
+  },
+  "gpioPinBlocks": [
+    ["SCL", "SDA", "~D13", "~D12", "~D11", "~D10", "~D9", "~D8"],
+    ["D7", "~D6", "~D5", "~D4", "~D3", "D2", "TX/D1", "RX/D0"],
+    ["A0", "A1", "A2", "A3", "A4", "A5"]
+  ],
+  "gpioPinMap": {
+    "A0": "A0",
+    "A1": "A1",
+    "A2": "A2",
+    "A3": "A3",
+    "A4": "A4",
+    "A5": "A5",
+
+    "D0": "RX/D0",
+    "D1": "TX/D1",
+    "D2": "D2",
+    "D3": "~D3",
+    "D4": "~D4",
+    "D5": "~D5",
+    "D6": "~D6",
+    "D7": "D7",
+    "D8": "~D8",
+    "D9": "~D9",
+    "D10": "~D10",
+    "D11": "~D11",
+    "D12": "~D12",
+    "D13": "~D13",
+    "D14": "SDA",
+    "D15": "SCL",
+
+    "LCD_RESET": "D7",
+    "LCD_ENABLE": "D8",
+    "LCD_DATALINE4": "D9",
+    "LCD_DATALINE5": "D10",
+    "LCD_DATALINE6": "D11",
+    "LCD_DATALINE7": "D12",
+
+    "BTN_USER": "BTN_USER"
+  },
+  "spiPins": {
+    "MOSI": "~D11",
+    "MISO": "~D12",
+    "SCK": "~D13"
+  },
+  "i2cPins": {
+    "SDA": "SDA",
+    "SCL": "SCL"
+  },
+  "groundPins": ["GND1", "GND0", "GND2"],
+  "threeVoltPins": ["3.3V"],
+  "fiveVoltPins": ["5V"],
+  "onboardComponents": ["accelerometer", "thermometer", "humidity", "pressure"],
+  "marginWhenBreadboarding": [0, 0, 80, 0]
+}

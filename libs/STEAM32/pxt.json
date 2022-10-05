@@ -1,0 +1,28 @@
+{
+  "name": "stm32-STEAM32",
+  "description": "STEAM23 - beta",
+  "files": [
+    "README.md",
+    "ns.ts",
+    "config.ts",
+    "device.d.ts",
+    "board.json",
+    "board.svg"
+  ],
+  "compileServiceVariant": "stm32-DISCO_L475VG_IOT",
+  "dependencies": {
+    "accelerometer---lsm6dsl": "file:../accelerometer---lsm6dsl",
+    "barometer---lps22hb": "file:../barometer---lps22hb",
+    "buttons": "file:../buttons",
+    "core---stm32": "file:../core---stm32",
+    "distance---vl53l0x": "file:../distance---vl53l0x",
+    "hygrometer---hts221": "file:../hygrometer---hts221",
+    "thermometer---lps22hb": "file:../thermometer---hts221"
+  },
+  "core": true,
+  "public": true,
+  "dalDTS": {
+    "corePackage": "../core---stm32"
+  },
+  "features": ["pina0", "pina1"]
+}
