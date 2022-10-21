@@ -75,7 +75,7 @@ void stopEmitting() {
  */
 //% blockId=ble_start_scanning block="Start Scan mode"
 //% help=magnetics/ble_start_scanning weight=91
-void starScanning() {
+void startScanning() {
     auto radio = getWRadioBLE();
     radio->configure();
 
