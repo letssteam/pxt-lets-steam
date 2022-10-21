@@ -2,16 +2,24 @@
 
 #include "pxt.h"
 
-#include "STM32AdvertisingBLE.h"
-#include "STM32duinoBLE.h"
+#include "BLEDevice_Component.h"
+#include "AdvertisingData.h"
+#include "AdvertisingFlagsBuilder.h"
 
 namespace pxt {
 class WRadioBLE {
   private:
   public:
-    codal::STM32AdvertisingBLE advertising;
+    codal::BLEDevice_Component *ble;
+    AdvertisingData advData;
+    AdvertisingData scanData;
+    bool isAdvertisingStarted;
+    bool isScanningStarted;
 
-    WRadioBLE() : advertising(DEVICE_ID_RADIO), isConfigured(false) {}
+    WRadioBLE() : ble(nullptr), isAdvertisingStarted(false), isScanningStarted(false), isConfigured(false) {
+        advData.setFlags(AdvertisingFlagsBuilder().addBrEdrNotSupported().addLeGeneralDiscoverableMode().build());
+    }
+
     void configure();
 
   private:

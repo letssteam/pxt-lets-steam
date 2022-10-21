@@ -2,7 +2,7 @@
 namespace pxsim.magnetics{
 
     export function setLocalName(name: string): void{}
-    export function setAdvertisingUserStringData(data: string): void{}
+    export function setAdvertisingStringData(data: string): void{}
     export function setAdvertisingKeyValueData(key: string, value: number): void{}
     export function availableDataFromName(name: string): boolean{return false;}
     export function readDataFromName(name: string): string{return "";}
