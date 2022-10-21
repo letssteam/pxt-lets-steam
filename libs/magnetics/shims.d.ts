@@ -22,8 +22,8 @@ declare namespace magnetics {
      *
      */
     //% blockId=ble_start_scanning block="Start Scan mode"
-    //% help=magnetics/ble_start_scanning weight=91 shim=magnetics::starScanning
-    function starScanning(): void;
+    //% help=magnetics/ble_start_scanning weight=91 shim=magnetics::startScanning
+    function startScanning(): void;
 
     /**
      * Stop the device to receiving data
