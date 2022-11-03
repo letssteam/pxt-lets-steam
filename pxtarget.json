@@ -25,6 +25,7 @@
     "libs/wifi",
     "libs/magnetics",
     "libs/datalogger",
+    "libs/hcsr04",
     "libs/lcd_i2c"
   ],
   "cloud": {

@@ -1,0 +1,15 @@
+{
+  "name": "hcsr04",
+  "description": "Library for the HC-SR04 sensor",
+  "files": [
+    "hcsr04.cpp",
+    "target_hcsr04.h",
+    "shims.d.ts",
+    "enums.d.ts",
+    "pxtparts.json"
+  ],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
