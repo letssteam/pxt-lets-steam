@@ -37,7 +37,9 @@ namespace pxsim {
         CompassBoard,
         SSD1306Board,
         SerialBoard,
-        hcsr04Board
+        hcsr04Board,
+        JoystickBoard,
+        LCDI2CBoard
         {
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -67,10 +69,12 @@ namespace pxsim {
         pressureUnitState: PressureUnit;
         compassState: CompassState;
         ssd1306State: SSD1306State;
+        lcdI2CState: LCDState;
 
         hcsr04State: HCSR04State;
 
         serialState: STMSerialState;
+        joystickState: JoystickState;
 
         constructor(public boardDefinition: BoardDefinition) {
             super();
@@ -142,6 +146,8 @@ namespace pxsim {
             this.pressureUnitState = PressureUnit.HectoPascal;
             this.ssd1306State = new SSD1306State();
             this.serialState = new STMSerialState(runtime, this);
+            this.joystickState = new JoystickState();
+            this.lcdI2CState = new LCDState();
 
             this.hcsr04State = new HCSR04State();
 
@@ -232,10 +238,20 @@ namespace pxsim {
 
             this.builtinParts["serial"] = this.serialState;
 
+
             this.builtinParts["hcsr04"] = this.hcsr04State;
             this.builtinVisuals["hcsr04"] = () => new visuals.HCSR04View();
             this.builtinPartVisuals["hcsr04"] = (xy: visuals.Coord) => visuals.mkHCSR04(xy);
 
+
+            
+            this.builtinParts["joystick"] = this.joystickState;
+            this.builtinVisuals["joystick"] = () => new visuals.JoystickView();
+            this.builtinPartVisuals["joystick"] = (xy: visuals.Coord) => visuals.mkJoystickPart(xy);
+
+            this.builtinParts["lcd_i2c"] =  this.lcdI2CState;
+            this.builtinVisuals["lcd_i2c"] = () => new visuals.LCDI2C2View();
+            this.builtinPartVisuals["lcd_i2c"] = (xy: visuals.Coord) => visuals.mkLCDI2C2Part(xy);
         }
 
         kill() {

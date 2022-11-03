@@ -16,8 +16,10 @@ class WCompas {
 
     WCompas()
         : i2c(getI2C(LOOKUP_PIN(LSM6DSL_SDA), LOOKUP_PIN(LSM6DSL_SCL))),
-          coordinateSpace(SIMPLE_CARTESIAN, true, COORDINATE_SPACE_ROTATED_180),
-          magnetometer(new codal::LIS3MDL_Magnetometer(i2c, 0x3C, coordinateSpace)) {}
+          coordinateSpace(codal::CoordinateSystem::SIMPLE_CARTESIAN),
+          magnetometer(new codal::LIS3MDL_Magnetometer(i2c, 0x3C, coordinateSpace)) {
+        magnetometer->configure();
+    }
 
     ~WCompas() { delete magnetometer; }
 };

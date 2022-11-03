@@ -19,12 +19,14 @@
     "libs/barometer---lps22hb",
     "libs/distance---vl53l0x",
     "libs/thermometer---hts221",
+    "libs/thermometer---lps22hb",
     "libs/hygrometer---hts221",
     "libs/oled",
     "libs/wifi",
     "libs/magnetics",
     "libs/datalogger",
-    "libs/hcsr04"
+    "libs/hcsr04",
+    "libs/lcd_i2c"
   ],
   "cloud": {
     "workspace": false,
@@ -114,7 +116,7 @@
     "codalTarget": {
       "name": "codal-stm32-DISCO_L475VG_IOT",
       "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-      "branch": "v1.0.19",
+      "branch": "v1.0.20",
       "type": "git",
       "dev": true
     },
@@ -137,7 +139,7 @@
         "codalTarget": {
           "name": "codal-stm32-DISCO_L475VG_IOT",
           "url": "https://github.com/letssteam/codal-stm32-DISCO_L475VG_IOT",
-          "branch": "v1.0.19",
+          "branch": "v1.0.20",
           "type": "git",
           "dev": true
         },

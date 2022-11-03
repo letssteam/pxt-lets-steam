@@ -1,0 +1,69 @@
+{
+  "joystick": {
+    "simulationBehavior": "joystick",
+    "visual": {
+      "builtIn": "joystick",
+      "width": 245.248,
+      "height": 125,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 59.976,
+          "y": 0
+        },
+        {
+          "x": 44.982,
+          "y": 0
+        },
+        {
+          "x": 29.988,
+          "y": 0
+        },
+        {
+          "x": 14.994,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    "numberOfPins": 5,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "-X"
+      },
+      {
+        "target": "threeVolt",
+        "style": "croc",
+        "orientation": "-X"
+      },
+      {
+        "target": "A0",
+        "style": "croc",
+        "orientation": "-X"
+      },
+      {
+        "target": "A1",
+        "style": "croc",
+        "orientation": "-X"
+      },
+      {
+        "target": "D2",
+        "style": "croc",
+        "orientation": "-X"
+      }
+    ],
+    "assembly": [
+      {
+        "pinIndices": [0, 1, 2, 3, 4]
+      }
+    ]
+  }
+}
