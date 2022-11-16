@@ -3,17 +3,17 @@
 ```codecard
 [
     {
-        "name": "Coding activities",
+        "name": "Activités de programmation",
         "url": "/coding_activities",
         "imageUrl": "/static/activities/1.png"
     },
     {
-        "name": "Inclusiveness",
+        "name": "Inclusivité",
         "url": "/inclusiveness_activities",
         "imageUrl": "/static/activities/24.png"
     },
     {
-        "name": "Project Ideas",
+        "name": "Idées de projets",
         "url": "/project_ideas",
         "imageUrl": "/static/activities/16.png"
     }
@@ -22,7 +22,6 @@
 
 ## See Also
 
-[Coding activities](/coding_activities),
-[Inclusiveness](/inclusiveness_activities),
-[Project Ideas](/project_ideas)
-
+[Activités de programmation](/coding_activities),
+[Inclusivité](/inclusiveness_activities),
+[Idées de projets](/project_ideas)

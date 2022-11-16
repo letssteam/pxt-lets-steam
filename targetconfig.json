@@ -52,8 +52,8 @@
   },
 
   "galleries": {
-    "Coding activities": "coding_activities",
-    "Inclusiveness": "inclusiveness_activities",
-    "Project Ideas": "project_ideas"
+    "Activités de programmation": "coding_activities",
+    "Inclusivité": "inclusiveness_activities",
+    "Idées de projets": "project_ideas"
   }
 }
