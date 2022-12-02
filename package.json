@@ -1,6 +1,6 @@
 {
   "name": "pxt-stm32-iot-node",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "MakeCode editor for Let's STEAM project",
   "public": true,
   "keywords": [
