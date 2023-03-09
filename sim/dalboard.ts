@@ -39,7 +39,8 @@ namespace pxsim {
         SerialBoard,
         hcsr04Board,
         JoystickBoard,
-        LCDI2CBoard
+        LCDI2CBoard,
+        SoilHygrometerBoard
         {
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -70,6 +71,7 @@ namespace pxsim {
         compassState: CompassState;
         ssd1306State: SSD1306State;
         lcdI2CState: LCDState;
+        soilHygrometerState: SoilHygrometerState;
 
         hcsr04State: HCSR04State;
 
@@ -150,6 +152,8 @@ namespace pxsim {
             this.lcdI2CState = new LCDState();
 
             this.hcsr04State = new HCSR04State();
+
+            this.soilHygrometerState = new SoilHygrometerState()
 
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -252,6 +256,10 @@ namespace pxsim {
             this.builtinParts["lcd_i2c"] =  this.lcdI2CState;
             this.builtinVisuals["lcd_i2c"] = () => new visuals.LCDI2C2View();
             this.builtinPartVisuals["lcd_i2c"] = (xy: visuals.Coord) => visuals.mkLCDI2C2Part(xy);
+
+            this.builtinParts["soil_hygrometer"] = this.soilHygrometerState;
+            this.builtinVisuals["soil_hygrometer"] = () => new visuals.SoilHygrometerView();
+            this.builtinPartVisuals["soil_hygrometer"] = (xy: visuals.Coord) => visuals.mkSoilHygrometerPart(xy)
         }
 
         kill() {
