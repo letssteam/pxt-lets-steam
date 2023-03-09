@@ -1,0 +1,9 @@
+{
+  "name": "soil-hygrometer",
+  "description": "A soil hygrometer analog sensor",
+  "files": ["soil-hygrometer.cpp", "shims.d.ts", "enums.d.ts", "pxtparts.json"],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
