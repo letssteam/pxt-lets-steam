@@ -26,7 +26,8 @@
     "libs/magnetics",
     "libs/datalogger",
     "libs/hcsr04",
-    "libs/lcd_i2c"
+    "libs/lcd_i2c",
+    "libs/soil-hygrometer"
   ],
   "cloud": {
     "workspace": false,
