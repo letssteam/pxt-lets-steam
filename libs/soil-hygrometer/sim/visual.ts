@@ -11,8 +11,6 @@ namespace pxsim.visuals {
             class: "sim-soil-hygrometer", x: l, y: t, width: w, height: h,
             href: svg.toDataUri(SOIL_HUM_PART)
         });
-        console.log(SOIL_HUM_PART);
-
         return { el: img, x: l, y: t, w: w, h: h };
     }
 
@@ -38,7 +36,7 @@ namespace pxsim.visuals {
       }
 
       public init(bus: EventBus, state: SoilHygrometerState, svgEl: SVGSVGElement, otherParams: Map<string>): void {
-         this.state = soilHygrometerState();
+         this.state = state;
          this.bus = bus;
          
          this.state.value = 512;
@@ -53,8 +51,6 @@ namespace pxsim.visuals {
          svg.hydrate(this.image, {
                class: "sim-soil-hygrometer", width: SOIL_HUM_PART_WIDTH, height: SOIL_HUM_PART_HEIGHT,
          });
-
-         console.log(this.image);
 
          this.element.appendChild(this.image);
 
