@@ -1,0 +1,9 @@
+{
+  "name": "mh_z19b",
+  "description": "An infrared CO2 sensor 0-5000 ppm",
+  "files": ["mh_z19b.cpp", "shims.d.ts", "enums.d.ts", "pxtparts.json"],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
