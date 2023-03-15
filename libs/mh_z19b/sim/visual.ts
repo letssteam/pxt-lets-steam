@@ -25,9 +25,6 @@ namespace pxsim.visuals {
       private handle : SVGGElement;
       private ruler : SVGRectElement;
 
-      private circle : SVGCircleElement;
-
-      private parent_svg : SVGSVGElement;
       private part: SVGElAndSize;
       private bus: EventBus;
 
@@ -42,7 +39,6 @@ namespace pxsim.visuals {
       public init(bus: EventBus, state: MHZ19BState, svgEl: SVGSVGElement, otherParams: Map<string>): void {
          this.state = state;
          this.bus = bus;
-         this.parent_svg = svgEl;
 
          this.state.value = 0;
 
