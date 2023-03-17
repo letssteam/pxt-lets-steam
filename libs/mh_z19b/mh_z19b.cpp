@@ -2,34 +2,9 @@
 #include "PulseIn.h"
 #include <vector>
 
-struct PulseInPinObject {
-    DigitalInOutPin pin;
-    codal::PulseIn *pulseIn;
-};
-
-constexpr size_t MAX_SIZE_PULSEIN_MAP = 32;
-
-std::vector<PulseInPinObject> pulseInMap;
+constexpr int TIMEOUT_PULSE = 2500;
 
 namespace input {
-
-codal::PulseIn *getPulseInForPin(DigitalInOutPin pin) {
-    for (int i = 0; i < pulseInMap.size(); ++i) {
-        auto obj = pulseInMap[i];
-        if (obj.pin == pin) {
-            return obj.pulseIn;
-        }
-    }
-
-    if (pulseInMap.size() >= MAX_SIZE_PULSEIN_MAP) {
-        return nullptr;
-    }
-
-    codal::PulseIn *pi = new codal::PulseIn(*pin);
-    pulseInMap.push_back(PulseInPinObject{.pin = pin, .pulseIn = pi});
-
-    return pi;
-}
 
 /**
  * @brief Get the CO2 concentration
@@ -46,19 +21,30 @@ codal::PulseIn *getPulseInForPin(DigitalInOutPin pin) {
 //% pin.fieldOptions.columns=4
 //% trackArgs=0
 int getCO2Concentration(DigitalInOutPin pin) {
+    int start = current_time_ms();
 
-    auto pi = getPulseInForPin(pin);
-
-    if (pi == nullptr) {
-        return -10;
+    while (pin->getDigitalValue() == 1) {
+        if ((current_time_ms() - start) >= TIMEOUT_PULSE) {
+            return -10;
+        }
     }
 
-    pin->setPolarity(1);
-    int pulse = pi->awaitPulse(2000000) / 1000;
-
-    if (pulse < 0) {
-        return -20;
+    while (pin->getDigitalValue() == 0) {
+        if ((current_time_ms() - start) >= TIMEOUT_PULSE) {
+            return -20;
+        }
     }
+
+    int begin = current_time_ms();
+
+    while (pin->getDigitalValue() == 1) {
+        if ((current_time_ms() - begin) >= TIMEOUT_PULSE) {
+            return -30;
+        }
+    }
+
+    int pulse = current_time_ms() - begin;
+
     return 5000 * (pulse - 2) / 1000;
 }
 
