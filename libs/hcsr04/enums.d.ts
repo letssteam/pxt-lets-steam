@@ -19,5 +19,7 @@
     //% block="Far"
     Far = 1,
     }
+declare namespace HCSR04 {
+}
 
 // Auto-generated. Do not edit. Really.
