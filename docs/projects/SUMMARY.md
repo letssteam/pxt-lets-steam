@@ -16,7 +16,7 @@
   * [Utiliser un servo pour mettre un objet en mouvement](https://letssteam.github.io/Resources/3_AS_Programming/FR/LS_R1AS13_Servos_FR.pdf)
   * [Créer un minuteur d'œuf](https://letssteam.github.io/Resources/3_AS_Programming/FR/LS_R1AS14_Timer_FR.pdf)
   * [Collecte de données](https://letssteam.github.io/Resources/3_AS_Programming/FR/LS_R1AS15_Data_FR.pdf)
-  * [Magneticss](https://letssteam.github.io/Resources/3_AS_Programming/FR/LS_R1AS16_Magnetics_FR.pdf)
+  * [Magnetics](https://letssteam.github.io/Resources/3_AS_Programming/FR/LS_R1AS16_Magnetics_FR.pdf)
 * [Inclusivité](/inclusiveness_activities)
   * [Design inclusif](https://letssteam.github.io/Resources/4_AS_Equity/FR/LS_R2AS01_Design_FR.pdf)
   * [Mise en œuvre inclusive](https://letssteam.github.io/Resources/4_AS_Equity/FR/LS_R2AS02_Implementation_FR.pdf)
