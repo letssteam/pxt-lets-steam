@@ -1,0 +1,9 @@
+{
+  "name": "ecmeter_sen0244",
+  "description": "A ECmeter (ElectroConducti-meter) from DFRobot (",
+  "files": ["ecmeter_sen0244.cpp", "shims.d.ts", "enums.d.ts", "pxtparts.json"],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
