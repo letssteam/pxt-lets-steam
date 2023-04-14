@@ -42,7 +42,8 @@ namespace pxsim {
         LCDI2CBoard,
         MHZ19BBoard,
         SoilHygrometerBoard,
-        INA219Board
+        INA219Board,
+        ECMeterSEN0244Board
         {
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -78,6 +79,7 @@ namespace pxsim {
         hcsr04State: HCSR04State;
         mhz19bState: MHZ19BState;
         ina219State: INA219State;
+        sen0422State: ECMeterSEN0244State;
 
         serialState: STMSerialState;
         joystickState: JoystickState;
@@ -158,8 +160,8 @@ namespace pxsim {
             this.hcsr04State = new HCSR04State();
             this.mhz19bState = new MHZ19BState();
             this.ina219State = new INA219State();
-
-            this.soilHygrometerState = new SoilHygrometerState()
+            this.soilHygrometerState = new SoilHygrometerState();
+            this.sen0422State = new ECMeterSEN0244State();
 
 
             // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -274,6 +276,10 @@ namespace pxsim {
             this.builtinParts["ina219"] =  this.ina219State;
             this.builtinVisuals["ina219"] = () => new visuals.INA219View();
             this.builtinPartVisuals["ina219"] = (xy: visuals.Coord) => visuals.mkINA219(xy);
+            
+            this.builtinParts["ecmeter_sen0244"] =  this.sen0422State;
+            this.builtinVisuals["ecmeter_sen0244"] = () => new visuals.ECMeterSEN0244View();
+            this.builtinPartVisuals["ecmeter_sen0244"] = (xy: visuals.Coord) => visuals.mkECMeterSEN0244(xy);
         }
 
         kill() {

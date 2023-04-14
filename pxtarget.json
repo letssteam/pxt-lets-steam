@@ -29,7 +29,8 @@
     "libs/lcd_i2c",
     "libs/mh_z19b",
     "libs/soil-hygrometer",
-    "libs/ina219"
+    "libs/ina219",
+    "libs/ecmeter_sen0244"
   ],
   "cloud": {
     "workspace": false,

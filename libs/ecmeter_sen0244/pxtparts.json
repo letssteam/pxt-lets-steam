@@ -1,0 +1,61 @@
+{
+  "ecmeter_sen0244": {
+    "simulationBehavior": "ecmeter_sen0244",
+    "visual": {
+      "builtIn": "ecmeter_sen0244",
+      "width": 301.16478,
+      "height": 143.295,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 181.825,
+          "y": 0.775
+        },
+        {
+          "x": 137.73,
+          "y": 0.775
+        },
+        {
+          "x": 160.325,
+          "y": 0.775
+        }
+      ]
+    },
+    "numberOfPins": 3,
+    "instantiation": {
+      "kind": "function",
+      "fullyQualifiedName": "input.getECValue",
+      "argumentRoles": [
+        {
+          "pinInstantiationIdx": 0,
+          "partParameter": "pin"
+        }
+      ]
+    },
+    "pinDefinitions": [
+      {
+        "target": {
+          "pinInstantiationIdx": 0
+        },
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "fiveVolt",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "-Z"
+      }
+    ],
+    "assembly": [
+      { "part": true },
+      { "pinIndices": [0] },
+      { "pinIndices": [1] },
+      { "pinIndices": [2] }
+    ]
+  }
+}
