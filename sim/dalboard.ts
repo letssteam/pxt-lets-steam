@@ -41,7 +41,8 @@ namespace pxsim {
         JoystickBoard,
         LCDI2CBoard,
         MHZ19BBoard,
-        SoilHygrometerBoard
+        SoilHygrometerBoard,
+        INA219Board
         {
         // state & update logic for component services
         viewHost: visuals.BoardHost;
@@ -76,6 +77,7 @@ namespace pxsim {
 
         hcsr04State: HCSR04State;
         mhz19bState: MHZ19BState;
+        ina219State: INA219State;
 
         serialState: STMSerialState;
         joystickState: JoystickState;
@@ -155,6 +157,7 @@ namespace pxsim {
 
             this.hcsr04State = new HCSR04State();
             this.mhz19bState = new MHZ19BState();
+            this.ina219State = new INA219State();
 
             this.soilHygrometerState = new SoilHygrometerState()
 
@@ -267,6 +270,10 @@ namespace pxsim {
             this.builtinParts["mh_z19b"] =  this.mhz19bState;
             this.builtinVisuals["mh_z19b"] = () => new visuals.MHZ19BView();
             this.builtinPartVisuals["mh_z19b"] = (xy: visuals.Coord) => visuals.mkMHZ19B(xy);
+            
+            this.builtinParts["ina219"] =  this.ina219State;
+            this.builtinVisuals["ina219"] = () => new visuals.INA219View();
+            this.builtinPartVisuals["ina219"] = (xy: visuals.Coord) => visuals.mkINA219(xy);
         }
 
         kill() {
