@@ -1,0 +1,15 @@
+{
+  "name": "ina219",
+  "description": "A voltage and current sensor that communicates in I2C",
+  "files": [
+    "ina219.cpp",
+    "target_ina219.h",
+    "shims.d.ts",
+    "enums.d.ts",
+    "pxtparts.json"
+  ],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}

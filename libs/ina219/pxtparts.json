@@ -1,0 +1,62 @@
+{
+  "ina219": {
+    "simulationBehavior": "ina219",
+    "visual": {
+      "builtIn": "ina219",
+      "width": 262.619,
+      "height": 199.877,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 121.825,
+          "y": 1.775
+        },
+        {
+          "x": 140.825,
+          "y": 1.775
+        },
+        {
+          "x": 159.825,
+          "y": 1.775
+        },
+        {
+          "x": 179.825,
+          "y": 1.775
+        }
+      ]
+    },
+    "numberOfPins": 4,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "SDA",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "SCL",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "-Z"
+      },
+      {
+        "target": "threeVolt",
+        "style": "croc",
+        "orientation": "-Z"
+      }
+    ],
+    "assembly": [
+      { "part": true },
+      { "pinIndices": [0] },
+      { "pinIndices": [1] },
+      { "pinIndices": [2] },
+      { "pinIndices": [3] }
+    ]
+  }
+}
