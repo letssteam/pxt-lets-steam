@@ -3,14 +3,16 @@
 
 namespace pxsim{
     export class HCSR04State { 
-        private distance;
+        private distance : number;
+        private time : number;
         private used : boolean = false;
         public distanceActionEvent : number[];
         public distanceEvent: RefAction[];
         public lastEvent : number;
 
         constructor() {
-            this.distance = 40;
+            this.setDistance(40);
+            this.setTime(this.distance);
             this.distanceEvent = [null, null];
             this.distanceActionEvent = [null, null];
             this.lastEvent = null;
@@ -38,6 +40,22 @@ namespace pxsim{
             }
         }
     
+        public getTime(unit: number): number {
+            switch (unit) {
+                case 1:
+                    return this.time / 1000;    
+                case 2:
+                    return this.time / 1000000;
+                case 0:
+                default:
+                    return this.time;
+            }
+        }
+
+        public setTime(distance: number) {
+            this.time = distance / 340000 * 2;
+        }
+
         public setDistance(distance: number) {
             this.distance = distance;
         }

@@ -12,6 +12,15 @@ enum class MHCSR04Unit {
     Mm = 3
 };
 
+enum class MHCSR04TimeUnit {
+    //% block="s"
+    S = 0, 
+    //% block="ms"
+    Ms = 1, 
+    //% block="us"
+    Us = 2, 
+};
+
 enum class MDistanceBehold {
     //% block="Near"
     Near = 0, 
@@ -28,17 +37,30 @@ namespace pxt {
 namespace HCSR04 {
     
 /**
- * @brief Get the value of the sensor 
+ * @brief Get the distance detected by the sensor
  *
  * @param unit the unit of the distance
- * @return uint16_t
+ * @return float
  */
 //% block="get distance in %unit"
 //% blockId="hcsr04_get_distance"
 //% group="HCSR04" weight=76
 //% parts="hcsr04"
-uint16_t getDistance(MHCSR04Unit unit) {
+float getDistance(MHCSR04Unit unit) {
     return getWHCSR04()->hcsr04->getDistance(static_cast<codal::HCSR04Unit>(unit));
+}
+
+/**
+ * @brief Get the time span between the trigger and the echo
+ * @param unit the unit of time
+ * @return float
+*/
+//% block="get time in %unit"
+//% blockId="hcsr04_get_time"
+//% group="HCSR04" weight=75
+//% parts="hcsr04"
+float getTime(MHCSR04TimeUnit unit) {
+    return getWHCSR04()->hcsr04->getTime(static_cast<codal::HCSR04TimeUnit>(unit));
 }
 
 void callActionNear() {
