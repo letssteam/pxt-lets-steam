@@ -8,7 +8,8 @@ class WHCSR04 {
     Action actNear;
     Action actFar;
 
-    WHCSR04() { 
+    WHCSR04() {
+      // D6 is the trigger pin, D7 is the echo pin 
       hcsr04 = new codal::HCSR04Sensor(*LOOKUP_PIN(D6), *LOOKUP_PIN(D7), 1337);
     }
 };

@@ -3,9 +3,15 @@ namespace pxsim.HCSR04 {
     export function getDistance(unit: number): number {
         let state = hcsr04State();
         state.setUsed();
-        return state.getDistance(0);
+        return state.getDistance(unit);
     }
 
+    export function getTime(unit: number): number {
+        let state = hcsr04State();
+        state.setUsed();
+        return state.getTime(unit);
+    }
+    
     export function onDistanceFrom(fromDistanceIs : number, distance : number, unit : number, handler : RefAction) : void {
         let state = hcsr04State();
         state.setUsed();
