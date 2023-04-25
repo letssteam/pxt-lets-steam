@@ -31,7 +31,7 @@
     },
     "pinDefinitions": [
       {
-        "target": "fiveVolt",
+        "target": "ground",
         "style": "croc",
         "orientation": "+Z"
       },
@@ -46,7 +46,7 @@
         "orientation": "+Z"
       },
       {
-        "target": "ground",
+        "target": "fiveVolt",
         "style": "croc",
         "orientation": "+Z"
       }
