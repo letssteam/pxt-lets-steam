@@ -12,7 +12,7 @@ namespace pxsim{
 
         constructor() {
             this.setDistance(40);
-            this.setTime(this.distance);
+            this.setTime();
             this.distanceEvent = [null, null];
             this.distanceActionEvent = [null, null];
             this.lastEvent = null;
@@ -25,16 +25,13 @@ namespace pxsim{
     
         public getDistance(unit : number): number {
             switch(unit) {
+                case 0:
+                    return this.distance / 1000
                 case 1:
-                    return this.distance / 10;
-    
-                case 2:
                     return this.distance / 100;
-    
+                case 2:
+                    return this.distance / 10;
                 case 3:
-                    return this.distance / 1000;
-                
-                case 0: 
                 default:
                     return this.distance;
             }
@@ -42,18 +39,18 @@ namespace pxsim{
     
         public getTime(unit: number): number {
             switch (unit) {
+                case 0:
+                    return this.time / 1000000;
                 case 1:
                     return this.time / 1000;    
                 case 2:
-                    return this.time / 1000000;
-                case 0:
                 default:
                     return this.time;
             }
         }
 
-        public setTime(distance: number) {
-            this.time = distance / 340000 * 2;
+        public setTime() {
+            this.time = (1000000 * 2 * this.distance) / 343000;
         }
 
         public setDistance(distance: number) {

@@ -3,39 +3,38 @@
 
 enum class MHCSR04Unit {
     //% block="m"
-    M = 0, 
+    M = 0,
     //% block="dm"
-    Dm = 1, 
+    Dm = 1,
     //% block="cm"
-    Cm = 2, 
+    Cm = 2,
     //% block="mm"
     Mm = 3
 };
 
 enum class MHCSR04TimeUnit {
     //% block="s"
-    S = 0, 
+    S = 0,
     //% block="ms"
-    Ms = 1, 
+    Ms = 1,
     //% block="us"
-    Us = 2, 
+    Us = 2,
 };
 
 enum class MDistanceBehold {
     //% block="Near"
-    Near = 0, 
+    Near = 0,
     //% block="Far"
     Far = 1
 };
 
-
 namespace pxt {
-    SINGLETON(WHCSR04);
+SINGLETON(WHCSR04);
 }
 
 //% color="#456F93" icon="\uf028" blockGap=8
 namespace HCSR04 {
-    
+
 /**
  * @brief Get the distance detected by the sensor
  *
@@ -54,7 +53,7 @@ float getDistance(MHCSR04Unit unit) {
  * @brief Get the time span between the trigger and the echo
  * @param unit the unit of time
  * @return float
-*/
+ */
 //% block="get time in %unit"
 //% blockId="hcsr04_get_time"
 //% group="HCSR04" weight=75
@@ -75,7 +74,7 @@ void callActionFar() {
  * @brief Creates a new event that triggers when the sensor is near or far of the distance
  *
  * @param fromDistanceIs the direction that triggers the event
- * @param distance the value 
+ * @param distance the value
  * @param unit the unit of the distance
  * @param handler what the event does
  */
@@ -84,19 +83,20 @@ void callActionFar() {
 //% group="HCSR04" weight=67
 //% parts="hcsr04"
 void onDistanceFrom(MDistanceBehold fromDistanceIs, uint16_t distance, MHCSR04Unit unit, Action handler) {
-    switch (fromDistanceIs)
-    {
-    case MDistanceBehold::Near : 
+    switch (fromDistanceIs) {
+    case MDistanceBehold::Near:
         getWHCSR04()->actNear = handler;
-        getWHCSR04()->hcsr04->registerDistanceEvent(static_cast<codal::DistanceBehold>(fromDistanceIs), distance, static_cast<codal::HCSR04Unit>(unit), callActionNear);
+        getWHCSR04()->hcsr04->registerDistanceEvent(static_cast<codal::DistanceBehold>(fromDistanceIs), distance,
+                                                    static_cast<codal::HCSR04Unit>(unit), callActionNear);
         break;
-    case MDistanceBehold::Far : 
+    case MDistanceBehold::Far:
         getWHCSR04()->actFar = handler;
-        getWHCSR04()->hcsr04->registerDistanceEvent(static_cast<codal::DistanceBehold>(fromDistanceIs), distance, static_cast<codal::HCSR04Unit>(unit), callActionFar);
+        getWHCSR04()->hcsr04->registerDistanceEvent(static_cast<codal::DistanceBehold>(fromDistanceIs), distance,
+                                                    static_cast<codal::HCSR04Unit>(unit), callActionFar);
         break;
     default:
         break;
     }
 }
- 
+
 } // namespace HCSR04
