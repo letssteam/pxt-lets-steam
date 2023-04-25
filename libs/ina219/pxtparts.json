@@ -51,12 +51,6 @@
         "orientation": "-Z"
       }
     ],
-    "assembly": [
-      { "part": true },
-      { "pinIndices": [0] },
-      { "pinIndices": [1] },
-      { "pinIndices": [2] },
-      { "pinIndices": [3] }
-    ]
+    "assembly": [{ "part": true, "pinIndices": [0, 1, 2, 3] }]
   }
 }
