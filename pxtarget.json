@@ -28,7 +28,8 @@
     "libs/hcsr04",
     "libs/lcd_i2c",
     "libs/mh_z19b",
-    "libs/soil-hygrometer"
+    "libs/soil-hygrometer",
+    "libs/ina219"
   ],
   "cloud": {
     "workspace": false,
