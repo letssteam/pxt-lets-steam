@@ -25,3 +25,4 @@
 [Activités de programmation](/coding_activities),
 [Inclusivité](/inclusiveness_activities),
 [Idées de projets](/project_ideas)
+
