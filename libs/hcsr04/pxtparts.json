@@ -36,12 +36,12 @@
         "orientation": "+Z"
       },
       {
-        "target": "D6",
+        "target": "D7",
         "style": "croc",
         "orientation": "+Z"
       },
       {
-        "target": "D7",
+        "target": "D6",
         "style": "croc",
         "orientation": "+Z"
       },
