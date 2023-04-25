@@ -150,6 +150,7 @@ namespace pxsim.visuals {
 
             this.slider.oninput = (ev) => {
                 state.setDistance(parseInt(this.slider.value));
+                state.setTime();
                 this.updateDistance();
 
                 if (state.distanceEvent[0] != null && state.getDistance(0) <= state.distanceActionEvent[0] && state.lastEvent != 0) {
@@ -174,7 +175,7 @@ namespace pxsim.visuals {
             if (!state || !state.isUsed())
                 return;
 
-            this.text.getElementsByTagName("tspan").item(0).innerHTML = state.getDistance(0).toString() + ' mm';
+            this.text.getElementsByTagName("tspan").item(0).innerHTML = state.getDistance(3).toString() + ' mm';
         }
 
         private generateIcon(width?: number, height?: number, x?: number, y?: number) {
