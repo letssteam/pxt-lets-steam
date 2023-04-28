@@ -1,0 +1,56 @@
+{
+  "anemometer": {
+    "simulationBehavior": "anemometer",
+    "visual": {
+      "builtIn": "anemometer",
+      "width": 196.28,
+      "height": 253.446,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 97.825,
+          "y": 10.775
+        },
+        {
+          "x": 41.02,
+          "y": 10.775
+        },
+        {
+          "x": 59.215,
+          "y": 10.775
+        }
+      ]
+    },
+    "numberOfPins": 3,
+    "instantiation": {
+      "kind": "function",
+      "fullyQualifiedName": "input.getRotation",
+      "argumentRoles": [
+        {
+          "pinInstantiationIdx": 0,
+          "partParameter": "pin"
+        }
+      ]
+    },
+    "pinDefinitions": [
+      {
+        "target": {
+          "pinInstantiationIdx": 0
+        },
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "fiveVolt",
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "+Z"
+      }
+    ],
+    "assembly": [{ "part": true, "pinIndices": [0, 1, 2] }]
+  }
+}
