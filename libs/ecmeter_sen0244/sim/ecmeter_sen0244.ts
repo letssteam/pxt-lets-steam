@@ -4,11 +4,8 @@
 
 namespace pxsim {
     export enum ECUnit {
-        //% block="S/cm"
         S_CM = 0,
-        //% block="mS/cm"
         MS_CM = 1,
-        //% block="µS/cm"
         US_CM = 2,
     }
 }
