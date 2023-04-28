@@ -8,15 +8,15 @@
       "pinDistance": 15,
       "pinLocations": [
         {
-          "x": 181.825,
+          "x": 173.825,
           "y": 0.775
         },
         {
-          "x": 137.73,
+          "x": 129.73,
           "y": 0.775
         },
         {
-          "x": 160.325,
+          "x": 151.325,
           "y": 0.775
         }
       ]
@@ -51,11 +51,6 @@
         "orientation": "-Z"
       }
     ],
-    "assembly": [
-      { "part": true },
-      { "pinIndices": [0] },
-      { "pinIndices": [1] },
-      { "pinIndices": [2] }
-    ]
+    "assembly": [{ "part": true, "pinIndices": [0, 1, 2] }]
   }
 }
