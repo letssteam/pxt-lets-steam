@@ -2,11 +2,12 @@
 
 
     declare const enum ECUnit {
-    //% block="PPM"
-    PPM = 0,
-
-    //% block="uS/cm"
-    US_CM = 1,
+    //% block="S/cm"
+    S_CM = 0,
+    //% block="mS/cm"
+    MS_CM = 1,
+    //% block="µS/cm"
+    US_CM = 2,
     }
 
 // Auto-generated. Do not edit. Really.
