@@ -30,7 +30,8 @@
     "libs/mh_z19b",
     "libs/soil-hygrometer",
     "libs/ina219",
-    "libs/ecmeter_sen0244"
+    "libs/ecmeter_sen0244",
+    "libs/anemometer"
   ],
   "cloud": {
     "workspace": false,
