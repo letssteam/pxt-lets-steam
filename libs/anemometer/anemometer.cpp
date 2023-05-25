@@ -19,13 +19,15 @@ namespace input {
  */
 //% blockId=input_anemometer_get_rotation_per_unit block="get anemometer rotation on %pin for %timeSpan seconds in %unit"
 //% help=input/anemometer_get_rotation_per_unit
-//% parts="anemometer"
+//% parts=anemometer
 //% group="Anemometer" weight="90"
 //% pin.fieldEditor="gridpicker"
 //% pin.fieldOptions.width=220
 //% pin.fieldOptions.columns=4
+//% timeSpan.min=0 timeSpan.max=10 timeSpan.defl=1
 //% trackArgs=0
-int getAnemometerRotationPerUnit(DigitalInOutPin pin, int timeSpan, AnemometerUnit unit) {
+//% promise
+int getAnemometerRotationPerUnit(DigitalInOutPin pin, AnemometerUnit unit, int timeSpan) {
     switch (unit) {
     case AnemometerUnit::RPS:
         return getAnemometerRotation(pin, timeSpan) / timeSpan;
@@ -43,12 +45,14 @@ int getAnemometerRotationPerUnit(DigitalInOutPin pin, int timeSpan, AnemometerUn
  */
 //% blockId=input_anemometer_get_rotation block="get anemometer number of rotations on %pin for %timeSpan seconds"
 //% help=input/anemometer_get_rotation
-//% parts="anemometer"
+//% parts=anemometer
 //% group="Anemometer" weight="90"
 //% pin.fieldEditor="gridpicker"
 //% pin.fieldOptions.width=220
 //% pin.fieldOptions.columns=4
+//% timeSpan.min=1 timeSpan.max=10 timeSpan.defl=1
 //% trackArgs=0
+//% promise
 int getAnemometerRotation(DigitalInOutPin pin, int timeSpan) {
     int endMeasureTime = current_time_ms() + (timeSpan * 1000);
     int rotations = 0;

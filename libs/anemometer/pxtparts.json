@@ -3,35 +3,47 @@
     "simulationBehavior": "anemometer",
     "visual": {
       "builtIn": "anemometer",
-      "width": 196.28,
-      "height": 253.446,
-      "pinDistance": 15,
+      "width": 350,
+      "height": 350,
+      "pinDistance": 25,
       "pinLocations": [
         {
-          "x": 97.825,
-          "y": 10.775
+          "x": 95,
+          "y": 12
         },
         {
-          "x": 41.02,
-          "y": 10.775
+          "x": 75,
+          "y": 12
         },
         {
-          "x": 59.215,
-          "y": 10.775
+          "x": 121,
+          "y": 12
         }
       ]
     },
     "numberOfPins": 3,
-    "instantiation": {
-      "kind": "function",
-      "fullyQualifiedName": "input.getRotation",
-      "argumentRoles": [
-        {
-          "pinInstantiationIdx": 0,
-          "partParameter": "pin"
-        }
-      ]
-    },
+    "instantiations": [
+      {
+        "kind": "function",
+        "fullyQualifiedName": "input.getAnemometerRotation",
+        "argumentRoles": [
+          {
+            "pinInstantiationIdx": 0,
+            "partParameter": "pin"
+          }
+        ]
+      },
+      {
+        "kind": "function",
+        "fullyQualifiedName": "input.getAnemometerRotationPerUnit",
+        "argumentRoles": [
+          {
+            "pinInstantiationIdx": 0,
+            "partParameter": "pin"
+          }
+        ]
+      }
+    ],
     "pinDefinitions": [
       {
         "target": {
