@@ -96,7 +96,7 @@ namespace pxsim.visuals {
 
       this.rotation = 30;
       this.interval = setInterval(() => {
-        this.rotateCups((this.state.getRPS() * 360) / 60);
+        this.rotateCups((this.state.getRPS() * 360) / 60 / 50);
       }, 17);
     }
 
@@ -113,7 +113,7 @@ namespace pxsim.visuals {
     }
 
     public moveToCoord(xy: Coord) {
-      translateEl(this.element, [0, 590]);
+      translateEl(this.element, [-20, 590]);
     }
 
     public updateTheme() {}
@@ -122,7 +122,7 @@ namespace pxsim.visuals {
       this.text_value.innerHTML = this.state.getRPS().toString();
       clearInterval(this.interval);
       this.interval = setInterval(() => {
-        this.rotateCups((this.state.getRPS() * 360) / 60);
+        this.rotateCups((this.state.getRPS() * 360) / 60 / 50);
       }, 17);
     }
 
@@ -139,9 +139,7 @@ namespace pxsim.visuals {
       offset = Math.max(-this.ruler.height.baseVal.value, Math.min(0, offset));
       this.handle.setAttribute("transform", `translate(0 ${offset})`);
       this.state.setRPS(
-        Math.round(
-          ((10 * (-1 * offset)) / this.ruler.height.baseVal.value) * 10
-        ) / 10
+        Math.round((100 * (-1 * offset)) / this.ruler.height.baseVal.value)
       );
       this.updateState();
     }
