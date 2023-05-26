@@ -27,7 +27,7 @@ namespace pxsim.input {
     return new Promise<number>(async (resolve, reject) => {
       let result: number = await getAnemometerRotation(pin, timeSpan).then(
         (value) => {
-          return value / timeSpan;
+          return value;
         }
       );
       resolve(unit == AnemometerUnit.RPM ? result * 60 : result);
