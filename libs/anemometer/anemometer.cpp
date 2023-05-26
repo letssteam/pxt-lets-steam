@@ -17,14 +17,14 @@ namespace input {
  * @param unit the measurement unit
  * @return int
  */
-//% blockId=input_anemometer_get_rotation_per_unit block="get anemometer rotation on %pin for %timeSpan seconds in %unit"
+//% blockId=input_anemometer_get_rotation_per_unit block="get anemometer rotation on %pin in %unit for %timeSpan seconds "
 //% help=input/anemometer_get_rotation_per_unit
 //% parts=anemometer
 //% group="Anemometer" weight="90"
 //% pin.fieldEditor="gridpicker"
 //% pin.fieldOptions.width=220
 //% pin.fieldOptions.columns=4
-//% timeSpan.min=0 timeSpan.max=10 timeSpan.defl=1
+//% timeSpan.min=1 timeSpan.max=10 timeSpan.defl=1
 //% trackArgs=0
 //% promise
 int getAnemometerRotationPerUnit(DigitalInOutPin pin, AnemometerUnit unit, int timeSpan) {
