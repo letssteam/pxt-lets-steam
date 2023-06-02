@@ -56,10 +56,18 @@ int getAnemometerRotationPerUnit(DigitalInOutPin pin, AnemometerUnit unit, int t
 int getAnemometerRotation(DigitalInOutPin pin, int timeSpan) {
     int endMeasureTime = current_time_ms() + (timeSpan * 1000);
     int rotations = 0;
+    bool isAlreadyCounted = false;
+
     while (current_time_ms() < endMeasureTime) {
-        if (pin.getDigitalValue() == 1)
+        if (pin.getDigitalValue() == 1 && !isAlreadyCounted) {
             ++rotations;
+            isAlreadyCounted = true;
+        }
+        if (pin.getDigitalValue() == 0 && isAlreadyCounted) {
+            isAlreadyCounted = false;
+        }
     }
+
     return rotations;
 }
 
