@@ -113,7 +113,7 @@ namespace pxsim.visuals {
     }
 
     public moveToCoord(xy: Coord) {
-      translateEl(this.element, [-20, 590]);
+      translateEl(this.element, [xy[0], 590]);
     }
 
     public updateTheme() {}
