@@ -5,19 +5,19 @@
       "builtIn": "anemometer",
       "width": 350,
       "height": 350,
-      "pinDistance": 25,
+      "pinDistance": 15,
       "pinLocations": [
         {
-          "x": 95,
-          "y": 12
+          "x": 165,
+          "y": 0
         },
         {
-          "x": 75,
-          "y": 12
+          "x": 151.5,
+          "y": 0
         },
         {
-          "x": 121,
-          "y": 12
+          "x": 176.5,
+          "y": 0
         }
       ]
     },
@@ -53,7 +53,7 @@
         "orientation": "+Z"
       },
       {
-        "target": "fiveVolt",
+        "target": "threeVolt",
         "style": "croc",
         "orientation": "+Z"
       },
