@@ -80,12 +80,10 @@ namespace pxsim.visuals {
 
       this.handle.addEventListener("mousedown", () => {
         this.is_handle_selected = true;
-        this.last_y = 0;
       });
 
       document.addEventListener("mouseup", () => {
         this.is_handle_selected = false;
-        this.last_y = 0;
       });
 
       document.addEventListener("mousemove", (event) => this.moveHandle(event));
