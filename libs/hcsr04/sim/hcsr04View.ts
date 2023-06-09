@@ -39,7 +39,6 @@ namespace pxsim.visuals {
     private state: HCSR04State;
 
     private is_handle_selected: boolean = false;
-    private last_y: number = 0;
 
     constructor() {}
 
@@ -93,7 +92,7 @@ namespace pxsim.visuals {
     }
 
     public moveToCoord(xy: Coord) {
-      translateEl(this.element, [xy[0], xy[1]]);
+      translateEl(this.element, xy);
     }
 
     public updateTheme() {}
