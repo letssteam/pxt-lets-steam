@@ -1,0 +1,9 @@
+{
+  "name": "dbmeter",
+  "description": "A dbmeter sensor",
+  "files": ["dbmeter.cpp", "target_dbmeter.h", "shims.d.ts", "enums.d.ts"],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
