@@ -116,6 +116,7 @@ namespace pxsim.visuals {
         private onBoardThermometer: pxsim.visuals.ThermometerView;
         private onBoardBarometer: pxsim.visuals.BarometerView;
         private onBoardCompass: pxsim.visuals.CompassView;
+        private onBoardDBMeter: pxsim.visuals.DBMeterView;
 
         private shakeButton: SVGCircleElement;
         private shakeText: SVGTextElement;
@@ -183,6 +184,7 @@ namespace pxsim.visuals {
             this.onBoardThermometer = new ThermometerView();
             this.onBoardBarometer = new BarometerView();
             this.onBoardCompass = new CompassView();
+            this.onBoardDBMeter = new DBMeterView();
 
             if (props && props.theme)
                 this.updateTheme();
@@ -198,6 +200,7 @@ namespace pxsim.visuals {
             this.onBoardThermometer.init( this.board.bus, new ThermometerState(this.board.thermometerState), el, null);
             this.onBoardBarometer.init( this.board.bus, new BarometerState(this.board.barometerState, this.board.pressureUnitState), el, null);
             this.onBoardCompass.init(this.board.bus, this.board.compassState, el, null);
+            this.onBoardDBMeter.init(this.board.bus, new DBMeterState(this.board.dbMeterState), el, null);
         }
 
         public updateTheme() {
@@ -224,6 +227,7 @@ namespace pxsim.visuals {
             this.onBoardThermometer.updateState();
             this.onBoardBarometer.updateState();
             this.onBoardCompass.updateState();
+            this.onBoardDBMeter.updateState();
             this.updateGestures();
         }
 
