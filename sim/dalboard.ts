@@ -44,7 +44,8 @@ namespace pxsim {
       SoilHygrometerBoard,
       INA219Board,
       ECMeterSEN0244Board,
-      AnemometerBoard
+      AnemometerBoard,
+      DBMeterBoard
       {
       // state & update logic for component services
       viewHost: visuals.BoardHost;
@@ -85,6 +86,7 @@ namespace pxsim {
       serialState: STMSerialState;
       joystickState: JoystickState;
       anemometerState: AnemometerState;
+      dbMeterState: AnalogSensorState;
 
       constructor(public boardDefinition: BoardDefinition) {
           super();
@@ -165,6 +167,7 @@ namespace pxsim {
           this.soilHygrometerState = new SoilHygrometerState();
           this.sen0422State = new ECMeterSEN0244State();
           this.anemometerState = new AnemometerState();
+          this.dbMeterState = new AnalogSensorState(DAL.DEVICE_ID_SYSTEM_LEVEL_DETECTOR_SPL, 0, 120);
 
 
           // TODO we need this.buttonState set for pxtcore.getButtonByPin(), but
@@ -287,6 +290,9 @@ namespace pxsim {
           this.builtinParts["anemometer"] = this.anemometerState;
           this.builtinVisuals["anemometer"] = () => new visuals.AnemometerView();
           this.builtinPartVisuals["anemometer"] = (xy: visuals.Coord) => visuals.mkAnemometer(xy);
+            
+          this.builtinParts["dbmeter"] =  new DBMeterState(this.dbMeterState);
+          this.builtinVisuals["dbmeter"] = () => new visuals.DBMeterView();
       }
 
       kill() {
