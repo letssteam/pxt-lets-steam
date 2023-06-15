@@ -31,7 +31,7 @@ namespace input {
 //% pin.fieldOptions.columns=4
 //% trackArgs=0
 float getECValue(AnalogInPin pin, ECUnit unit) {
-    float voltage = 0f;
+    float voltage = 0.0f;
 
     for (uint8_t i = 0; i < EC_SAMPLE; ++i) {
         voltage += pin->getAnalogValue();
@@ -44,13 +44,13 @@ float getECValue(AnalogInPin pin, ECUnit unit) {
     float conductivity = (1.0f / resistance) * EC_K_FACTOR;
 
     switch (unit) {
-    case US_CM:
+    case ECUnit::US_CM:
         return conductivity * 1000000.0f;
 
-    case MS_CM:
+    case ECUnit::MS_CM:
         return conductivity * 1000.0f;
 
-    case S_CM:
+    case ECUnit::S_CM:
     default:
         return conductivity;
     }
