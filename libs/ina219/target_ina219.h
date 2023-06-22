@@ -76,14 +76,14 @@ constexpr uint16_t INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS = 0x07; /**< shunt an
 
 constexpr uint16_t configuration = INA219_CONFIG_BVOLTAGERANGE_32V | INA219_CONFIG_GAIN_8_320MV | INA219_CONFIG_BADCRES_12BIT |
                                    INA219_CONFIG_SADCRES_12BIT_1S_532US | INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
-constexpr uint32_t calibration = 4096;
+constexpr uint16_t calibration = 42 << 1;
 constexpr uint32_t currentDivider_mA = 10;
 constexpr float powerMultiplier_mW = 2.0f;
 
 namespace pxt {
 class WINA219 {
   public:
-    WINA219() : address(0x40), i2c(getI2C(LOOKUP_PIN(LSM6DSL_SDA), LOOKUP_PIN(LSM6DSL_SCL))) {}
+    WINA219() : address(0x80), i2c(*LOOKUP_PIN(SDA), *LOOKUP_PIN(SCL)) {}
     ~WINA219() {}
 
     void init() {
@@ -103,7 +103,7 @@ class WINA219 {
         // value even if it's an unfortunate extra step
         send_calibration();
 
-        auto raw = i2c->readRegister(address, REGISTER_CURRENT, 2);
+        auto raw = i2c.readRegister(address, REGISTER_CURRENT, 2);
 
         float value = ((raw[0] << 8) | raw[1]);
 
@@ -123,10 +123,12 @@ class WINA219 {
         // value even if it's an unfortunate extra step
         send_calibration();
 
-        auto raw = i2c->readRegister(address, REGISTER_BUS_VOLTAGE, 2);
-        float value = ((raw[0] << 8) | raw[1]);
+        auto raw = i2c.readRegister(address, REGISTER_BUS_VOLTAGE, 2);
+        uint16_t value = (uint16_t)raw[0] << 8;
+        value |= raw[1];
+        value >>= 3;
 
-        return value / 0.001;
+        return (float)value * 0.004;
     }
 
     /**
@@ -142,10 +144,11 @@ class WINA219 {
         // value even if it's an unfortunate extra step
         send_calibration();
 
-        auto raw = i2c->readRegister(address, REGISTER_SHUNT_VOLTAGE, 2);
-        float value = ((raw[0] << 8) | raw[1]);
+        auto raw = i2c.readRegister(address, REGISTER_SHUNT_VOLTAGE, 2);
+        int16_t value = (raw[0] << 8);
+        value |= raw[1];
 
-        return value / 0.01;
+        return (float)value * 0.01;
     }
 
     /**
@@ -161,7 +164,7 @@ class WINA219 {
         // value even if it's an unfortunate extra step
         send_calibration();
 
-        auto raw = i2c->readRegister(address, REGISTER_POWER, 2);
+        auto raw = i2c.readRegister(address, REGISTER_POWER, 2);
         float value = ((raw[0] << 8) | raw[1]);
 
         return value * powerMultiplier_mW;
@@ -171,22 +174,22 @@ class WINA219 {
 
   private:
     uint16_t address;
-    CODAL_I2C *i2c;
+    codal::STM32I2C i2c;
 
     void send_calibration() {
-        i2c->beginTransmission(address);
-        i2c->write(REGISTER_CALIBRATION);
-        i2c->write((uint8_t)((calibration >> 8) & 0x00FF));
-        i2c->write((uint8_t)(calibration & 0x00FF));
-        i2c->endTransmission();
+        i2c.beginTransmission(address);
+        i2c.write(REGISTER_CALIBRATION);
+        i2c.write((uint8_t)((calibration >> 8) & 0x00FF));
+        i2c.write((uint8_t)(calibration & 0x00FF));
+        i2c.endTransmission();
     }
 
     void send_configuration() {
-        i2c->beginTransmission(address);
-        i2c->write(REGISTER_CONFIG);
-        i2c->write((uint8_t)((configuration >> 8) & 0x00FF));
-        i2c->write((uint8_t)(configuration & 0x00FF));
-        i2c->endTransmission();
+        i2c.beginTransmission(address);
+        i2c.write(REGISTER_CONFIG);
+        i2c.write((uint8_t)((configuration >> 8) & 0x00FF));
+        i2c.write((uint8_t)(configuration & 0x00FF));
+        i2c.endTransmission();
     }
 };
 } // namespace pxt
