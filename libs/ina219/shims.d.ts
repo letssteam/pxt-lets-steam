@@ -8,7 +8,7 @@ declare namespace pxt {
 declare namespace input {
 
     /**
-     * @brief Get the Voltage measurement, the INA219 module must be placed *before* to perform accurate voltage measurements
+     * @brief Get the Voltage measurement, the INA219 module must be placed *before* load to perform accurate voltage measurements
      *
      * @return float
      */
@@ -19,7 +19,7 @@ declare namespace input {
     function getINA219Voltage(): number;
 
     /**
-     * @brief Get the Current measurement
+     * @brief Get the Current measurement, the INA219 module must be placed *before* load to perform accurate voltage measurements
      *
      * @return float
      */
@@ -30,7 +30,7 @@ declare namespace input {
     function getINA219Current(): number;
 
     /**
-     * @brief Get the Power measurement
+     * @brief Get the Power measurement, the INA219 module must be placed *before* load to perform accurate voltage measurements
      *
      * @return float
      */

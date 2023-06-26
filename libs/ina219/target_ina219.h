@@ -10,7 +10,7 @@ constexpr uint8_t REGISTER_CURRENT = 0x04;
 constexpr uint8_t REGISTER_CALIBRATION = 0x05;
 
 // ===========================================================================================================================
-// === See https://github.com/adafruit/Adafruit_INA219/blob/master/Adafruit_INA219.cpp for constants and calibration value ===
+// ===         See https://github.com/adafruit/Adafruit_INA219/blob/master/Adafruit_INA219.cpp for constants value         ===
 // ===========================================================================================================================
 
 /** mask for bus voltage range **/
@@ -76,9 +76,17 @@ constexpr uint16_t INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS = 0x07; /**< shunt an
 
 constexpr uint16_t configuration = INA219_CONFIG_BVOLTAGERANGE_32V | INA219_CONFIG_GAIN_8_320MV | INA219_CONFIG_BADCRES_12BIT |
                                    INA219_CONFIG_SADCRES_12BIT_1S_532US | INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
-constexpr uint16_t calibration = 42 << 1;
-constexpr uint32_t currentDivider_mA = 10;
-constexpr float powerMultiplier_mW = 2.0f;
+
+// ===========================================================================================================================
+// ==============       CALIBRATION (see INA219 datasheet : https://www.ti.com/lit/ds/symlink/ina219.pdf)       ==============
+// ===========================================================================================================================
+constexpr float maxCurrent = 3.2;
+constexpr float rShunt = 0.1;
+constexpr float currentLSB = maxCurrent / 32768.0;                            // Equation 2 from DataSheet INA219 p. 12
+constexpr uint16_t calibration = (uint16_t)(0.04096 / (currentLSB * rShunt)); // Equation 1 from DataSheet INA219 p. 12
+constexpr float powerLSB = 20 * currentLSB;                                   // Equation 3 from DataSheet INA219 p. 12
+constexpr float busVoltageMultiplier = 0.004;
+constexpr float shuntVoltageMultiplier = 0.01;
 
 namespace pxt {
 class WINA219 {
@@ -105,9 +113,11 @@ class WINA219 {
 
         auto raw = i2c.readRegister(address, REGISTER_CURRENT, 2);
 
-        float value = ((raw[0] << 8) | raw[1]);
+        int16_t value = (raw[0] << 8);
+        value |= raw[1];
 
-        return value / currentDivider_mA;
+        return (float)value * currentLSB * 1000; /* * currentLSB*/
+        ;
     }
 
     /**
@@ -128,7 +138,7 @@ class WINA219 {
         value |= raw[1];
         value >>= 3;
 
-        return (float)value * 0.004;
+        return (float)value * busVoltageMultiplier;
     }
 
     /**
@@ -148,7 +158,7 @@ class WINA219 {
         int16_t value = (raw[0] << 8);
         value |= raw[1];
 
-        return (float)value * 0.01;
+        return (float)value * shuntVoltageMultiplier;
     }
 
     /**
@@ -165,9 +175,10 @@ class WINA219 {
         send_calibration();
 
         auto raw = i2c.readRegister(address, REGISTER_POWER, 2);
-        float value = ((raw[0] << 8) | raw[1]);
+        uint16_t value = (raw[0] << 8);
+        value |= raw[1];
 
-        return value * powerMultiplier_mW;
+        return value * powerLSB * 1000;
     }
 
     void setAddress(uint16_t addr) { address = addr; }
