@@ -18,10 +18,6 @@ namespace pxsim {
       this.rps = rps;
     }
 
-    public addRPS() {
-      this.rps += 1;
-    }
-
     public setUsed() {
       if (!this.used) {
         this.used = true;
