@@ -96,6 +96,7 @@ namespace pxsim.visuals {
 
       this.rotation = 30;
       this.interval = setInterval(() => {
+        // We divide this.state.getRPS() by 60 to know the rotation angle for the current frame and then we divide by 50 because otherwise the cups spin too fast (like, really fast)
         this.rotateCups((this.state.getRPS() * 360) / 60 / 50);
       }, 17);
     }
@@ -105,7 +106,7 @@ namespace pxsim.visuals {
         .querySelector("#cups")
         .getAttribute("transform");
       transform = transform.replace(
-        `rotate(${this.rotation} 46.302 46.302)`,
+        `rotate(${this.rotation} 46.302 46.302)`, // absolute position of cups in the svg
         `rotate(${this.rotation + angle} 46.302 46.302)`
       );
       this.rotation = this.rotation + angle;
