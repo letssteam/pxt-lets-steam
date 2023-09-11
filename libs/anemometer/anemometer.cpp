@@ -9,6 +9,8 @@ enum class AnemometerUnit {
 
 namespace input {
 
+int getAnemometerRotation(DigitalInOutPin pin, int timeSpan);
+
 /**
  * @brief Get the anemometer cup rotation frequency
  *
