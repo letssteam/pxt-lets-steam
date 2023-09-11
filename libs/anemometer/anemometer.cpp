@@ -35,6 +35,8 @@ int getAnemometerRotationPerUnit(DigitalInOutPin pin, AnemometerUnit unit, int t
         return getAnemometerRotation(pin, timeSpan) / timeSpan;
     case AnemometerUnit::RPM:
         return getAnemometerRotation(pin, timeSpan) / timeSpan * 60;
+    default:
+        return 0;
     }
 }
 
@@ -61,11 +63,11 @@ int getAnemometerRotation(DigitalInOutPin pin, int timeSpan) {
     bool isAlreadyCounted = false;
 
     while (current_time_ms() < endMeasureTime) {
-        if (pin.getDigitalValue() == 1 && !isAlreadyCounted) {
+        if (pin->getDigitalValue() == 1 && !isAlreadyCounted) {
             ++rotations;
             isAlreadyCounted = true;
         }
-        if (pin.getDigitalValue() == 0 && isAlreadyCounted) {
+        if (pin->getDigitalValue() == 0 && isAlreadyCounted) {
             isAlreadyCounted = false;
         }
     }
