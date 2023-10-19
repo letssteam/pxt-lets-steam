@@ -37,16 +37,12 @@ pxt.editor.initExtensionsAsync = function (
   content.style.borderRadius = "5px";
   content.style.overflow = "hidden";
   content.innerHTML = `<div style="padding: 8px; background-color: #e9407f; color: #ffffff;">
-            <h3>${lf("Uploading")}</h3>
+            <h3>Uploading</h3>
         </div>
         <div style="padding: 16px; background-color: white;">
             <p>
-                ${lf(
-                  "Your program is uploading to your target, please wait."
-                )}<br/><br/>
-                <i>${lf(
-                  "Do not unplug your board, do not close this tab nor change tab during uploading."
-                )}</i><br/>
+                Your program is uploading to your target, please wait.<br/><br/>
+                <i>Do not unplug your board, do not close this tab nor change tab during uploading.</i><br/>
             </p>
             <div style="background-color: #cfcfcf; height: 20px; border-radius: 10px; overflow: hidden;">
                 <p id="upload_modal_value" style="float: left; width: 100%; height: 100%; text-align: center">0%</p>
@@ -55,9 +51,7 @@ pxt.editor.initExtensionsAsync = function (
             <p id="upload_modal_message" style="display: none; padding-top: 8px;">
             </p>
             <div id="upload_modal_button" style="text-align: right; display: none;">
-                <button onclick="document.getElementById('upload_modal_container').style.display = 'none'" style="border-radius: 10px; padding: 8px 32px; border: none; background: #e9407f; color: white; font-weight: bold; margin-top: 8px; cursor: pointer;">${lf(
-                  "Ok"
-                )}</button>
+                <button onclick="document.getElementById('upload_modal_container').style.display = 'none'" style="border-radius: 10px; padding: 8px 32px; border: none; background: #e9407f; color: white; font-weight: bold; margin-top: 8px; cursor: pointer;">"Ok"</button>
             </div>
         </div>`;
 
