@@ -59,7 +59,7 @@
     "dapjs": "^2.3.0",
     "http-server": "^14.0.0",
     "pxt": "^0.5.1",
-    "pxt-common-packages": "10.4.9",
-    "pxt-core": "8.6.34"
+    "pxt-common-packages": "11.1.2",
+    "pxt-core": "9.1.11"
   }
 }
