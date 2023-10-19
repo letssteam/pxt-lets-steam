@@ -9,8 +9,7 @@
     },
     {
         "name": "Expérimentations TheDexterLab",
-        "url": "/TheDexterLab_experimentations",
-        "imageUrl": "/static/activities/1TDL.png"
+        "url": "/TheDexterLab_experimentations"
     },
     {
         "name": "Inclusivité",
