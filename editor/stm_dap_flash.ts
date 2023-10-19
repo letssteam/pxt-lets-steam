@@ -1,4 +1,3 @@
-import { USBDevice } from "webusb";
 import * as DAPjs from "dapjs";
 
 const SERIAL_BAUDRATE = 115200;
