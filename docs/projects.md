@@ -9,7 +9,8 @@
     },
     {
         "name": "Expérimentations TheDexterLab",
-        "url": "/TheDexterLab_experimentations"
+        "url": "/tdl_experimentations",
+        "imageUrl": "/static/activities/1TDL.png"
     },
     {
         "name": "Inclusivité",
@@ -27,7 +28,7 @@
 ## See Also
 
 [Activités de programmation](/coding_activities),
-[Expérimentations TheDexterLab](/TheDexterLab_experimentations),
+[Expérimentations TheDexterLab](/tdl_experimentations),
 [Inclusivité](/inclusiveness_activities),
 [Idées de projets](/project_ideas)
 
