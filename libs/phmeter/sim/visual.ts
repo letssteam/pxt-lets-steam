@@ -256,8 +256,5 @@ namespace pxsim.visuals {
     <path style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke-width:.33508" id="text-anchor" transform="rotate(-90 -26.618 21.015)" d="M-134.243 90.459h33.383v30.66h-33.383z"/>
     <text xml:space="preserve" id="value" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:85.3333px;font-family:Monospace;-inkscape-font-specification:Monospace;text-align:center;white-space:pre;display:inline;opacity:1;fill:#000" transform="scale(.26458)"><tspan x="167.815" y="436.066" id="tspan1">7</tspan></text>
     </g>
-</svg>
-
-`;
-
+</svg>`;
 }
