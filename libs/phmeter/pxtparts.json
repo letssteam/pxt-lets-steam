@@ -1,0 +1,61 @@
+{
+  "phmeter": {
+    "simulationBehavior": "phmeter",
+    "visual": {
+      "builtIn": "phmeter",
+      "width": 146.517,
+      "height": 214.263,
+      "pinDistance": 15,
+      "pinLocations": [
+        {
+          "x": 95,
+          "y": 5
+        },
+        {
+          "x": 90,
+          "y": 5
+        },
+        {
+          "x": 85,
+          "y": 5
+        }
+      ]
+    },
+    "numberOfPins": 3,
+    "instantiation": {
+      "kind": "function",
+      "fullyQualifiedName": "input.getPhmeterPh",
+      "argumentRoles": [
+        {
+          "pinInstantiationIdx": 0,
+          "partParameter": "pin"
+        }
+      ]
+    },
+    "pinDefinitions": [
+      {
+        "target": {
+          "pinInstantiationIdx": 0
+        },
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "fiveVolt",
+        "style": "croc",
+        "orientation": "+Z"
+      },
+      {
+        "target": "ground",
+        "style": "croc",
+        "orientation": "+Z"
+      }
+    ],
+    "assembly": [
+      { "part": true },
+      { "pinIndices": [0] },
+      { "pinIndices": [1] },
+      { "pinIndices": [2] }
+    ]
+  }
+}

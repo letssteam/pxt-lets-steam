@@ -44,6 +44,7 @@ namespace pxsim {
       SoilHygrometerBoard,
       INA219Board,
       ECMeterSEN0244Board,
+      PhmeterBoard,
       AnemometerBoard,
       DBMeterBoard
   {
@@ -86,6 +87,7 @@ namespace pxsim {
     serialState: STMSerialState;
     joystickState: JoystickState;
     anemometerState: AnemometerState;
+    phmeterState: PhmeterState;
     dbMeterState: AnalogSensorState;
 
     constructor(public boardDefinition: BoardDefinition) {
@@ -193,6 +195,7 @@ namespace pxsim {
       this.soilHygrometerState = new SoilHygrometerState();
       this.sen0422State = new ECMeterSEN0244State();
       this.anemometerState = new AnemometerState();
+      this.phmeterState = new PhmeterState();
       this.dbMeterState = new AnalogSensorState(
         DAL.DEVICE_ID_SYSTEM_LEVEL_DETECTOR_SPL,
         0,
@@ -362,6 +365,11 @@ namespace pxsim {
         new visuals.ECMeterSEN0244View();
       this.builtinPartVisuals["ecmeter_sen0244"] = (xy: visuals.Coord) =>
         visuals.mkECMeterSEN0244(xy);
+
+      this.builtinParts["phmeter"] = this.phmeterState;
+      this.builtinVisuals["phmeter"] = () => new visuals.phmeterView();
+      this.builtinPartVisuals["phmeter"] = (xy: visuals.Coord) =>
+        visuals.mkphmeter(xy);
 
       this.builtinParts["anemometer"] = this.anemometerState;
       this.builtinVisuals["anemometer"] = () => new visuals.AnemometerView();

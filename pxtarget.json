@@ -33,6 +33,7 @@
     "libs/ina219",
     "libs/ecmeter_sen0244",
     "libs/anemometer",
+    "libs/phmeter",
     "libs/dbmeter---mp34dt01"
   ],
   "cloud": {

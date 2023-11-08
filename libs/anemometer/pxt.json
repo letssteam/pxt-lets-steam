@@ -1,6 +1,6 @@
 {
   "name": "anemometer",
-  "description": "An anemometer measuring rotation per minute / frequency of anemometer's cup rotation",
+  "description": "An anemometer measuring rotation per minute / frequency of anemometer's cup rotation /test",
   "files": ["anemometer.cpp", "shims.d.ts", "enums.d.ts", "pxtparts.json"],
   "public": true,
   "dependencies": {
