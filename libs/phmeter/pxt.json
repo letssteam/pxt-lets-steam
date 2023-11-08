@@ -1,0 +1,9 @@
+{
+  "name": "phmeter",
+  "description": "A pH meter measures the acidity or alkalinity of a solution by quantifying its pH value.",
+  "files": ["phmeter.cpp", "shims.d.ts", "enums.d.ts", "pxtparts.json"],
+  "public": true,
+  "dependencies": {
+    "core": "file:../core---stm32"
+  }
+}
