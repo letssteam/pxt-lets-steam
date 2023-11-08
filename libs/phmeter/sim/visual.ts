@@ -4,12 +4,12 @@ namespace pxsim.visuals {
       let [x, y] = xy;
       let l = x;
       let t = y;
-      let w = PHMETER_HUM_PART_WIDTH;
-      let h = PHMETER_HUM_PART_HEIGHT;
+      let w = PHMETER_PART_WIDTH;
+      let h = PHMETER_PART_HEIGHT;
       let img = <SVGGElement>svg.elt("image");
       svg.hydrate(img, {
           class: "sim-phmeter", x: l, y: t, width: w, height: h,
-          href: svg.toDataUri(PHMETER_HUM_PART)
+          href: svg.toDataUri(PHMETER_PART)
       });
       return { el: img, x: l, y: t, w: w, h: h };
   }
@@ -46,9 +46,9 @@ namespace pxsim.visuals {
 
     initDom() {
        this.element = svg.elt("g");
-       this.image = new DOMParser().parseFromString(PHMETER_HUM_PART, "image/svg+xml").querySelector("svg") as SVGSVGElement;
+       this.image = new DOMParser().parseFromString(PHMETER_PART, "image/svg+xml").querySelector("svg") as SVGSVGElement;
        svg.hydrate(this.image, {
-             class: "sim-phmeter", width: PHMETER_HUM_PART_WIDTH, height: PHMETER_HUM_PART_HEIGHT,
+             class: "sim-phmeter", width: PHMETER_PART_WIDTH, height: PHMETER_PART_HEIGHT,
        });
 
        this.element.appendChild(this.image);
@@ -131,10 +131,10 @@ namespace pxsim.visuals {
     }
   }
 
-  const PHMETER_HUM_PART_WIDTH = 146.517;   //97.678×1.5
-  const PHMETER_HUM_PART_HEIGHT = 214.263; //142.842×1,5
+  const PHMETER_PART_WIDTH = 146.517;   //97.678×1.5
+  const PHMETER_PART_HEIGHT = 214.263; //142.842×1,5
 
-  const PHMETER_HUM_PART = `
+  const PHMETER_PART = `
   <svg width="369.177" height="539.874" viewBox="0 0 97.678 142.842" version="1.1" id="svg1" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <defs id="defs1">
     <path id="rect10" d="M160.855 360.567h116.67v125.286h-116.67z"/>
